@@ -49,8 +49,7 @@
 
 ;; Settings for org-capture
 (setq org-capture-templates
-      (quote
-       (("t" "todo" entry
+      '(("t" "todo" entry
          (file org-default-notes-file)
          "* TODO %?\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("n" "note" entry
@@ -64,7 +63,7 @@
          "* DONE %?  :phone:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("h" "Habit" entry
          (file org-default-notes-file)
-         "*  %?\n%U\n%a\nSCHEDULED: %t .+1d/3d\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n  %i"))))
+         "*  %?\n%U\n%a\nSCHEDULED: %t .+1d/3d\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n  %i")))
 
 
 ;; refile settings
@@ -82,43 +81,43 @@
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      (quote ((sequence "TODO(t!/!)" "WORKING(w!/!)" "IN-REVIEW(i!/!)"
-                        "REDO(R@/!)" "WAITING(a@/!)"
-                        "|" "DONE(d!/@)" "DELEGATED(e@/!)")
-              (sequence "PROJECT(p)" "BUG(b!/@)" "FEATURE(f!/!)" "MAINT(m!/!)"
-                        "|" "SOMEDAY(s)" "CANCELLED(c@/!)"
-                        "RESTRUCTURED(r@/!)"))))
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "IN-REVIEW(i!/!)"
+                  "REDO(R@/!)" "WAITING(a@/!)"
+                  "|" "DONE(d!/@)" "DELEGATED(e@/!)")
+        (sequence "PROJECT(p)" "BUG(b!/@)" "FEATURE(f!/!)" "MAINT(m!/!)"
+                  "|" "SOMEDAY(s)" "CANCELLED(c@/!)"
+                  "RESTRUCTURED(r@/!)")))
 
 
 (setq org-todo-keyword-faces
-      (quote (("TODO" :foreground "red" :weight bold)
-              ("WORKING" :foreground "orange" :weight bold)
-              ("IN-REVIEW" :foreground "orange" :weight bold)
-              ("WAITING" :foreground "lightblue" :weight bold)
-              ("REDO" :foreground "magenta" :weight bold)
-              ("DONE" :foreground "lightgreen" :weight bold)
-              ("DELEGATED" :foreground "lightgreen" :weight bold)
-              ("PROJECT" :foreground "lightblue" :weight bold)
-              ("BUG" :foreground "red" :weight bold)
-              ("FEATURE" :foreground "red" :weight bold)
-              ("MAINT" :foreground "red" :weight bold)
-              ("SOMEDAY" :foreground "magenta" :weight bold)
-              ("CANCELLED" :foreground "lightgreen" :weight bold)
-              ("RESTRUCTURED" :foreground "lightgreen" :weight bold))))
+      '(("TODO" :foreground "red" :weight bold)
+        ("WORKING" :foreground "orange" :weight bold)
+        ("IN-REVIEW" :foreground "orange" :weight bold)
+        ("WAITING" :foreground "lightblue" :weight bold)
+        ("REDO" :foreground "magenta" :weight bold)
+        ("DONE" :foreground "lightgreen" :weight bold)
+        ("DELEGATED" :foreground "lightgreen" :weight bold)
+        ("PROJECT" :foreground "lightblue" :weight bold)
+        ("BUG" :foreground "red" :weight bold)
+        ("FEATURE" :foreground "red" :weight bold)
+        ("MAINT" :foreground "red" :weight bold)
+        ("SOMEDAY" :foreground "magenta" :weight bold)
+        ("CANCELLED" :foreground "lightgreen" :weight bold)
+        ("RESTRUCTURED" :foreground "lightgreen" :weight bold)))
 
 
 ;; Changing State should trigger following Tag changes
 (setq org-todo-state-tags-triggers
-      (quote (("SOMEDAY"
-               ("waiting" . t) ("next"))
-              (done
-               ("next") ("waiting"))
-              ("WAITING"
-               ("next") ("waiting" . t))
-              ("TODO"
-               ("waiting"))
-              ("WORKING"
-               ("waiting") ("next" . t)))))
+      '(("SOMEDAY"
+         ("waiting" . t) ("next"))
+        (done
+         ("next") ("waiting"))
+        ("WAITING"
+         ("next") ("waiting" . t))
+        ("TODO"
+         ("waiting"))
+        ("WORKING"
+         ("waiting") ("next" . t))))
 
 
 (defun bh/org-auto-exclude-function (tag)
@@ -157,19 +156,19 @@
 
 ;;org-tags
 ;; Important Tag list
-(setq org-tag-alist (quote (("next" . ?x)
-                            ("release" . ?r)
-                            ("note" . ?N)
-                            ("study" . ?s)
-                            ("goal" . ?g)
-                            ("dp" . ?d)
-                            ("tweak" . ?t)
-                            ("write" . ?w)
-                            ("productive" . ?p)
-                            ("essential" . ?e)
-                            ("nonessential" . ?n)
-                            ("waiting" . ?a)
-                            ("future" . ?f))))
+(setq org-tag-alist '(("next" . ?x)
+                      ("release" . ?r)
+                      ("note" . ?N)
+                      ("study" . ?s)
+                      ("goal" . ?g)
+                      ("dp" . ?d)
+                      ("tweak" . ?t)
+                      ("write" . ?w)
+                      ("productive" . ?p)
+                      ("essential" . ?e)
+                      ("nonessential" . ?n)
+                      ("waiting" . ?a)
+                      ("future" . ?f)))
 
 
 ;; org-priorities
@@ -178,7 +177,7 @@
 
 
 ;; Logbook settings
-(setq org-log-done (quote time)
+(setq org-log-done 'time
       org-log-into-drawer t
       org-log-reschedule 'note
       org-log-redeadline 'note)
@@ -188,7 +187,7 @@
 (org-clock-persistence-insinuate)
 (setq org-clock-history-length 10
       org-clock-in-resume t
-      org-drawers (quote ("PROPERTIES" "LOGBOOK" "CLOCK"))
+      org-drawers '("PROPERTIES" "LOGBOOK" "CLOCK")
       org-clock-into-drawer "CLOCK"
       org-clock-out-remove-zero-time-clocks t
       org-clock-out-when-done t
@@ -277,8 +276,10 @@ as the default task."
     ;;
     (save-restriction
       (widen)
-                                        ; Find the tags on the current task
-      (if (and (equal major-mode 'org-mode) (not (org-before-first-heading-p)) (eq arg 4))
+      ;; Find the tags on the current task
+      (if (and (equal major-mode 'org-mode)
+               (not (org-before-first-heading-p))
+               (eq arg 4))
           (org-clock-in '(16))
         (bh/clock-in-organization-task-as-default)))))
 (global-set-key (kbd "<f9> i") 'bh/punch-in)
@@ -335,6 +336,7 @@ as the default task."
 (add-hook 'org-clock-out-hook 'bh/clock-out-maybe 'append)
 
 
+;; org-agenda
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
       (quote (("a" "Work Agenda"
@@ -469,35 +471,32 @@ as the default task."
 (setq org-agenda-repeating-timestamp-show-all nil
       org-agenda-show-all-dates t
       org-agenda-sorting-strategy
-      (quote ((agenda time-up priority-down effort-up category-up)
-              (todo todo-state-up priority-up)
-              (tags priority-down)))
+      '((agenda time-up priority-down effort-up category-up)
+       (todo todo-state-up priority-up)
+       (tags priority-down))
       org-agenda-start-on-weekday nil
       org-agenda-time-grid
-      (quote (nil "----------------"
-                  (800 1000 1200 1400 1600 1800 2000)))
+      '(nil "----------------"
+           (800 1000 1200 1400 1600 1800 2000))
       org-deadline-warning-days 30
       org-agenda-todo-ignore-with-date t
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t
-      org-agenda-text-search-extra-files (quote (agenda-archives))
-      org-agenda-log-mode-items (quote (clock closed state))
+      org-agenda-text-search-extra-files '(agenda-archives)
+      org-agenda-log-mode-items '(clock closed state)
       org-agenda-clockreport-parameter-plist '(:link t :maxlevel 5 :fileskip0 t
                                                      :compact t :narrow 80)
       org-agenda-span 1
       org-columns-default-format
       "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM"
       org-global-properties
-      (quote (("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00")
-              ("STYLE_ALL" . "habit")))
+      '(("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00")
+        ("STYLE_ALL" . "habit"))
       org-agenda-clock-consistency-checks
-      (quote (:max-duration "4:00"
-                            :min-duration 0
-                            :max-gap 0
-                            :gap-ok-around ("4:00"))))
+      '(:max-duration "4:00" :min-duration 0 :max-gap 0 :gap-ok-around ("4:00")))
 
 
-;; setup for Reminder
+;; settings for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
 (defadvice org-agenda-to-appt (before wickedcool activate)
   "Clear the appt-time-msg-list."
