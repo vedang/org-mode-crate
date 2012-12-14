@@ -1,7 +1,7 @@
 ;;; org-mode-crate-init.el --- Load code for a better clojure environment
 ;;; Author: Vedang Manerikar
 ;;; Created on: 13 Dec 2012
-;;; Time-stamp: "2012-12-14 14:05:29 vedang"
+;;; Time-stamp: "2012-12-14 16:31:00 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -16,7 +16,7 @@
 ;;; Commentary:
 ;; To use this code, simply add
 ;;    (add-to-list 'load-path "/path/to/org-mode-crate/")
-;;    (setq org-directory "path/where/you/want/to/store/org/files")
+;;    (setq org-directory "path//to/org-files/")
 ;;    (require 'org-mode-crate-init)
 ;; to your .emacs file
 
