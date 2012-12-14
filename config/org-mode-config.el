@@ -192,7 +192,7 @@
       org-clock-out-remove-zero-time-clocks t
       org-clock-out-when-done t
       org-clock-persist 'history
-      org-clock-persist-file (concat *tempfiles-dir* "org-clock-save")
+      org-clock-persist-file (concat org-directory "/org-clock-save")
       org-clock-auto-clock-resolution 'when-no-clock-is-running
       org-clock-report-include-clocking-task t)
 
