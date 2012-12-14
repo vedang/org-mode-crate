@@ -338,11 +338,11 @@ as the default task."
 ;; org-agenda
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
-      (quote (("a" "Work Agenda"
-               ((agenda "" ((org-agenda-files (list org-work-directory))))
-                (tags-todo "+release+@office-future"
-                           ((org-agenda-files (list org-work-directory))
-                            (org-agenda-overriding-header
+      (quote (("a" "The Agenda"
+               ((agenda "" ((org-agenda-overriding-header
+                             "Deadlines and Scheduled")))
+                (tags-todo "+release-future"
+                           ((org-agenda-overriding-header
                              "Release Tasks")
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
@@ -350,42 +350,8 @@ as the default task."
                             (org-agenda-sorting-strategy
                              '(effort-up category-keep))))
                 (tags-todo "+productive+future"
-                           ((org-agenda-files (list org-work-directory))
-                            (org-agenda-overriding-header
-                             "Next Tasks")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags "refile"
-                      ((org-agenda-overriding-header
-                        "Notes and Tasks to Refile")))
-                nil))
-              ("b" "Personal Agenda"
-               ((agenda "" ((org-agenda-files (list org-personal-directory
-                                                    (concat org-directory "/Birthdays.org")))))
-                (tags-todo "+goal|+write|+study|+tweak"
-                           ((org-agenda-files (list org-personal-directory))
-                            (org-agenda-overriding-header
-                             "Fun Tasks & Tweaks")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up priority-down category-keep))))
-                (tags-todo "+next-release-someday|+future-someday"
-                           ((org-agenda-files (list org-personal-directory))
-                            (org-agenda-overriding-header
-                             "Next Tasks")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags-todo "+@errand|+personal"
                            ((org-agenda-overriding-header
-                             "Errands & the small stuff")
+                             "Next Tasks")
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
                             (org-tags-match-list-sublevels t)
@@ -395,10 +361,6 @@ as the default task."
                       ((org-agenda-overriding-header
                         "Notes and Tasks to Refile")))
                 nil))
-              ("h" "Habits" tags-todo "STYLE=\"habit\""
-               ((org-agenda-overriding-header "Habits")
-                (org-agenda-sorting-strategy
-                 '(todo-state-down effort-up category-keep))))
               ("c" "Select default clocking task" tags "LEVEL=1-refile"
                ((org-agenda-skip-function
                  '(org-agenda-skip-subtree-if 'notregexp "^\\* Organization"))
