@@ -1,7 +1,7 @@
 ;;; org-mode-config.el --- Configuration for org-mode
 ;;; Author: Vedang Manerikar
 ;;; Created on: 11 Mar 2012
-;;; Time-stamp: "2012-12-14 14:22:02 vedang"
+;;; Time-stamp: "2012-12-14 14:22:43 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -173,7 +173,7 @@
                             ("future" . ?f))))
 
 
-;; I need more priorities that provided by default
+;; org-priorities
 (setq org-lowest-priority ?E)
 (setq org-default-priority ?E)
 
