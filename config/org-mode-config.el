@@ -1,7 +1,7 @@
 ;;; org-mode-config.el --- Configuration for org-mode
 ;;; Author: Vedang Manerikar
 ;;; Created on: 11 Mar 2012
-;;; Time-stamp: "2012-12-14 14:11:23 vedang"
+;;; Time-stamp: "2012-12-14 14:21:21 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -78,8 +78,6 @@
 
 
 ;; org-todo settings
-
-;; I need more todo keywords than present by default
 ;; keys mentioned in brackets are hot-keys for the States
 ;; ! indicates insert timestamp
 ;; @ indicates insert note
@@ -134,6 +132,7 @@
 (setq org-agenda-auto-exclude-function 'bh/org-auto-exclude-function)
 
 
+;; Other todo related settings
 (setq org-use-fast-todo-selection t
       org-fast-tag-selection-single-key 'expert
       ;; Allow me to change state without it being logged
@@ -144,6 +143,20 @@
       org-enforce-todo-dependencies t)
 
 
+(dolist (map (list org-agenda-keymap org-agenda-mode-map))
+  (define-prefix-command 'org-todo-state-map)
+  (define-key map "x" 'org-todo-state-map)
+
+  (define-key org-todo-state-map "d"
+    #'(lambda nil (interactive) (org-agenda-todo "DONE")))
+  (define-key org-todo-state-map "x"
+    #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
+
+  ;; These functions are defined later in the file.
+  (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
+
+
+;;org-tags
 ;; Important Tag list
 (setq org-tag-alist (quote (("next" . ?x)
                             ("release" . ?r)
@@ -165,17 +178,6 @@
 (setq org-default-priority ?E)
 
 
-(dolist (map (list org-agenda-keymap org-agenda-mode-map))
-  (define-prefix-command 'org-todo-state-map)
-  (define-key map "x" 'org-todo-state-map)
-
-  (define-key org-todo-state-map "d"
-    #'(lambda nil (interactive) (org-agenda-todo "DONE")))
-  (define-key org-todo-state-map "x"
-    #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
-
-  ;;(define-key org-todo-state-map "z" #'make-bugzilla-bug)
-  (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
 
 
 ;; Logbook settings
