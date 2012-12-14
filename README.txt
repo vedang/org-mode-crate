@@ -19,6 +19,18 @@ about it.
    (setq org-directory "/path/to/org-files/")
    (require 'org-mode-crate-init)
 
+** Press F12 to get started with your agenda
+
+* Workflow notes
+ - Create and maintain as many files in your org-directory as you want.
+ - Currently, I don't handle recursively loading org files, so your
+   org-directory should be a flat structure.
+ - Tasks are categorized as follows:
+   - Important tasks - These tasks should be tagged with one (or more)
+     of the following tags: next, release, imp
+   - Other tasks that should be tracked - These tasks should be tagged
+     with one (or more) of the following tags: fun, future, productive
+
 * Caveats
  - This configuration is ONLY known to work with Emacs 24. You are on
    your own with older versions of Emacs.
