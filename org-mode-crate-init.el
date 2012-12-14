@@ -1,7 +1,7 @@
 ;;; org-mode-crate-init.el --- Load code for a better clojure environment
 ;;; Author: Vedang Manerikar
 ;;; Created on: 13 Dec 2012
-;;; Time-stamp: "2012-12-14 16:31:00 vedang"
+;;; Time-stamp: "2012-12-14 17:09:16 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -53,10 +53,16 @@
                                (or (buffer-file-name) load-file-name)))
 
 
+;; Agenda does not have a key-binding by default in Emacs 24.
+;; Provide one as a starting point.
+(global-set-key (kbd "<f12>") 'org-agenda)
+
+
 (eval-after-load "org"
   '(progn
      (require 'org-key-bindings)
      (require 'org-mode-config)))
 
 
+(message "Press <f12> to get started with your agenda...")
 (provide 'org-mode-crate-init)
