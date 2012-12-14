@@ -47,19 +47,16 @@
 (setq org-capture-templates
       '(("t" "todo" entry
          (file org-default-notes-file)
-         "* TODO %?\n%U\n%a\n %i" :clock-in t :clock-resume t)
+         "* TODO %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("n" "note" entry
          (file org-default-notes-file)
-         "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+         "* %?  :refile:note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
         ("l" "linklog" entry
          (file (concat org-directory "linklog.org"))
-         "* %?\n%U\n%a\n %i" :clock-in t :clock-resume t)
+         "* %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("p" "phone" entry
          (file org-default-notes-file)
-         "* DONE %?  :phone:\n%U\n%a\n %i" :clock-in t :clock-resume t)
-        ("h" "Habit" entry
-         (file org-default-notes-file)
-         "*  %?\n%U\n%a\nSCHEDULED: %t .+1d/3d\n:PROPERTIES:\n:STYLE: habit\n:REPEAT_TO_STATE: NEXT\n:END:\n  %i")))
+         "* DONE %?  :refile:phone:\n%U\n%a\n %i" :clock-in t :clock-resume t)))
 
 
 ;; refile settings
