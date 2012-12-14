@@ -1,7 +1,7 @@
 ;;; org-mode-crate-init.el --- Load code for a better clojure environment
 ;;; Author: Vedang Manerikar
 ;;; Created on: 13 Dec 2012
-;;; Time-stamp: "2012-12-14 17:09:16 vedang"
+;;; Time-stamp: "2012-12-14 17:21:18 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -35,6 +35,7 @@
          (dirs-list (delq nil (mapcar (lambda (lst)
                                         (and (car (cdr lst))
                                              (not (equal "." (substring (car lst) -1)))
+                                             (not (equal ".#" (substring (car lst) -2)))
                                              (not (equal ".git" (substring (car lst) -4)))
                                              (car lst)))
                                       current-directory-list))))
