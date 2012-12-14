@@ -15,7 +15,6 @@
 ;;; Code:
 
 
-(require 'org-install)
 (require 'org-exp-blocks)
 (require 'org-latex)
 
