@@ -462,18 +462,6 @@ as the default task."
       (org-agenda-change-all-lines newhead hdmarker))))
 
 
-;; http://stackoverflow.com/a/8920418/137430
-(defun my-org-insert-sub-task ()
-  (interactive)
-  (let ((parent-deadline (org-get-deadline-time nil)))
-    (org-goto-sibling)
-    (org-insert-todo-subheading t)
-    (when parent-deadline
-      (org-deadline nil parent-deadline))))
-
-(define-key org-mode-map (kbd "C-c s") 'my-org-insert-sub-task)
-
-
 ;; Always highlight current agenda line
 (add-hook 'org-agenda-mode-hook '(lambda ()
                                    (hl-line-mode 1)))
@@ -523,136 +511,10 @@ as the default task."
 ;; reset the appointments one minute after midnight
 (run-at-time "24:01" nil 'org-agenda-to-appt)
 
-;; Make TAB the yas trigger key in the org-mode-hook and turn on flyspell mode
-(add-hook 'org-mode-hook
-          (lambda ()
-            ;; yasnippet
-            (make-variable-buffer-local 'yas/trigger-key)
-            (setq yas/trigger-key [tab])
-            (define-key yas/keymap [tab] 'yas/next-field-group)
-            ;; flyspell mode to spell check everywhere
-            (flyspell-mode 1)))
 
-
+;; Settings for org-table
 ;; Export org table as CSV by default
 (setq org-table-export-default-format "orgtbl-to-csv")
-
-
-;; settings for Beamer
-(setq org-ditaa-jar-path (concat *dotfiles-dir*
-                                 "plugins/org-mode/contrib/scripts/ditaa.jar"))
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((ditaa . t)
-   (dot . t)
-   (C . t)
-   (emacs-lisp . t)
-   (python . t)
-   (ruby . t)
-   (sh . t)
-   (clojure . t)))
-
-
-(unless (boundp 'org-export-latex-classes)
-  (setq org-export-latex-classes nil))
-;; allow for export=>beamer by placing #+LaTeX_CLASS: beamer in org files
-(add-to-list 'org-export-latex-classes
-             ;; beamer class, for presentations
-             '("beamer"
-               "\\documentclass[11pt]{beamer}\n
-      \\mode<{{{beamermode}}}>\n
-      \\usetheme{{{{beamertheme}}}}\n
-      \\usecolortheme{{{{beamercolortheme}}}}\n
-      \\beamertemplateballitem\n
-      \\setbeameroption{show notes}
-      \\usepackage{color}
-      \\usepackage{listings}
-      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
-  frame=single,
-  basicstyle=\\small,
-  showspaces=false,showstringspaces=false,
-  showtabs=false,
-  keywordstyle=\\color{blue}\\bfseries,
-  commentstyle=\\color{red},
-  }\n
-      \\usepackage{verbatim}\n
-      \\institute{{{{beamerinstitute}}}}\n
-       \\subject{{{{beamersubject}}}}\n"
-
-               ("\\section{%s}" . "\\section*{%s}")
-
-               ("\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}"
-                "\\begin{frame}[fragile]\\frametitle{%s}"
-                "\\end{frame}")))
-
-
-;; letter class, for formal letters
-(add-to-list 'org-export-latex-classes
-
-             '("letter"
-               "\\documentclass[11pt]{letter}\n
-      \\usepackage{color}\n
-      \\usepackage{listings}
-      \\lstset{numbers=none,language=[ISO]C++,tabsize=4,
-  frame=single,
-  basicstyle=\\small,
-  showspaces=false,showstringspaces=false,
-  showtabs=false,
-  keywordstyle=\\color{blue}\\bfseries,
-  commentstyle=\\color{red},
-  }\n
-      \\usepackage{verbatim}\n"
-
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-
-;; article class, for articles
-(add-to-list 'org-export-latex-classes
-             '("article"
-               "\\documentclass[10pt]{article}
-\\usepackage{color}
-\\usepackage{listings}
-\\lstset{numbers=none,language=[ISO]C++,tabsize=4,
-  frame=single,
-  basicstyle=\\small,
-  showspaces=false,showstringspaces=false,
-  showtabs=false,
-  keywordstyle=\\color{blue}\\bfseries,
-  commentstyle=\\color{red},
-  }\n
-\\usepackage{verbatim}\n
-\\usepackage[left=1in,top=1in,right=1in,bottom=1in,head=0.2in,foot=0.2in]{geometry}"
-               ("\\section{%s}" . "\\section*{%s}")
-               ("\\subsection{%s}" . "\\subsection*{%s}")
-               ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
-               ("\\paragraph{%s}" . "\\paragraph*{%s}")
-               ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
-
-
-;; I don't want org mode to export a_b as a subscript b in latex.
-;; I mostly write code documents and this is never the intended behavior
-(setq org-export-with-sub-superscripts nil)
-
-
-;; I want to add comments to my org files without
-;; having them show up in the latex export.
-;; (setq org-export-blocks nil)
-
-
-;; (add-to-list 'org-export-blocks
-;;              '(src org-babel-exp-src-blocks nil))
-;; (add-to-list 'org-export-blocks
-;;              '(comment org-export-blocks-format-comment nil))
-;; (add-to-list 'org-export-blocks
-;;              '(ditaa org-export-blocks-format-ditaa nil))
-;; (add-to-list 'org-export-blocks
-;;              '(dot org-export-blocks-format-dot nil))
-;; ============================================================================
 
 
 (setq org-link-abbrev-alist
