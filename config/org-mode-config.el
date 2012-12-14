@@ -335,17 +335,17 @@ as the default task."
       (quote (("a" "The Agenda"
                ((agenda "" ((org-agenda-overriding-header
                              "Deadlines and Scheduled")))
-                (tags-todo "+release-future"
+                (tags-todo "+release+next+imp-future"
                            ((org-agenda-overriding-header
-                             "Release Tasks")
+                             "Do These Tasks Next")
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
                             (org-tags-match-list-sublevels t)
                             (org-agenda-sorting-strategy
                              '(effort-up category-keep))))
-                (tags-todo "+productive+future"
+                (tags-todo "+productive+future+fun"
                            ((org-agenda-overriding-header
-                             "Next Tasks")
+                             "Other Fun Tasks")
                             (org-agenda-todo-ignore-scheduled t)
                             (org-agenda-todo-ignore-deadlines t)
                             (org-tags-match-list-sublevels t)
