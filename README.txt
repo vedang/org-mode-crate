@@ -11,7 +11,7 @@ about it.
 
 * INSTALL
 ** Get the code:
-   - git clone --recursive git://github.com/vedang/org-mode-crate.git ~/.emacs.d/path/to/org-mode-crate
+   - git clone git://github.com/vedang/org-mode-crate.git ~/.emacs.d/path/to/org-mode-crate
 
 ** Add the following lines to your .emacs
 
