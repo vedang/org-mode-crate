@@ -177,8 +177,6 @@
 (setq org-default-priority ?E)
 
 
-
-
 ;; Logbook settings
 (setq org-log-done (quote time)
       org-log-into-drawer t
@@ -200,7 +198,7 @@
       org-clock-report-include-clocking-task t)
 
 
-;;; List of TODO states to clock-in
+;; List of TODO states to clock-in
 (setq vm/todo-list '("TODO" "FEATURE" "BUG" "MAINT" "WAITING"))
 
 
@@ -222,7 +220,6 @@ Skips capture tasks and tasks with subtasks"
   (when (and (not (and (boundp 'org-capture-mode) org-capture-mode))
              (member kw vm/todo-list))
     "WORKING"))
-
 
 (setq org-clock-in-switch-to-state 'bh/clock-in-to-working)
 
