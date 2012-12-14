@@ -16,7 +16,7 @@ about it.
 ** Add the following lines to your .emacs
 
    (add-to-list 'load-path "/path/to/org-mode-crate/")
-   (setq org-directory "/path/to/org-files/")
+   (setq org-directory "/path/to/org-files-dir")
    (require 'org-mode-crate-init)
 
 ** Press F12 to get started with your agenda

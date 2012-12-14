@@ -20,9 +20,9 @@
 
 
 ;; Setup directory and file paths for org
-(setq org-archive-directory (concat org-directory "archive")
+(setq org-archive-directory (concat org-directory "/archive")
       org-archive-location (concat org-archive-directory "/%s_archive::")
-      org-default-notes-file (concat org-directory "remember-notes.org")
+      org-default-notes-file (concat org-directory "/remember-notes.org")
       org-agenda-files (list org-directory))
 
 
@@ -52,7 +52,7 @@
          (file org-default-notes-file)
          "* %?  :refile:note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
         ("l" "linklog" entry
-         (file (concat org-directory "linklog.org"))
+         (file (concat org-directory "/linklog.org"))
          "* %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("p" "phone" entry
          (file org-default-notes-file)
@@ -185,7 +185,7 @@
       org-clock-out-remove-zero-time-clocks t
       org-clock-out-when-done t
       org-clock-persist 'history
-      org-clock-persist-file (concat org-directory "org-clock-save")
+      org-clock-persist-file (concat org-directory "/org-clock-save")
       org-clock-auto-clock-resolution 'when-no-clock-is-running
       org-clock-report-include-clocking-task t)
 
