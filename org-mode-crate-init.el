@@ -1,7 +1,7 @@
 ;;; org-mode-crate-init.el --- Load code for a better clojure environment
 ;;; Author: Vedang Manerikar
 ;;; Created on: 13 Dec 2012
-;;; Time-stamp: "2012-12-13 16:40:38 vedang"
+;;; Time-stamp: "2012-12-14 14:00:00 vedang"
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
 
 ;; This file is not part of GNU Emacs.
@@ -51,6 +51,11 @@
 
 (vedang/add-dirs-to-load-path (file-name-directory
                                (or (buffer-file-name) load-file-name)))
+
+
+(eval-after-load "org"
+  '(progn
+     (require 'org-key-bindings)))
 
 
 (provide 'org-mode-crate-init)
