@@ -309,13 +309,11 @@ as the default task."
             (bh/clock-in-default-task)))))))
 
 
-(defvar bh/organization-task-id "a87c0695-ab23-44ab-a270-df6e86ec015e")
-
-
 (defun bh/clock-in-organization-task-as-default ()
   (interactive)
-  (org-with-point-at (org-id-find bh/organization-task-id 'marker)
-    (org-clock-in '(16))))
+  (when (boundp 'bh/organization-task-id)
+    (org-with-point-at (org-id-find bh/organization-task-id 'marker)
+      (org-clock-in '(16)))))
 
 
 (defun bh/clock-out-maybe ()

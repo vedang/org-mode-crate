@@ -31,6 +31,19 @@ about it.
    - Other tasks that should be tracked - These tasks should be tagged
      with one (or more) of the following tags: fun, future, productive
 
+* Optional notes
+ - You can use the convenience function bh/punch-in (bound to `<f9> i`)
+   to clock in a predetermined default task. All you need is the
+   following one time setup:
+   - Go to the org-task you want to use as the default task.
+   - Give this task an org-id by running the function `org-id-get-create`
+     M-x org-id-get-create
+   - Copy the ID (stored in the task properties) and add the following
+     line above (require 'org-mode-crate-init)
+     (defvar bh/organization-task-id "<task_id>")
+ - Now when you start org-mode, you can press <f9> i to clock in the
+   default task.
+
 * Caveats
  - This configuration is ONLY known to work with Emacs 24. You are on
    your own with older versions of Emacs.
