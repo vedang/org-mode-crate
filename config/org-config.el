@@ -1,4 +1,4 @@
-;;; org-mode-config.el --- Configuration for org-mode
+;;; org-config.el --- Configuration for org-mode
 ;;; Author: Vedang Manerikar
 ;;; Created on: 11 Mar 2012
 ;;; Copyright (c) 2012 Vedang Manerikar <vedang.manerikar@gmail.com>
@@ -476,7 +476,7 @@ as the default task."
         ("google"   . "http://www.google.com/search?q=%s")))
 
 
-(provide 'org-mode-config)
+(provide 'org-config)
 ;; A big thanks to Bernt Hansen for providing an awesome guide to
 ;; beginners so that we can harness the power of org-mode. Almost all of the
 ;; customization here, and my complete day-to-day workflow,

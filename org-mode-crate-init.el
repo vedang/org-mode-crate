@@ -61,7 +61,7 @@
 (eval-after-load "org"
   '(progn
      (require 'org-key-bindings)
-     (require 'org-mode-config)))
+     (require 'org-config)))
 
 
 (message "Press <f12> to get started with your agenda...")
