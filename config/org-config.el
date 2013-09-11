@@ -471,8 +471,7 @@ as the default task."
 
 
 (setq org-link-abbrev-alist
-      '(("bug" . "http://bugzilla.helpshift.com/show_bug.cgi?id=%s")
-        ("google"   . "http://www.google.com/search?q=%s")))
+      '(("google"   . "http://www.google.com/search?q=%s")))
 
 
 (provide 'org-config)
