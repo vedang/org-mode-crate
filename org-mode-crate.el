@@ -184,7 +184,7 @@
 
 ;; org-priorities
 (setq org-lowest-priority ?E)
-(setq org-default-priority ?C)
+(setq org-default-priority ?D)
 
 
 ;; Logbook settings
