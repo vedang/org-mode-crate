@@ -28,6 +28,7 @@
 
 
 (global-set-key (kbd "C-c l") 'org-store-link)
+(global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c t") 'org-todo)
 (global-set-key (kbd "C-c C-r") 'org-capture)
 (global-set-key (kbd "<f6>") 'org-capture)
