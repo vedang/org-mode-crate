@@ -94,7 +94,7 @@
       '((sequence "TODO(t!/!)" "WORKING(w!/!)" "IN-REVIEW(i!/!)" "IN-QA(q!/!)"
                   "REDO(R@/!)" "WAITING(a@/!)"
                   "|" "DONE(d!/@)" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "BUG(b!/@)" "FEATURE(f!/!)" "MAINT(m!/!)"
+        (sequence "PROJECT(p)" "FOLLOWUP(f!/!)" "MAINT(m!/!)"
                   "|" "SOMEDAY(s)" "CANCELLED(c@/!)"
                   "RESTRUCTURED(r@/!)")))
 
@@ -109,8 +109,7 @@
         ("DONE" :foreground "lightgreen" :weight bold)
         ("DELEGATED" :foreground "lightgreen" :weight bold)
         ("PROJECT" :foreground "lightblue" :weight bold)
-        ("BUG" :foreground "red" :weight bold)
-        ("FEATURE" :foreground "red" :weight bold)
+        ("FOLLOWUP" :foreground "red" :weight bold)
         ("MAINT" :foreground "red" :weight bold)
         ("SOMEDAY" :foreground "magenta" :weight bold)
         ("CANCELLED" :foreground "lightgreen" :weight bold)
@@ -127,6 +126,8 @@
          ("next") ("waiting" . t))
         ("TODO"
          ("waiting"))
+        ("FOLLOWUP"
+         ("followup" . t))
         ("WORKING"
          ("waiting") ("next" . t))))
 
@@ -210,7 +211,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "FEATURE" "BUG" "MAINT" "WAITING"))
+(setq vm/todo-list '("TODO" "WAITING" "REDO"))
 
 
 (defun bh/hide-other ()
