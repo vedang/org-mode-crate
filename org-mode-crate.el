@@ -169,6 +169,7 @@
 ;; Important Tag list
 (setq org-tag-alist '(("next" . ?x)
                       ("release" . ?r)
+                      ("bug" . ?b)
                       ("note" . ?N)
                       ("study" . ?s)
                       ("goal" . ?g)
