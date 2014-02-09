@@ -31,8 +31,8 @@
   (error "org-directory is unset. Please refer to instructions in the README"))
 (message "`org-directory' has been set to: %s" org-directory)
 
-(require 'org-exp-blocks)
-(require 'org-latex)
+
+(require 'org-agenda)
 (require 'org-key-bindings)
 
 
@@ -491,6 +491,11 @@ as the default task."
 
 (setq org-link-abbrev-alist
       '(("google"   . "http://www.google.com/search?q=%s")))
+
+
+;; Pull in export backends for beamer and md
+(dolist (b (list 'beamer 'md))
+  (add-to-list 'org-export-backends b))
 
 
 (provide 'org-mode-crate)
