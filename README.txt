@@ -9,6 +9,26 @@ I've strived to make this configuration super simple to install and
 use, if you face any problems please open an issue and let me know
 about it.
 
+* CAVEATS
+ - This configuration is ONLY known to work with Emacs 24. You are on
+   your own with older versions of Emacs.
+ - Currently, this configuration has ONLY been tested with Org Mode
+   version "release_7.9.3f". Org Mode's latest version - the "8.x"
+   version - is a breaking change. One of my top priorities is fixing
+   this configuration and bringing it up-to-date with the latest Org
+   Mode. Until then, you will need to install the older version of Org
+   Mode to use this configuration. This is a one-time task and can be
+   done as follows:
+   #+begin_src shell-script
+     $ git clone git://orgmode.org/org-mode.git ~/path/to/org-mode/
+     $ cd ~/path/to/org-mode/
+     $ git checkout release_7.9.3f
+     $ make
+     $ sudo make install
+
+   #+end_src
+
+
 * INSTALL
 ** Get the code:
    - git clone git://github.com/vedang/org-mode-crate.git /path/to/org-mode-crate
@@ -20,7 +40,7 @@ about it.
   ;; Agenda does not have a key-binding by default in Emacs 24.
   ;; Provide one as a starting point.
   (global-set-key (kbd "<f12>") 'org-agenda)
-  (require 'org-mode-crate-init)
+  (require 'org-mode-crate)
 #+end_src
 
 ** Press F12 to get started with your agenda
@@ -49,7 +69,3 @@ about it.
      #+end_src
  - Now when you start org-mode, you can press <f9> i to clock in the
    default task.
-
-* Caveats
- - This configuration is ONLY known to work with Emacs 24. You are on
-   your own with older versions of Emacs.
