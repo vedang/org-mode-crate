@@ -236,13 +236,12 @@ Skips capture tasks and tasks with subtasks"
 (setq org-clock-in-switch-to-state 'bh/clock-in-to-working)
 
 
-;; Remove empty drawers on clock out
+;; Remove empty LOGBOOK drawers on clock out
 (defun bh/remove-empty-drawer-on-clock-out ()
   (interactive)
   (save-excursion
     (beginning-of-line 0)
-    (org-remove-empty-drawer-at "CLOCK" (point))
-    (org-remove-empty-drawer-at "LOGBOOK" (point))))
+    (org-remove-empty-drawer-at (point))))
 
 (add-hook 'org-clock-out-hook 'bh/remove-empty-drawer-on-clock-out 'append)
 
