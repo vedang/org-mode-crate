@@ -198,13 +198,13 @@
 
 ;; settings for org-clock
 (org-clock-persistence-insinuate)
-(setq org-clock-history-length 10
+(setq org-clock-history-length 20
       org-clock-in-resume t
       org-drawers '("PROPERTIES" "LOGBOOK" "CLOCK")
       org-clock-into-drawer "CLOCK"
       org-clock-out-remove-zero-time-clocks t
       org-clock-out-when-done t
-      org-clock-persist 'history
+      org-clock-persist t
       org-clock-persist-file (concat org-directory "/org-clock-save")
       org-clock-auto-clock-resolution 'when-no-clock-is-running
       org-clock-report-include-clocking-task t)
