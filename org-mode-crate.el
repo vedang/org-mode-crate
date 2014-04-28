@@ -66,14 +66,11 @@
          (file org-default-notes-file)
          "* TODO %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("n" "note" entry
-         (file org-default-notes-file)
+         (file+headline org-default-notes-file "Notes")
          "* %?  :refile:note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
         ("l" "linklog" entry
          (file (concat org-directory "/linklog.org"))
-         "* %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
-        ("p" "phone" entry
-         (file org-default-notes-file)
-         "* DONE %?  :refile:phone:\n%U\n%a\n %i" :clock-in t :clock-resume t)))
+         "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
 
 
 ;; refile settings
