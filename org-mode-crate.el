@@ -88,7 +88,7 @@
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "IN-REVIEW(i!/!)" "IN-QA(q!/!)"
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)"
                   "REDO(R@/!)" "WAITING(a@/!)"
                   "|" "DONE(d!/@)" "DELEGATED(e@/!)")
         (sequence "PROJECT(p)" "FOLLOWUP(f!/!)" "MAINT(m!/!)"
@@ -99,8 +99,6 @@
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "red" :weight bold)
         ("WORKING" :foreground "orange" :weight bold)
-        ("IN-REVIEW" :foreground "orange" :weight bold)
-        ("IN-QA" :foreground "orange" :weight bold)
         ("WAITING" :foreground "lightblue" :weight bold)
         ("REDO" :foreground "magenta" :weight bold)
         ("DONE" :foreground "lightgreen" :weight bold)
@@ -377,7 +375,7 @@ as the default task."
               ("d" "Delegated Tasks" todo "DELEGATED"
                ((org-use-tag-inheritance nil)
                 (org-agenda-todo-ignore-with-date nil)))
-              ("I" "Inheritable Deadlines" todo "TODO|WAITING|IN-REVIEW|IN-QA|WORKING|SOMEDAY"
+              ("I" "Inheritable Deadlines" todo "TODO|WAITING|WORKING|FOLLOWUP"
                ((org-agenda-overriding-header "Inheritable DEADLINEs")
                 (org-agenda-skip-function 'fc/skip-non-inheritable-deadlines))))))
 
