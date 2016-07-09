@@ -438,9 +438,10 @@ as the default task."
 (setq org-agenda-repeating-timestamp-show-all nil
       org-agenda-show-all-dates t
       org-agenda-sorting-strategy
-      '((agenda time-up priority-down effort-up category-up)
-        (todo todo-state-up priority-up)
-        (tags priority-down))
+      '((agenda habit-down time-up priority-down effort-up category-keep)
+        (todo todo-state-up priority-down category-keep)
+        (tags priority-down category-keep)
+        (search category-keep))
       org-agenda-start-on-weekday nil
       org-agenda-time-grid
       '(nil "----------------"
