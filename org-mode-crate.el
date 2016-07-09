@@ -191,6 +191,11 @@
       org-log-redeadline 'note)
 
 
+;; org-list
+(setq org-list-demote-modify-bullet
+      '(("+" . "-") ("-" . "+") ("*" . "+")))
+
+
 ;; settings for org-clock
 (org-clock-persistence-insinuate)
 (setq org-clock-history-length 20
