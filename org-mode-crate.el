@@ -492,6 +492,12 @@ as the default task."
   (add-to-list 'org-export-backends b))
 
 
+;; Add Babel execution support for es-mode, if it has been installed.
+(eval-after-load 'es-mode
+  '(progn (org-babel-do-load-languages
+           'org-babel-load-languages
+           '((elasticsearch . t)))))
+
 (provide 'org-mode-crate)
 ;; A big thanks to Bernt Hansen for providing an awesome guide to
 ;; beginners so that we can harness the power of org-mode. Almost all of the
