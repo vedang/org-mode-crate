@@ -469,7 +469,7 @@ as the default task."
   "Clear the appt-time-msg-list."
   (setq appt-time-msg-list nil))
 
-(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt)
+(add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
 
 (appt-activate t)
 
