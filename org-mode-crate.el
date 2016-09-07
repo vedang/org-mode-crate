@@ -500,7 +500,8 @@ as the default task."
 (add-to-list 'org-modules 'org-habit)
 
 ;; Pull in export backends for beamer and md
-(dolist (b (list 'beamer 'md))
+(require 'ox-confluence)
+(dolist (b (list 'beamer 'md 'confluence))
   (add-to-list 'org-export-backends b))
 
 
