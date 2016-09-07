@@ -496,6 +496,9 @@ as the default task."
       '(("google"   . "http://www.google.com/search?q=%s")))
 
 
+;; Enable org-habit by modifying org modules to load
+(add-to-list 'org-modules 'org-habit)
+
 ;; Pull in export backends for beamer and md
 (dolist (b (list 'beamer 'md))
   (add-to-list 'org-export-backends b))
