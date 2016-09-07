@@ -61,13 +61,16 @@
 
 
 ;; Settings for org-capture
+;; Tip: Add the following to the top of your `org-default-notes-file'
+;; to find tasks that need refiling via a simple tag search:
+;; #+FILETAGS: refile
 (setq org-capture-templates
       '(("t" "todo" entry
          (file org-default-notes-file)
-         "* TODO %?  :refile:\n%U\n%a\n %i" :clock-in t :clock-resume t)
+         "* TODO %?  \n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("n" "note" entry
          (file+headline org-default-notes-file "Notes")
-         "* %?  :refile:note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+         "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
         ("l" "linklog" entry
          (file (concat org-directory "/linklog.org"))
          "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
