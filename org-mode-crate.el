@@ -167,17 +167,17 @@
 ;;org-tags
 ;; Important Tag list
 (setq org-tag-alist '(("next" . ?x)
-                      ("release" . ?r)
+                      ("release" . ?R)
+                      ("refile" . ?r)
                       ("bug" . ?b)
-                      ("note" . ?N)
+                      ("syncupnotes" . ?n)
+                      ("actionitems" ?i)
+                      ("engmgmt" ?e)
                       ("study" . ?s)
                       ("goal" . ?g)
-                      ("dp" . ?d)
                       ("tweak" . ?t)
                       ("write" . ?w)
                       ("productive" . ?p)
-                      ("essential" . ?e)
-                      ("nonessential" . ?n)
                       ("waiting" . ?a)
                       ("future" . ?f)))
 
