@@ -82,7 +82,10 @@
       ;; Targets start with the file name - allows creating level 1 tasks
       org-refile-use-outline-path 'file
       org-outline-path-complete-in-steps nil
-      org-refile-allow-creating-parent-nodes 'confirm)
+      org-refile-allow-creating-parent-nodes 'confirm
+      ;; File new notes, refile new todos on top instead of at the
+      ;; bottom
+      org-reverse-note-order t)
 
 
 ;; org-todo settings
