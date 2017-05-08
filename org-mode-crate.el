@@ -450,7 +450,7 @@ as the default task."
 (setq org-agenda-repeating-timestamp-show-all nil
       org-agenda-show-all-dates t
       org-agenda-sorting-strategy
-      '((agenda habit-down time-up priority-down effort-up category-keep)
+      '((agenda habit-up time-up priority-down effort-up category-keep)
         (todo todo-state-up priority-down category-keep)
         (tags priority-down category-keep)
         (search category-keep))
