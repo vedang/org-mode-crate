@@ -182,7 +182,8 @@
                       ("write" . ?w)
                       ("productive" . ?p)
                       ("waiting" . ?a)
-                      ("future" . ?f)))
+                      ("feedback" . ?f)
+                      ("future" . ?F)))
 
 
 ;; org-priorities
