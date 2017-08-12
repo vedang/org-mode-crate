@@ -518,6 +518,70 @@ as the default task."
            'org-babel-load-languages
            '((elasticsearch . t)))))
 
+;;; Structural Editing
+;; Modify functions found in org-list.el for my purposes
+
+(defun vedang/org-list-top-level-to-subtree (list &optional params)
+  "Convert LIST into an Org subtree.
+LIST is as returned by `org-list-to-lisp'.  PARAMS is a property
+list with overruling parameters for `org-list-to-generic'."
+  (let* ((blank (pcase (cdr (assq 'heading org-blank-before-new-entry))
+                  (`t t)
+                  (`auto (save-excursion
+                           (org-with-limited-levels (outline-previous-heading))
+                           (org-previous-line-empty-p)))))
+         (level (org-reduced-level (or (org-current-level) 0)))
+         (make-heading/list-prefix
+          (lambda (_type depth &optional _count)
+            ;; Return the string for the heading, depending on DEPTH
+            ;; of current sub-list.
+            (if (= 1 depth)
+                (concat (make-string (if org-odd-levels-only
+                                         (1- (* 2 (+ level 1)))
+                                       (+ level 1))
+                                     ?*)
+                        " ")
+              (if (= 2 depth)
+                  (concat (make-string (if org-odd-levels-only
+                                           (1- (* 2 (+ level depth)))
+                                         (+ level depth))
+                                       ? )
+                          "- ")
+                (concat (make-string (if org-odd-levels-only
+                                         (1- (* 2 (+ level
+                                                     (* 2  (- depth 1)))))
+                                       (+ level
+                                          (* 2 (- depth 1))))
+                                     ? )
+                        (if (oddp depth)
+                            "+ "
+                          "- ")))))))
+    (org-list-to-generic
+     list
+     (org-combine-plists
+      (list :splice t
+            :istart make-heading/list-prefix
+            :icount make-heading/list-prefix
+            :dtstart " "
+            :dtend " "
+            :isep (if blank "\n\n" "\n")
+            :cbon "DONE "
+            :cboff "TODO "
+            :cbtrans "TODO ")
+      params))))
+
+(defun vedang/org-list-make-top-level-subtree ()
+  "Convert the plain list at point into a subtree."
+  (interactive)
+  (if (not (ignore-errors (goto-char (org-in-item-p))))
+      (error "Not in a list")
+    (let ((list (org-list-to-lisp t)))
+      (save-excursion (insert (vedang/org-list-top-level-to-subtree list))))))
+
+(define-key org-mode-map (kbd "C-c C-*")
+  'vedang/org-list-make-top-level-subtree)
+
+
 (provide 'org-mode-crate)
 ;; A big thanks to Bernt Hansen for providing an awesome guide to
 ;; beginners so that we can harness the power of org-mode. Almost all of the
