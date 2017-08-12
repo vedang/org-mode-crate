@@ -565,9 +565,9 @@ list with overruling parameters for `org-list-to-generic'."
             :dtstart " "
             :dtend " "
             :isep (if blank "\n\n" "\n")
-            :cbon "DONE "
-            :cboff "TODO "
-            :cbtrans "TODO ")
+            :cbon "[X] "
+            :cboff "[ ] "
+            :cbtrans "[/] ")
       params))))
 
 (defun vedang/org-list-make-top-level-subtree ()
