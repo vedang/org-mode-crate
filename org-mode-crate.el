@@ -42,6 +42,9 @@
       org-default-notes-file (concat org-directory "/remember-notes.org")
       org-agenda-files (list org-directory))
 
+;; settings for org which don't fall under any particular category.
+(setq org-special-ctrl-a/e t)
+
 
 ;; Ido for the win
 (setq org-completion-use-ido t)
