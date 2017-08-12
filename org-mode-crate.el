@@ -120,17 +120,17 @@
 ;; Changing State should trigger following Tag changes
 (setq org-todo-state-tags-triggers
       '(("SOMEDAY"
-         ("waiting" . t) ("next"))
+         ("waiting" . t) ("next" . nil))
         (done
-         ("next") ("waiting"))
+         ("next" . nil) ("waiting" . nil))
         ("WAITING"
-         ("next") ("waiting" . t))
+         ("next" . nil) ("waiting" . t))
         ("TODO"
-         ("waiting"))
+         ("waiting" . nil))
         ("FOLLOWUP"
          ("followup" . t))
         ("WORKING"
-         ("waiting") ("next" . t))))
+         ("waiting" . nil) ("next" . t))))
 
 
 (defun bh/org-auto-exclude-function (tag)
