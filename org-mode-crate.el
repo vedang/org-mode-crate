@@ -110,14 +110,14 @@
         ("WORKING" :foreground "orange" :weight bold)
         ("WAITING" :foreground "lightblue" :weight bold)
         ("REDO" :foreground "magenta" :weight bold)
-        ("DONE" :foreground "lightgreen" :weight bold)
-        ("DELEGATED" :foreground "lightgreen" :weight bold)
-        ("PROJECT" :foreground "lightblue" :weight bold)
-        ("FOLLOWUP" :foreground "red" :weight bold)
-        ("MAINT" :foreground "red" :weight bold)
+        ("DONE" :foreground "SeaGreen4" :weight bold)
+        ("DELEGATED" :foreground "SeaGreen4" :weight bold)
+        ("PROJECT" :foreground "light slate blue" :weight bold)
+        ("FOLLOWUP" :foreground "IndianRed4" :weight bold)
+        ("REVIEW" :foreground "dark violet" :weight bold)
         ("SOMEDAY" :foreground "magenta" :weight bold)
-        ("CANCELLED" :foreground "lightgreen" :weight bold)
-        ("RESTRUCTURED" :foreground "lightgreen" :weight bold)))
+        ("CANCELLED" :foreground "SeaGreen4" :weight bold)
+        ("RESTRUCTURED" :foreground "SeaGreen4" :weight bold)))
 
 
 ;; Changing State should trigger following Tag changes
