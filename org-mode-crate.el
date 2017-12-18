@@ -100,9 +100,9 @@
       '((sequence "TODO(t!/!)" "WORKING(w!/!)"
                   "REDO(R@/!)" "WAITING(a@/!)"
                   "|" "DONE(d!/@)" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "FOLLOWUP(f!/!)" "MAINT(m!/!)"
-                  "|" "SOMEDAY(s)" "CANCELLED(c@/!)"
-                  "RESTRUCTURED(r@/!)")))
+        (sequence "PROJECT(p)" "FOLLOWUP(f!/!)" "REVIEW(r!/!)"
+                  "|" "SOMEDAY(S)" "CANCELLED(c@/!)"
+                  "RESTRUCTURED(s@/!)")))
 
 
 (setq org-todo-keyword-faces
