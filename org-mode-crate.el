@@ -219,7 +219,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "WAITING" "REDO"))
+(setq vm/todo-list '("TODO" "WAITING" "REDO" "REVIEW"))
 
 
 (defun bh/hide-other ()
