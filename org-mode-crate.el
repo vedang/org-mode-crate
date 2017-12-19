@@ -130,6 +130,8 @@
          ("next" . nil) ("waiting" . t))
         ("TODO"
          ("waiting" . nil))
+        ("REVIEW"
+         ("review" . t))
         ("WORKING"
          ("waiting" . nil) ("next" . t))))
 
