@@ -39,7 +39,7 @@
 ;; Setup directory and file paths for org
 (setq org-archive-directory (concat org-directory "/archive")
       org-archive-location (concat org-archive-directory "/%s_archive::")
-      org-default-notes-file (concat org-directory "/remember-notes.org")
+      org-default-notes-file (concat org-directory "/refile.org")
       org-agenda-files (list org-directory))
 
 ;; settings for org which don't fall under any particular category.
