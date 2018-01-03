@@ -132,6 +132,8 @@
          ("waiting" . nil))
         ("REVIEW"
          ("review" . t))
+        ("FOLLOWUP"
+         ("followup" . t))
         ("WORKING"
          ("waiting" . nil) ("next" . t))))
 
