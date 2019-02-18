@@ -98,8 +98,9 @@
 ;; / indicates entering the state
 (setq org-todo-keywords
       '((sequence "TODO(t!/!)" "WORKING(w!/!)"
-                  "WAITING(a@/!)" "FOLLOWUP(f!/!)"
-                  "|" "DONE(d!/@)" "DELEGATED(e@/!)")
+                  "|" "DONE(d!/@)")
+        (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)"
+                  "|" "DELEGATED(e@/!)")
         (sequence "PROJECT(p)" "REVIEW(r!/!)" "REDO(R@/!)"
                   "|" "SOMEDAY(S)" "CANCELLED(c@/!)"
                   "RESTRUCTURED(s@/!)")))
