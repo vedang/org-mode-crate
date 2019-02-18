@@ -126,7 +126,7 @@
       '(("SOMEDAY"
          ("waiting" . t) ("next" . nil))
         (done
-         ("next" . nil) ("waiting" . nil))
+         ("next" . nil) ("waiting" . nil) ("followup" . nil))
         ("WAITING"
          ("next" . nil) ("waiting" . t))
         ("TODO"
