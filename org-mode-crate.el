@@ -101,9 +101,9 @@
                   "|" "DONE(d!/@)")
         (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)"
                   "|" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "REVIEW(r!/!)" "REDO(R@/!)"
+        (sequence "PROJECT(p)" "REDO(R@/!)"
                   "|" "SOMEDAY(S)" "CANCELLED(c@/!)"
-                  "RESTRUCTURED(s@/!)")))
+                  "RESTRUCTURED(r@/!)")))
 
 
 (setq org-todo-keyword-faces
@@ -115,7 +115,6 @@
         ("DELEGATED" :foreground "SeaGreen4" :weight bold)
         ("PROJECT" :foreground "light slate blue" :weight bold)
         ("FOLLOWUP" :foreground "IndianRed4" :weight bold)
-        ("REVIEW" :foreground "dark violet" :weight bold)
         ("SOMEDAY" :foreground "magenta" :weight bold)
         ("CANCELLED" :foreground "SeaGreen4" :weight bold)
         ("RESTRUCTURED" :foreground "SeaGreen4" :weight bold)))
@@ -131,8 +130,6 @@
          ("next" . nil) ("waiting" . t))
         ("TODO"
          ("waiting" . nil) ("followup" . nil))
-        ("REVIEW"
-         ("review" . t))
         ("FOLLOWUP"
          ("followup" . t))
         ("WORKING"
@@ -240,7 +237,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "WAITING" "REDO" "REVIEW"))
+(setq vm/todo-list '("TODO" "WAITING" "REDO"))
 
 
 (defun bh/hide-other ()
