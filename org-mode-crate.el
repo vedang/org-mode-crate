@@ -534,6 +534,10 @@ as the default task."
            'org-babel-load-languages
            '((elasticsearch . t)))))
 
+;; Add Babel execution support for shell
+(org-babel-do-load-languages 'org-babel-load-languages
+                             '((shell . t)))
+
 ;;; Structural Editing
 ;; Modify functions found in org-list.el for my purposes
 
