@@ -519,8 +519,11 @@ as the default task."
       '(("google"   . "http://www.google.com/search?q=%s")))
 
 
-;; Enable org-habit by modifying org modules to load
+;; Enable some extra modules by modifying org modules to load
 (add-to-list 'org-modules 'org-habit)
+(add-to-list 'org-modules 'ol-man)
+(add-to-list 'org-modules 'ol-git-link)
+(add-to-list 'org-modules 'ol-notmuch)
 
 ;; Pull in export backends for beamer and md
 (require 'ox-confluence)
