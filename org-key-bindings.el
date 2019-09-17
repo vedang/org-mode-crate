@@ -1,4 +1,4 @@
-;;; org-key-bindings.el
+;;; org-key-bindings --- Key bindings in Org
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;
@@ -21,7 +21,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;
-;; Commentary:
+;;; Commentary:
 ;; Refer to installation instructions in the README document.
 ;;
 ;;; Code:

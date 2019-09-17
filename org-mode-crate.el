@@ -1,4 +1,4 @@
-;;; org-mode-crate.el - A pre-defined org environment for the consummate gtd'er
+;;; org-mode-crate --- A pre-defined org environment for the consummate gtd'er
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;
@@ -21,7 +21,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;
-;; Commentary:
+;;; Commentary:
 ;; Refer to installation instructions in the README document.
 ;;
 ;;; Code:
