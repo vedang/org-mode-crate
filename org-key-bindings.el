@@ -46,7 +46,11 @@
     (org-cycle)
     (org-cycle)))
 
-(global-set-key (kbd "<f9> h") 'bh/hide-other)
+;; @TODO: Remove `bh/hide-other' in the future if `outline-hide-other'
+;; proves to be better.
+
+;; (global-set-key (kbd "<f9> h") 'bh/hide-other)
+(global-set-key (kbd "<f9> h") 'outline-hide-other)
 
 (provide 'org-key-bindings)
 ;;; org-key-bindings.el ends here
