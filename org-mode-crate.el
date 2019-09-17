@@ -239,18 +239,6 @@
 ;; List of TODO states to clock-in
 (setq vm/todo-list '("TODO" "WAITING" "REDO"))
 
-
-(defun bh/hide-other ()
-  (interactive)
-  (save-excursion
-    (org-back-to-heading 'invisible-ok)
-    (hide-other)
-    (org-cycle)
-    (org-cycle)
-    (org-cycle)))
-(global-set-key (kbd "<f9> h") 'bh/hide-other)
-
-
 ;; Change task state to WORKING when clocking in
 (defun bh/clock-in-to-working (kw)
   "Switch task from TODO to WORKING when clocking in.

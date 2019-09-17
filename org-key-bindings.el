@@ -37,6 +37,16 @@
 (global-set-key (kbd "C-<f11>") 'org-clock-in)
 (global-set-key (kbd "C-c C-x C") 'org-clone-subtree-with-time-shift)
 
+(defun bh/hide-other ()
+  (interactive)
+  (save-excursion
+    (org-back-to-heading 'invisible-ok)
+    (outline-hide-other)
+    (org-cycle)
+    (org-cycle)
+    (org-cycle)))
+
+(global-set-key (kbd "<f9> h") 'bh/hide-other)
 
 (provide 'org-key-bindings)
 ;;; org-key-bindings.el ends here
