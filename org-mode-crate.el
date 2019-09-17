@@ -97,26 +97,22 @@
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      '((sequence "TODO(t!/!)" "WORKING(w!/!)"
-                  "|" "DONE(d!/@)")
-        (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)"
-                  "|" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "REDO(R@/!)"
-                  "|" "SOMEDAY(S)" "CANCELLED(c@/!)"
-                  "RESTRUCTURED(r@/!)")))
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "|" "DONE(d!/@)")
+        (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)" "DELEGATED(e@/!)" "|" "CANCELLED(c@/!)")
+        (sequence "PROJECT(p)" "|" "MEETING(m!/!)" "SOMEDAY(S)" "RESTRUCTURED(r@/!)")))
 
 
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "red" :weight bold)
         ("WORKING" :foreground "orange" :weight bold)
-        ("WAITING" :foreground "lightblue" :weight bold)
-        ("REDO" :foreground "magenta" :weight bold)
         ("DONE" :foreground "SeaGreen4" :weight bold)
-        ("DELEGATED" :foreground "SeaGreen4" :weight bold)
-        ("PROJECT" :foreground "light slate blue" :weight bold)
         ("FOLLOWUP" :foreground "IndianRed4" :weight bold)
-        ("SOMEDAY" :foreground "magenta" :weight bold)
+        ("WAITING" :foreground "lightblue" :weight bold)
+        ("DELEGATED" :foreground "IndianRed1" :weight bold)
         ("CANCELLED" :foreground "SeaGreen4" :weight bold)
+        ("PROJECT" :foreground "light slate blue" :weight bold)
+        ("MEETING" :foreground "forest green" :weight bold)
+        ("SOMEDAY" :foreground "magenta" :weight bold)
         ("RESTRUCTURED" :foreground "SeaGreen4" :weight bold)))
 
 
@@ -129,9 +125,11 @@
         ("WAITING"
          ("next" . nil) ("waiting" . t))
         ("TODO"
-         ("waiting" . nil) ("followup" . nil))
+         ("waiting" . nil) ("followup" . nil) ("cancelled" . nil))
         ("FOLLOWUP"
          ("followup" . t))
+        ("CANCELLED"
+         ("next" . nil) ("followup" . nil) ("cancelled" . t))
         ("WORKING"
          ("waiting" . nil) ("next" . t))))
 
