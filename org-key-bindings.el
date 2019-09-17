@@ -26,7 +26,7 @@
 ;;
 ;;; Code:
 
-
+(global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "C-c l") 'org-store-link)
 (global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c t") 'org-todo)
