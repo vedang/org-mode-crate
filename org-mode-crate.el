@@ -63,7 +63,7 @@
                            (org-defkey org-mode-map "\C-c]" 'undefined)))
 
 
-;; Settings for org-capture
+;;; Settings for org-capture
 ;; Tip: Add the following to the top of your `org-default-notes-file'
 ;; to find tasks that need refiling via a simple tag search:
 ;; #+FILETAGS: refile
@@ -71,11 +71,18 @@
       '(("t" "todo" entry
          (file org-default-notes-file)
          "* TODO %?  \n%U\n%a\n %i" :clock-in t :clock-resume t)
+        ("r" "respond to email" entry
+         (file org-default-notes-file)
+         "* WORKING Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
         ("n" "note" entry
          (file+headline org-default-notes-file "Notes")
          "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
-        ("l" "linklog" entry
-         (file (concat org-directory "/linklog.org"))
+        ("m" "Meeting" entry (file org-default-notes-file)
+         "* MEETING with %? :meeting:\n%U" :clock-in t :clock-resume t)
+        ("w" "org-protocol" entry (file org-default-notes-file)
+         "* TODO Review %c\n%U\n" :immediate-finish t)
+        ("l" "link" entry
+         (file+headline org-default-notes-file "Links")
          "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
 
 
