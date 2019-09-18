@@ -79,19 +79,28 @@
          "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
 
 
-;; refile settings
-(setq org-refile-targets '((org-agenda-files :maxlevel . 4)
-                           (nil :maxlevel . 4))
+;;; Refile settings
+(setq org-refile-targets '((org-agenda-files :maxlevel . 9)
+                           (nil :maxlevel . 9))
       ;; Targets start with the file name - allows creating level 1 tasks
       org-refile-use-outline-path 'file
+      ;; Show the entire path in one step, ido will help me filter
+      ;; results and get to where I want to go.
       org-outline-path-complete-in-steps nil
+      ;; Make it possible for me to create a new sub-heading under
+      ;; which I want to refile something.
       org-refile-allow-creating-parent-nodes 'confirm
       ;; File new notes, refile new todos on top instead of at the
       ;; bottom
-      org-reverse-note-order t)
+      org-reverse-note-order t
+      ;; Exclude DONE state tasks from refile targets
+      org-refile-target-verify-function 'bh/verify-refile-target)
 
+(defun bh/verify-refile-target ()
+  "Exclude todo keywords with a done state from refile targets."
+  (not (member (nth 2 (org-heading-components)) org-done-keywords)))
 
-;; org-todo settings
+;;; org-todo settings
 ;; keys mentioned in brackets are hot-keys for the States
 ;; ! indicates insert timestamp
 ;; @ indicates insert note
