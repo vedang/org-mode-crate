@@ -167,8 +167,10 @@
       org-treat-S-cursor-todo-selection-as-state-change nil
       ;; show TODO counts of _all_ subtasks under a heading
       org-hierarchical-todo-statistics nil
-      org-hierarchical-checkbox-statistics nil
-      org-enforce-todo-dependencies t)
+      ;; Ensure that we can only mark a task as complete when
+      ;; sub-tasks and ordered tasks are complete.
+      org-enforce-todo-dependencies t
+      org-enforce-todo-checkbox-dependencies t)
 
 
 (dolist (map (list org-agenda-keymap org-agenda-mode-map))
