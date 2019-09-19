@@ -529,9 +529,11 @@ as the default task."
 (add-to-list 'org-modules 'ol-git-link)
 (add-to-list 'org-modules 'ol-notmuch)
 
-;; Pull in export backends for beamer and md
+;; Pull in contrib export backends that I want
+(require 'ox-md)
 (require 'ox-confluence)
-(dolist (b (list 'beamer 'md 'confluence))
+(require 'ox-taskjuggler)
+(dolist (b (list 'beamer 'md 'confluence 'taskjuggler))
   (add-to-list 'org-export-backends b))
 
 
