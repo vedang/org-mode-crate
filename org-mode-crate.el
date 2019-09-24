@@ -154,6 +154,8 @@
   "Automatic task exclusion in the agenda with / RET"
   (and (cond
         ((string= tag "waiting")
+         t)
+        ((string= tag "errand")
          t))
        (concat "-" tag)))
 
@@ -238,7 +240,7 @@
 
 (define-key org-mode-map (kbd "C-c j") 'suv/org-move-item-or-tree)
 
-;; settings for org-clock
+;;; org-clock
 (org-clock-persistence-insinuate)
 (setq org-clock-history-length 20
       org-clock-in-resume t
@@ -278,25 +280,16 @@ Skips capture tasks and tasks with subtasks"
 
 (setq bh/keep-clock-running nil)
 
-
-(defun bh/clock-in-last-task (arg)
-  "Clock in the interrupted task if there is one
-Skip the default task and get the next one.
-A prefix arg forces clock in of the default task."
-  (interactive "p")
-  (let ((clock-in-to-task
-         (cond
-          ((eq arg 4) org-clock-default-task)
-          ((and (org-clock-is-active)
-                (equal org-clock-default-task (cadr org-clock-history)))
-           (caddr org-clock-history))
-          ((org-clock-is-active) (cadr org-clock-history))
-          ((equal org-clock-default-task (car org-clock-history)) (cadr org-clock-history))
-          (t (car org-clock-history)))))
-    (org-with-point-at clock-in-to-task
-                       (org-clock-in nil))))
-(global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
-
+(defun bh/find-project-task ()
+  "Move point to the parent (project) task if any"
+  (save-restriction
+    (widen)
+    (let ((parent-task (save-excursion (org-back-to-heading 'invisible-ok) (point))))
+      (while (org-up-heading-safe)
+        (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
+          (setq parent-task (point))))
+      (goto-char parent-task)
+      parent-task)))
 
 (defun bh/punch-in (arg)
   "Start continuous clocking and set the default task to the
@@ -324,6 +317,7 @@ as the default task."
                (eq arg 4))
           (org-clock-in '(16))
         (bh/clock-in-organization-task-as-default)))))
+
 (global-set-key (kbd "<f9> i") 'bh/punch-in)
 
 
@@ -333,6 +327,7 @@ as the default task."
   (when (org-clock-is-active)
     (org-clock-out))
   (org-agenda-remove-restriction-lock))
+
 (global-set-key (kbd "<f9> o") 'bh/punch-out)
 
 
@@ -357,6 +352,12 @@ as the default task."
           (when bh/keep-clock-running
             (bh/clock-in-default-task)))))))
 
+(require 'org-id)
+
+(defun bh/clock-in-task-by-id (id)
+  "Clock in a task by id"
+  (org-with-point-at (org-id-find id 'marker)
+    (org-clock-in nil)))
 
 (defun bh/clock-in-organization-task-as-default ()
   (interactive)
@@ -364,6 +365,24 @@ as the default task."
     (org-with-point-at (org-id-find bh/organization-task-id 'marker)
                        (org-clock-in '(16)))))
 
+(defun bh/clock-in-last-task (arg)
+  "Clock in the interrupted task if there is one
+Skip the default task and get the next one.
+A prefix arg forces clock in of the default task."
+  (interactive "p")
+  (let ((clock-in-to-task
+         (cond
+          ((eq arg 4) org-clock-default-task)
+          ((and (org-clock-is-active)
+                (equal org-clock-default-task (cadr org-clock-history)))
+           (caddr org-clock-history))
+          ((org-clock-is-active) (cadr org-clock-history))
+          ((equal org-clock-default-task (car org-clock-history)) (cadr org-clock-history))
+          (t (car org-clock-history)))))
+    (org-with-point-at clock-in-to-task
+      (org-clock-in nil))))
+
+(global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
 
 (defun bh/clock-out-maybe ()
   (when (and bh/keep-clock-running
