@@ -505,10 +505,13 @@ A prefix arg forces clock in of the default task."
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t
       org-agenda-text-search-extra-files '(agenda-archives)
-      org-agenda-log-mode-items '(clock closed state)
-      org-agenda-clockreport-parameter-plist '(:link t :maxlevel 5 :fileskip0 t
-                                                     :compact t :narrow 80)
-      org-agenda-span 1
+      org-agenda-log-mode-items '(closed state)
+      org-agenda-clockreport-parameter-plist '(:link t
+                                                     :maxlevel 5
+                                                     :fileskip0 t
+                                                     :compact t
+                                                     :narrow 80)
+      org-agenda-span 'day
       org-columns-default-format
       "%50ITEM(Task) %5Effort(Effort){:} %5CLOCKSUM %3PRIORITY %20DEADLINE %20SCHEDULED %20TIMESTAMP %TODO %CATEGORY(Category) %TAGS"
       org-global-properties
