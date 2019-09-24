@@ -34,7 +34,7 @@
 
 (require 'org-agenda)
 (require 'org-key-bindings)
-
+(require 'org-checklist)
 
 ;; Setup directory and file paths for org
 (setq org-archive-directory (concat org-directory "/archive")
