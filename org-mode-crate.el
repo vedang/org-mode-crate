@@ -253,7 +253,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "WAITING" "REDO"))
+(setq vm/todo-list '("TODO" "WAITING"))
 
 ;; Change task state to WORKING when clocking in
 (defun bh/clock-in-to-working (kw)
