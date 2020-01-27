@@ -192,21 +192,12 @@
 
 ;;org-tags
 ;; Important Tag list
-(setq org-tag-alist '(("next" . ?x)
-                      ("release" . ?R)
-                      ("refile" . ?r)
-                      ("bug" . ?b)
-                      ("syncupnotes" . ?n)
-                      ("actionitems" . ?i)
-                      ("engmgmt" . ?e)
-                      ("study" . ?s)
-                      ("goal" . ?g)
-                      ("tweak" . ?t)
-                      ("write" . ?w)
-                      ("productive" . ?p)
-                      ("waiting" . ?a)
-                      ("feedback" . ?f)
-                      ("future" . ?F)))
+(setq org-tag-alist
+      '(("next" . ?x)
+        ("notes" . ?n)
+        ("important" . ?i)
+        ("action_items" . ?a)
+        ("waiting" . ?w)))
 
 
 ;; org-priorities
