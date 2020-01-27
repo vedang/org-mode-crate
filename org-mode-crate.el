@@ -143,7 +143,7 @@
         ("WAITING"
          ("next" . nil) ("waiting" . t))
         ("TODO"
-         ("waiting" . nil) ("followup" . nil) ("cancelled" . nil))
+         ("waiting" . nil) ("followup" . nil) ("cancelled" . nil) ("next" . nil))
         ("FOLLOWUP"
          ("followup" . t))
         ("CANCELLED"
