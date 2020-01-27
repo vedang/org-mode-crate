@@ -43,7 +43,8 @@
       org-agenda-files (list org-directory))
 
 ;; settings for org which don't fall under any particular category.
-(setq org-special-ctrl-a/e t)
+(setq org-special-ctrl-a/e t
+      org-imenu-depth 4)
 
 
 ;; Ido for the win
