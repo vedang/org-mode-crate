@@ -544,7 +544,7 @@ A prefix arg forces clock in of the default task."
 
 
 ;; Add Babel execution support for es-mode, if it has been installed.
-(eval-after-load 'es-mode
+(eval-after-load 'ob-elasticsearch
   '(progn (org-babel-do-load-languages
            'org-babel-load-languages
            '((elasticsearch . t)))))
