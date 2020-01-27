@@ -391,41 +391,36 @@ A prefix arg forces clock in of the default task."
 ;; org-agenda
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
-      (quote (("a" "The Agenda"
-               ((agenda "" ((org-agenda-overriding-header
-                             "Deadlines and Scheduled")))
-                (tags-todo "+release-future|+next-future|+imp-future"
-                           ((org-agenda-overriding-header
-                             "Do These Tasks Next")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags-todo "productive|future|fun"
-                           ((org-agenda-overriding-header
-                             "Other Fun Tasks")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags "refile"
-                      ((org-agenda-overriding-header
-                        "Notes and Tasks to Refile")))
-                nil))
-              ("c" "Select default clocking task" tags "LEVEL=1-refile"
-               ((org-agenda-skip-function
-                 '(org-agenda-skip-subtree-if 'notregexp "^\\* Organization"))
-                (org-agenda-overriding-header
-                 "Set default clocking task with C-u C-u I")))
-              ("d" "Delegated Tasks" todo "DELEGATED"
-               ((org-use-tag-inheritance nil)
-                (org-agenda-todo-ignore-with-date nil)))
-              ("I" "Inheritable Deadlines" todo "TODO|WAITING|WORKING|FOLLOWUP"
-               ((org-agenda-overriding-header "Inheritable DEADLINEs")
-                (org-agenda-skip-function 'fc/skip-non-inheritable-deadlines))))))
+      '(("g" "GTD Agenda"
+         ((tags-todo "+important"
+                     ((org-agenda-overriding-header
+                       "These are your IMPORTANT Tasks")
+                      ;; Sorting is *really* slowing it down.
 
+                      ;; @TODO: Figure out a way to speed this up,
+                      ;; maybe by specifying certain files here and
+                      ;; creating a separate custom agenda for all
+                      ;; important tasks.
+                      ;; (org-agenda-sorting-strategy
+                      ;;  '(timestamp-down effort-up))
+                      ))
+          (agenda ""
+                  ((org-agenda-overriding-header
+                    "Your Meetings today")
+                   (org-agenda-entry-types '(:timestamp :sexp))
+                   (org-agenda-repeating-timestamp-show-all t)
+                   (org-agenda-time-grid '((daily today require-timed)
+                                           (800 1000 1200 1400 1600 1800 2000)
+                                           "......" "----------------"))))
+          (agenda ""
+                  ((org-agenda-overriding-header
+                    "These are your URGENT Tasks")
+                   (org-agenda-entry-types '(:deadline))
+                   (org-deadline-warning-days 7)
+                   (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
+          ))
+        ("n" "Your NEXT Tasks" tags-todo "+next")
+        ("r" "Refile" tags "+refile")))
 
 ;;; http://article.gmane.org/gmane.emacs.orgmode/49215
 (defun fc/has-inheritable-deadline-p ()
