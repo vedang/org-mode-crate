@@ -28,13 +28,11 @@
 
 (global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c t") 'org-todo)
 (global-set-key (kbd "<f6>") 'org-capture)
 (global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "<S-f5>") 'widen)
-(global-set-key (kbd "<f11>") 'org-clock-goto)
-(global-set-key (kbd "C-<f11>") 'org-clock-in)
+(global-set-key (kbd "C-<f11>") 'org-clock-goto)
 (global-set-key (kbd "C-c C-x C") 'org-clone-subtree-with-time-shift)
 
 (defun bh/hide-other ()
