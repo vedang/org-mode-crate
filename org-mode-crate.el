@@ -75,15 +75,17 @@
          (file org-default-notes-file)
          "* WORKING Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
         ("n" "note" entry
-         (file+headline org-default-notes-file "Notes")
+         (file+olp+datetree org-default-notes-file "Notes")
          "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
-        ("m" "Meeting" entry (file org-default-notes-file)
+        ("m" "Meeting" entry
+         (file+olp+datetree org-default-notes-file "Meetings")
          "* MEETING with %? :meeting:\n%U" :clock-in t :clock-resume t)
         ("w" "org-protocol" entry (file org-default-notes-file)
          "* TODO Review %c\n%U\n" :immediate-finish t)
         ("l" "link" entry
          (file+headline org-default-notes-file "Links")
-         "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
+         "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t))
+      org-datetree-add-timestamp 'inactive)
 
 
 ;;; Refile settings
