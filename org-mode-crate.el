@@ -346,6 +346,8 @@ as the default task."
             (bh/clock-in-default-task)))))))
 
 (require 'org-id)
+;;; Ensuring sane defaults for `org-id'
+(setq org-id-track-globally t)
 
 (defun bh/clock-in-task-by-id (id)
   "Clock in a task by id"
@@ -479,21 +481,15 @@ A prefix arg forces clock in of the default task."
 
 (setq org-agenda-repeating-timestamp-show-all nil
       org-agenda-show-all-dates t
-      org-agenda-sorting-strategy
-      '((agenda habit-up time-up priority-down effort-up category-keep)
-        (todo todo-state-up priority-down category-keep)
-        (tags priority-down category-keep)
-        (search category-keep))
       org-agenda-start-on-weekday nil
       org-agenda-time-grid
-      '(nil "----------------"
-            (800 1000 1200 1400 1600 1800 2000))
-      org-deadline-warning-days 30
-      org-agenda-todo-ignore-with-date t
+      '(nil (800 1000 1200 1400 1600 1800 2000)
+            "......"
+            "----------------")
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t
       org-agenda-text-search-extra-files '(agenda-archives)
-      org-agenda-log-mode-items '(closed state)
+      org-agenda-log-mode-items '(clock)
       org-agenda-clockreport-parameter-plist '(:link t
                                                      :maxlevel 5
                                                      :fileskip0 t
