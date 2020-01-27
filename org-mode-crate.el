@@ -73,7 +73,7 @@
          "* TODO %?  \n%U\n%a\n %i" :clock-in t :clock-resume t)
         ("r" "respond to email" entry
          (file org-default-notes-file)
-         "* WORKING Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
+         "* TODO Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
         ("n" "note" entry
          (file+olp+datetree org-default-notes-file "Notes")
          "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
