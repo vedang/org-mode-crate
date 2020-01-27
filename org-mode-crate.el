@@ -507,17 +507,17 @@ A prefix arg forces clock in of the default task."
 
 ;; settings for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
-(defadvice org-agenda-to-appt (before wickedcool activate)
-  "Clear the appt-time-msg-list."
-  (setq appt-time-msg-list nil))
+;; (defadvice org-agenda-to-appt (before wickedcool activate)
+;;   "Clear the appt-time-msg-list."
+;;   (setq appt-time-msg-list nil))
 
-(add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
+;; (add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
 
-(appt-activate t)
+;; (appt-activate t)
 
-;; If we leave Emacs running overnight -
-;; reset the appointments one minute after midnight
-(run-at-time "24:01" nil 'org-agenda-to-appt)
+;; ;; If we leave Emacs running overnight -
+;; ;; reset the appointments one minute after midnight
+;; (run-at-time "24:01" nil 'org-agenda-to-appt)
 
 
 ;; Settings for org-table
