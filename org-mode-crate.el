@@ -558,7 +558,9 @@ A prefix arg forces clock in of the default task."
 
 ;; Add Babel execution support for shell
 (org-babel-do-load-languages 'org-babel-load-languages
-                             '((shell . t)))
+                             '((shell . t)
+                               (emacs-lisp . t)
+                               (plantuml . t)))
 
 ;;; Structural Editing
 ;; Modify functions found in org-list.el for my purposes
