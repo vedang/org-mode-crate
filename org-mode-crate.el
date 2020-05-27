@@ -69,23 +69,29 @@
 ;; to find tasks that need refiling via a simple tag search:
 ;; #+FILETAGS: refile
 (setq org-capture-templates
-      '(("t" "Todo" entry
-         (file org-default-notes-file)
-         "* TODO %?  \n%U\n%a\n %i" :clock-in t :clock-resume t)
-        ("r" "Respond to email" entry
-         (file org-default-notes-file)
-         "* TODO Respond to %:from on %:subject\nSCHEDULED: %t\n%U\n%a\n" :clock-in t :clock-resume t :immediate-finish t)
-        ("n" "Note" entry
-         (file org-default-notes-file)
+      '(("t" "Todo"
+         entry (file org-default-notes-file)
+         "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
+         :clock-in t
+         :clock-resume t)
+        ("r" "Respond to email"
+         entry (file org-default-notes-file)
+         "* TODO Respond to %:from on %:subject  :email: \nSCHEDULED: %t\n%U\n%a\n"
+         :clock-in t
+         :clock-resume t
+         :immediate-finish t)
+        ("n" "Note"
+         entry (file org-default-notes-file)
          "* %?  :notes:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
-        ("m" "Meeting" entry
-         (file org-default-notes-file)
-         "* MEETING with %? \n%U" :clock-in t :clock-resume t)
-        ("w" "Org Protocol" entry (file org-default-notes-file)
-         "* TODO Review %c\n%U\n" :immediate-finish t)
-        ("l" "Link" entry
-         (file org-default-notes-file)
-         "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t))
+        ("p" "Org Protocol"
+         entry (file org-default-notes-file)
+         "* TODO Review %c\n%U\n"
+         :immediate-finish t)
+        ("l" "Link"
+         entry (file org-default-notes-file)
+         "* [[%c][%? ]]  :linklog:\n%U\n"
+         :clock-in t
+         :clock-resume t))
       org-datetree-add-timestamp 'inactive)
 
 
