@@ -430,6 +430,8 @@ A prefix arg forces clock in of the default task."
           ))
         ("n" "Your NEXT Tasks" tags-todo "+next")
         ("r" "Refile" tags "+refile")))
+;;; Don't recalculate agenda unless I explicitly say so.
+(setq org-agenda-sticky t)
 
 ;;; http://article.gmane.org/gmane.emacs.orgmode/49215
 (defun fc/has-inheritable-deadline-p ()
