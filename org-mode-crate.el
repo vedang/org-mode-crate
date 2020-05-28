@@ -488,9 +488,8 @@ A prefix arg forces clock in of the default task."
 (add-hook 'org-agenda-mode-hook '(lambda ()
                                    (hl-line-mode 1)))
 
-(setq org-agenda-repeating-timestamp-show-all nil
-      org-agenda-show-all-dates t
-      org-agenda-start-on-weekday nil
+(setq org-agenda-show-all-dates nil
+      org-agenda-start-on-weekday 1
       org-agenda-time-grid
       '(nil (800 1000 1200 1400 1600 1800 2000)
             "......"
