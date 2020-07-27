@@ -92,7 +92,7 @@
          "* [[%c][%? ]]  :linklog:\n%U\n"
          :clock-in t
          :clock-resume t))
-      org-datetree-add-timestamp 'inactive)
+      org-datetree-add-timestamp t)
 
 
 ;;; Refile settings
