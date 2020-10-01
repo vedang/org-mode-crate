@@ -10,40 +10,55 @@ about it.
 
 ** Caveats
 
- - This configuration is ONLY known to work with Emacs 24. You are on
-   your own with older versions of Emacs.
+ - This configuration is ONLY known to work with Emacs 25 and above.
+   You are on your own with older versions of Emacs.
 
- - This configuration requires Org Mode 8.0 and above.
+ - This configuration requires Org Mode 9.0 and above.
 
 ** Install
 
-*** Get the code:
-   #+begin_src text
-     $ git clone git://github.com/vedang/org-mode-crate.git /path/to/org-mode-crate
-   #+end_src
+*** Manual Install
+**** Get the code:
+#+begin_src text
+  $ git clone git://github.com/vedang/org-mode-crate.git /path/to/org-mode-crate
+#+end_src
 
-*** Add the following lines to your .emacs
+**** Add the following lines to your .emacs
 #+begin_src emacs-lisp
   (add-to-list 'load-path "/path/to/org-mode-crate/")
   (setq org-directory "/path/to/org-files-dir")
-  ;; Agenda does not have a key-binding by default in Emacs 24.
+  ;; Agenda does not have a key-binding by default.
   ;; Provide one as a starting point.
   (global-set-key (kbd "<f12>") 'org-agenda)
   (require 'org-mode-crate)
 #+end_src
 
-*** Press F12 to get started with your agenda
+**** Press F12 to get started with your agenda
+
+*** TODO Install via Melpa
+*** TODO Install via El-Get
 
 ** Workflow notes
 
- - Create and maintain as many files in your org-directory as you want.
- - Currently, I don't handle recursively loading org files, so your
-   org-directory should be a flat structure.
- - Tasks are categorized as follows:
-   - Important tasks - These tasks should be tagged with one (or more)
-     of the following tags: =next=, =release=, =imp=
-   - Other tasks that should be tracked - These tasks should be tagged
-     with one (or more) of the following tags: =fun=, =future=, =productive=
+- Create and maintain as many files in your org-directory as you want.
+- Currently, I don't handle recursively loading org files, so your
+  org-directory should be a flat structure.
+- Tasks are categorized as follows:
+  + Important tasks: These tasks should be tagged with =important=.
+  + Next tasks: In any given project, tag the next thing you want to
+    do with the tag =next=. You can have many =next= tasks, but
+    ideally you should have only one. Whenever a task goes into
+    WORKING state, it automatically gets the =next= tag. Moving to any
+    other state automatically removes this tag.
+- The following hotkeys are provided for quick tagging:
+#+begin_src emacs-lisp
+(setq org-tag-alist
+      '(("next" . ?x)
+        ("notes" . ?n)
+        ("important" . ?i)
+        ("action_items" . ?a)
+        ("waiting" . ?w)))
+#+end_src
 
 ** Optional notes
 

@@ -1,4 +1,4 @@
-;;; org-key-bindings.el
+;;; org-key-bindings --- Key bindings in Org
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;
@@ -21,22 +21,34 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;
-;; Commentary:
+;;; Commentary:
 ;; Refer to installation instructions in the README document.
 ;;
 ;;; Code:
 
-
+(global-set-key (kbd "<f12>") 'org-agenda)
 (global-set-key (kbd "C-c l") 'org-store-link)
-(global-set-key (kbd "C-c b") 'org-iswitchb)
 (global-set-key (kbd "C-c t") 'org-todo)
-(global-set-key (kbd "C-c C-r") 'org-capture)
 (global-set-key (kbd "<f6>") 'org-capture)
+(global-set-key (kbd "C-c c") 'org-capture)
 (global-set-key (kbd "<S-f5>") 'widen)
-(global-set-key (kbd "<f11>") 'org-clock-goto)
-(global-set-key (kbd "C-<f11>") 'org-clock-in)
+(global-set-key (kbd "C-<f11>") 'org-clock-goto)
 (global-set-key (kbd "C-c C-x C") 'org-clone-subtree-with-time-shift)
 
+(defun bh/hide-other ()
+  (interactive)
+  (save-excursion
+    (org-back-to-heading 'invisible-ok)
+    (outline-hide-other)
+    (org-cycle)
+    (org-cycle)
+    (org-cycle)))
+
+;; @TODO: Remove `bh/hide-other' in the future if `outline-hide-other'
+;; proves to be better.
+
+;; (global-set-key (kbd "<f9> h") 'bh/hide-other)
+(global-set-key (kbd "<f9> h") 'outline-hide-other)
 
 (provide 'org-key-bindings)
 ;;; org-key-bindings.el ends here

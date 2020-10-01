@@ -1,4 +1,4 @@
-;;; org-mode-crate.el - A pre-defined org environment for the consummate gtd'er
+;;; org-mode-crate --- A pre-defined org environment for the consummate gtd'er
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;
@@ -21,7 +21,7 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
 ;;
-;; Commentary:
+;;; Commentary:
 ;; Refer to installation instructions in the README document.
 ;;
 ;;; Code:
@@ -34,7 +34,7 @@
 
 (require 'org-agenda)
 (require 'org-key-bindings)
-
+(require 'org-checklist)
 
 ;; Setup directory and file paths for org
 (setq org-archive-directory (concat org-directory "/archive")
@@ -43,7 +43,8 @@
       org-agenda-files (list org-directory))
 
 ;; settings for org which don't fall under any particular category.
-(setq org-special-ctrl-a/e t)
+(setq org-special-ctrl-a/e t
+      org-imenu-depth 4)
 
 
 ;; Ido for the win
@@ -63,60 +64,80 @@
                            (org-defkey org-mode-map "\C-c]" 'undefined)))
 
 
-;; Settings for org-capture
+;;; Settings for org-capture
 ;; Tip: Add the following to the top of your `org-default-notes-file'
 ;; to find tasks that need refiling via a simple tag search:
 ;; #+FILETAGS: refile
 (setq org-capture-templates
-      '(("t" "todo" entry
-         (file org-default-notes-file)
-         "* TODO %?  \n%U\n%a\n %i" :clock-in t :clock-resume t)
-        ("n" "note" entry
-         (file+headline org-default-notes-file "Notes")
-         "* %?  :note:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
-        ("l" "linklog" entry
-         (file (concat org-directory "/linklog.org"))
-         "* [[%c][%? ]]  :linklog:\n%U\n" :clock-in t :clock-resume t)))
+      '(("t" "Todo"
+         entry (file org-default-notes-file)
+         "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
+         :clock-in t
+         :clock-resume t)
+        ("r" "Respond to email"
+         entry (file org-default-notes-file)
+         "* TODO Respond to %:from on %:subject  :email: \nSCHEDULED: %t\n%U\n%a\n"
+         :clock-in t
+         :clock-resume t
+         :immediate-finish t)
+        ("n" "Note"
+         entry (file org-default-notes-file)
+         "* %?  :notes:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
+        ("p" "Org Protocol"
+         entry (file org-default-notes-file)
+         "* TODO Review %c\n%U\n"
+         :immediate-finish t)
+        ("l" "Link"
+         entry (file org-default-notes-file)
+         "* Review [[%c][%? ]]  :linklog:\n%U\n"
+         :clock-in t
+         :clock-resume t))
+      org-datetree-add-timestamp t)
 
 
-;; refile settings
-(setq org-refile-targets '((org-agenda-files :maxlevel . 4)
-                           (nil :maxlevel . 4))
+;;; Refile settings
+(setq org-refile-targets '((org-agenda-files :maxlevel . 9)
+                           (nil :maxlevel . 9))
       ;; Targets start with the file name - allows creating level 1 tasks
       org-refile-use-outline-path 'file
+      ;; Show the entire path in one step, ido will help me filter
+      ;; results and get to where I want to go.
       org-outline-path-complete-in-steps nil
+      ;; Make it possible for me to create a new sub-heading under
+      ;; which I want to refile something.
       org-refile-allow-creating-parent-nodes 'confirm
       ;; File new notes, refile new todos on top instead of at the
       ;; bottom
-      org-reverse-note-order t)
+      org-reverse-note-order t
+      ;; Exclude DONE state tasks from refile targets
+      org-refile-target-verify-function 'bh/verify-refile-target)
 
+(defun bh/verify-refile-target ()
+  "Exclude todo keywords with a done state from refile targets."
+  (not (member (nth 2 (org-heading-components)) org-done-keywords)))
 
-;; org-todo settings
+;;; org-todo settings
 ;; keys mentioned in brackets are hot-keys for the States
 ;; ! indicates insert timestamp
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      '((sequence "TODO(t!/!)" "WORKING(w!/!)"
-                  "|" "DONE(d!/@)")
-        (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)"
-                  "|" "DELEGATED(e@/!)")
-        (sequence "PROJECT(p)" "REDO(R@/!)"
-                  "|" "SOMEDAY(S)" "CANCELLED(c@/!)"
-                  "RESTRUCTURED(r@/!)")))
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "|" "DONE(d!/@)")
+        (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)" "DELEGATED(e@/!)" "|" "CANCELLED(c@/!)")
+        (sequence "PROJECT(p)" "|" "MEETING(m!/!)" "SOMEDAY(S)" "RESTRUCTURED(r@/!)")))
 
 
 (setq org-todo-keyword-faces
       '(("TODO" :foreground "red" :weight bold)
         ("WORKING" :foreground "orange" :weight bold)
-        ("WAITING" :foreground "lightblue" :weight bold)
-        ("REDO" :foreground "magenta" :weight bold)
         ("DONE" :foreground "SeaGreen4" :weight bold)
-        ("DELEGATED" :foreground "SeaGreen4" :weight bold)
-        ("PROJECT" :foreground "light slate blue" :weight bold)
         ("FOLLOWUP" :foreground "IndianRed4" :weight bold)
-        ("SOMEDAY" :foreground "magenta" :weight bold)
+        ("WAITING" :foreground "lightblue" :weight bold)
+        ("DELEGATED" :foreground "IndianRed1" :weight bold)
         ("CANCELLED" :foreground "SeaGreen4" :weight bold)
+        ("PROJECT" :foreground "light slate blue" :weight bold)
+        ("MEETING" :foreground "forest green" :weight bold)
+        ("SOMEDAY" :foreground "magenta" :weight bold)
         ("RESTRUCTURED" :foreground "SeaGreen4" :weight bold)))
 
 
@@ -129,9 +150,11 @@
         ("WAITING"
          ("next" . nil) ("waiting" . t))
         ("TODO"
-         ("waiting" . nil) ("followup" . nil))
+         ("waiting" . nil) ("followup" . nil) ("cancelled" . nil) ("next" . nil))
         ("FOLLOWUP"
          ("followup" . t))
+        ("CANCELLED"
+         ("next" . nil) ("followup" . nil) ("cancelled" . t))
         ("WORKING"
          ("waiting" . nil) ("next" . t))))
 
@@ -140,6 +163,8 @@
   "Automatic task exclusion in the agenda with / RET"
   (and (cond
         ((string= tag "waiting")
+         t)
+        ((string= tag "errand")
          t))
        (concat "-" tag)))
 
@@ -153,8 +178,10 @@
       org-treat-S-cursor-todo-selection-as-state-change nil
       ;; show TODO counts of _all_ subtasks under a heading
       org-hierarchical-todo-statistics nil
-      org-hierarchical-checkbox-statistics nil
-      org-enforce-todo-dependencies t)
+      ;; Ensure that we can only mark a task as complete when
+      ;; sub-tasks and ordered tasks are complete.
+      org-enforce-todo-dependencies t
+      org-enforce-todo-checkbox-dependencies t)
 
 
 (dolist (map (list org-agenda-keymap org-agenda-mode-map))
@@ -172,21 +199,12 @@
 
 ;;org-tags
 ;; Important Tag list
-(setq org-tag-alist '(("next" . ?x)
-                      ("release" . ?R)
-                      ("refile" . ?r)
-                      ("bug" . ?b)
-                      ("syncupnotes" . ?n)
-                      ("actionitems" . ?i)
-                      ("engmgmt" . ?e)
-                      ("study" . ?s)
-                      ("goal" . ?g)
-                      ("tweak" . ?t)
-                      ("write" . ?w)
-                      ("productive" . ?p)
-                      ("waiting" . ?a)
-                      ("feedback" . ?f)
-                      ("future" . ?F)))
+(setq org-tag-alist
+      '(("next" . ?x)
+        ("notes" . ?n)
+        ("important" . ?i)
+        ("action_items" . ?a)
+        ("waiting" . ?w)))
 
 
 ;; org-priorities
@@ -222,7 +240,7 @@
 
 (define-key org-mode-map (kbd "C-c j") 'suv/org-move-item-or-tree)
 
-;; settings for org-clock
+;;; org-clock
 (org-clock-persistence-insinuate)
 (setq org-clock-history-length 20
       org-clock-in-resume t
@@ -237,19 +255,7 @@
 
 
 ;; List of TODO states to clock-in
-(setq vm/todo-list '("TODO" "WAITING" "REDO"))
-
-
-(defun bh/hide-other ()
-  (interactive)
-  (save-excursion
-    (org-back-to-heading 'invisible-ok)
-    (hide-other)
-    (org-cycle)
-    (org-cycle)
-    (org-cycle)))
-(global-set-key (kbd "<f9> h") 'bh/hide-other)
-
+(setq vm/todo-list '("TODO" "WAITING"))
 
 ;; Change task state to WORKING when clocking in
 (defun bh/clock-in-to-working (kw)
@@ -274,25 +280,16 @@ Skips capture tasks and tasks with subtasks"
 
 (setq bh/keep-clock-running nil)
 
-
-(defun bh/clock-in-last-task (arg)
-  "Clock in the interrupted task if there is one
-Skip the default task and get the next one.
-A prefix arg forces clock in of the default task."
-  (interactive "p")
-  (let ((clock-in-to-task
-         (cond
-          ((eq arg 4) org-clock-default-task)
-          ((and (org-clock-is-active)
-                (equal org-clock-default-task (cadr org-clock-history)))
-           (caddr org-clock-history))
-          ((org-clock-is-active) (cadr org-clock-history))
-          ((equal org-clock-default-task (car org-clock-history)) (cadr org-clock-history))
-          (t (car org-clock-history)))))
-    (org-with-point-at clock-in-to-task
-                       (org-clock-in nil))))
-(global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
-
+(defun bh/find-project-task ()
+  "Move point to the parent (project) task if any"
+  (save-restriction
+    (widen)
+    (let ((parent-task (save-excursion (org-back-to-heading 'invisible-ok) (point))))
+      (while (org-up-heading-safe)
+        (when (member (nth 2 (org-heading-components)) org-todo-keywords-1)
+          (setq parent-task (point))))
+      (goto-char parent-task)
+      parent-task)))
 
 (defun bh/punch-in (arg)
   "Start continuous clocking and set the default task to the
@@ -320,6 +317,7 @@ as the default task."
                (eq arg 4))
           (org-clock-in '(16))
         (bh/clock-in-organization-task-as-default)))))
+
 (global-set-key (kbd "<f9> i") 'bh/punch-in)
 
 
@@ -329,6 +327,7 @@ as the default task."
   (when (org-clock-is-active)
     (org-clock-out))
   (org-agenda-remove-restriction-lock))
+
 (global-set-key (kbd "<f9> o") 'bh/punch-out)
 
 
@@ -353,6 +352,14 @@ as the default task."
           (when bh/keep-clock-running
             (bh/clock-in-default-task)))))))
 
+(require 'org-id)
+;;; Ensuring sane defaults for `org-id'
+(setq org-id-track-globally t)
+
+(defun bh/clock-in-task-by-id (id)
+  "Clock in a task by id"
+  (org-with-point-at (org-id-find id 'marker)
+    (org-clock-in nil)))
 
 (defun bh/clock-in-organization-task-as-default ()
   (interactive)
@@ -360,6 +367,24 @@ as the default task."
     (org-with-point-at (org-id-find bh/organization-task-id 'marker)
                        (org-clock-in '(16)))))
 
+(defun bh/clock-in-last-task (arg)
+  "Clock in the interrupted task if there is one
+Skip the default task and get the next one.
+A prefix arg forces clock in of the default task."
+  (interactive "p")
+  (let ((clock-in-to-task
+         (cond
+          ((eq arg 4) org-clock-default-task)
+          ((and (org-clock-is-active)
+                (equal org-clock-default-task (cadr org-clock-history)))
+           (caddr org-clock-history))
+          ((org-clock-is-active) (cadr org-clock-history))
+          ((equal org-clock-default-task (car org-clock-history)) (cadr org-clock-history))
+          (t (car org-clock-history)))))
+    (org-with-point-at clock-in-to-task
+      (org-clock-in nil))))
+
+(global-set-key (kbd "<f9> SPC") 'bh/clock-in-last-task)
 
 (defun bh/clock-out-maybe ()
   (when (and bh/keep-clock-running
@@ -375,41 +400,38 @@ as the default task."
 ;; org-agenda
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
-      (quote (("a" "The Agenda"
-               ((agenda "" ((org-agenda-overriding-header
-                             "Deadlines and Scheduled")))
-                (tags-todo "+release-future|+next-future|+imp-future"
-                           ((org-agenda-overriding-header
-                             "Do These Tasks Next")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags-todo "productive|future|fun"
-                           ((org-agenda-overriding-header
-                             "Other Fun Tasks")
-                            (org-agenda-todo-ignore-scheduled t)
-                            (org-agenda-todo-ignore-deadlines t)
-                            (org-tags-match-list-sublevels t)
-                            (org-agenda-sorting-strategy
-                             '(effort-up category-keep))))
-                (tags "refile"
-                      ((org-agenda-overriding-header
-                        "Notes and Tasks to Refile")))
-                nil))
-              ("c" "Select default clocking task" tags "LEVEL=1-refile"
-               ((org-agenda-skip-function
-                 '(org-agenda-skip-subtree-if 'notregexp "^\\* Organization"))
-                (org-agenda-overriding-header
-                 "Set default clocking task with C-u C-u I")))
-              ("d" "Delegated Tasks" todo "DELEGATED"
-               ((org-use-tag-inheritance nil)
-                (org-agenda-todo-ignore-with-date nil)))
-              ("I" "Inheritable Deadlines" todo "TODO|WAITING|WORKING|FOLLOWUP"
-               ((org-agenda-overriding-header "Inheritable DEADLINEs")
-                (org-agenda-skip-function 'fc/skip-non-inheritable-deadlines))))))
+      '(("g" "GTD Agenda"
+         ((tags-todo "+important"
+                     ((org-agenda-overriding-header
+                       "These are your IMPORTANT Tasks")
+                      ;; Sorting is *really* slowing it down.
 
+                      ;; @TODO: Figure out a way to speed this up,
+                      ;; maybe by specifying certain files here and
+                      ;; creating a separate custom agenda for all
+                      ;; important tasks.
+                      ;; (org-agenda-sorting-strategy
+                      ;;  '(timestamp-down effort-up))
+                      ))
+          (agenda ""
+                  ((org-agenda-overriding-header
+                    "Your Meetings today")
+                   (org-agenda-entry-types '(:timestamp :sexp))
+                   (org-agenda-repeating-timestamp-show-all t)
+                   (org-agenda-time-grid '((daily today require-timed)
+                                           (800 1000 1200 1400 1600 1800 2000)
+                                           "......" "----------------"))))
+          (agenda ""
+                  ((org-agenda-overriding-header
+                    "These are your URGENT Tasks")
+                   (org-agenda-entry-types '(:deadline))
+                   (org-deadline-warning-days 7)
+                   (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
+          ))
+        ("n" "Your NEXT Tasks" tags-todo "+next")
+        ("r" "Refile" tags "+refile")))
+;;; Don't recalculate agenda unless I explicitly say so.
+(setq org-agenda-sticky t)
 
 ;;; http://article.gmane.org/gmane.emacs.orgmode/49215
 (defun fc/has-inheritable-deadline-p ()
@@ -466,30 +488,26 @@ as the default task."
 (add-hook 'org-agenda-mode-hook '(lambda ()
                                    (hl-line-mode 1)))
 
-(setq org-agenda-repeating-timestamp-show-all nil
-      org-agenda-show-all-dates t
-      org-agenda-sorting-strategy
-      '((agenda habit-up time-up priority-down effort-up category-keep)
-        (todo todo-state-up priority-down category-keep)
-        (tags priority-down category-keep)
-        (search category-keep))
-      org-agenda-start-on-weekday nil
+(setq org-agenda-show-all-dates nil
+      org-agenda-start-on-weekday 1
       org-agenda-time-grid
-      '(nil "----------------"
-            (800 1000 1200 1400 1600 1800 2000))
-      org-deadline-warning-days 30
-      org-agenda-todo-ignore-with-date t
+      '(nil (800 1000 1200 1400 1600 1800 2000)
+            "......"
+            "----------------")
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t
       org-agenda-text-search-extra-files '(agenda-archives)
-      org-agenda-log-mode-items '(clock closed state)
-      org-agenda-clockreport-parameter-plist '(:link t :maxlevel 5 :fileskip0 t
-                                                     :compact t :narrow 80)
-      org-agenda-span 1
+      org-agenda-log-mode-items '(clock)
+      org-agenda-clockreport-parameter-plist '(:link t
+                                                     :maxlevel 5
+                                                     :fileskip0 t
+                                                     :compact t
+                                                     :narrow 80)
+      org-agenda-span 'day
       org-columns-default-format
-      "%80ITEM(Task) %10Effort(Effort){:} %10CLOCKSUM"
+      "%50ITEM(Task) %5Effort(Effort){:} %5CLOCKSUM %3PRIORITY %20DEADLINE %20SCHEDULED %20TIMESTAMP %TODO %CATEGORY(Category) %TAGS"
       org-global-properties
-      '(("Effort_ALL" . "0:10 0:30 1:00 2:00 3:00 4:00 5:00 6:00 8:00")
+      '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 4:00 6:00 8:00")
         ("STYLE_ALL" . "habit"))
       org-agenda-clock-consistency-checks
       '(:max-duration "4:00" :min-duration 0 :max-gap 0 :gap-ok-around ("4:00")))
@@ -497,17 +515,17 @@ as the default task."
 
 ;; settings for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
-(defadvice org-agenda-to-appt (before wickedcool activate)
-  "Clear the appt-time-msg-list."
-  (setq appt-time-msg-list nil))
+;; (defadvice org-agenda-to-appt (before wickedcool activate)
+;;   "Clear the appt-time-msg-list."
+;;   (setq appt-time-msg-list nil))
 
-(add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
+;; (add-hook 'org-agenda-finalize-hook 'org-agenda-to-appt)
 
-(appt-activate t)
+;; (appt-activate t)
 
-;; If we leave Emacs running overnight -
-;; reset the appointments one minute after midnight
-(run-at-time "24:01" nil 'org-agenda-to-appt)
+;; ;; If we leave Emacs running overnight -
+;; ;; reset the appointments one minute after midnight
+;; (run-at-time "24:01" nil 'org-agenda-to-appt)
 
 
 ;; Settings for org-table
@@ -525,21 +543,25 @@ as the default task."
 (add-to-list 'org-modules 'ol-git-link)
 (add-to-list 'org-modules 'ol-notmuch)
 
-;; Pull in export backends for beamer and md
+;; Pull in contrib export backends that I want
+(require 'ox-md)
 (require 'ox-confluence)
-(dolist (b (list 'beamer 'md 'confluence))
+(require 'ox-taskjuggler)
+(dolist (b (list 'beamer 'md 'confluence 'taskjuggler))
   (add-to-list 'org-export-backends b))
 
 
 ;; Add Babel execution support for es-mode, if it has been installed.
-(eval-after-load 'es-mode
+(eval-after-load 'ob-elasticsearch
   '(progn (org-babel-do-load-languages
            'org-babel-load-languages
            '((elasticsearch . t)))))
 
 ;; Add Babel execution support for shell
 (org-babel-do-load-languages 'org-babel-load-languages
-                             '((shell . t)))
+                             '((shell . t)
+                               (emacs-lisp . t)
+                               (plantuml . t)))
 
 ;;; Structural Editing
 ;; Modify functions found in org-list.el for my purposes

@@ -17,7 +17,7 @@ about it.
 
 ### Get the code:
 
-    $ git clone git://github.com/vedang/org-mode-crate.git /path/to/org-mode-crate
+    $ git clone https://github.com/vedang/org-mode-crate.git /path/to/org-mode-crate
 
 ### Add the following lines to your .emacs
 
