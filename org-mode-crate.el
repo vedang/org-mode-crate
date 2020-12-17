@@ -429,9 +429,48 @@ A prefix arg forces clock in of the default task."
                    (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
           ))
         ("n" "Your NEXT Tasks" tags-todo "+next")
+        ("h" "Your Habits" tags-todo "STYLE=\"habit\"")
         ("r" "Refile" tags "+refile")))
 ;;; Don't recalculate agenda unless I explicitly say so.
 (setq org-agenda-sticky t)
+
+;;; Show the Habit graph in all Agenda buffers (where Habits are
+;;; available). From:
+;;; https://emacs.stackexchange.com/a/17328/20448
+
+(defvar so/org-habit-show-graphs-everywhere t
+  "If non-nil, show habit graphs in all types of agenda buffers.
+
+Normally, habits display consistency graphs only in
+\"agenda\"-type agenda buffers, not in other types of agenda
+buffers.  Set this variable to any non-nil variable to show
+consistency graphs in all Org mode agendas.")
+
+(defun so/org-agenda-mark-habits ()
+  "Mark all habits in current agenda for graph display.
+
+This function enforces `so/org-habit-show-graphs-everywhere' by
+marking all habits in the current agenda as such.  When run just
+before `org-agenda-finalize' (such as by advice; unfortunately,
+`org-agenda-finalize-hook' is run too late), this has the effect
+of displaying consistency graphs for these habits.
+
+When `so/org-habit-show-graphs-everywhere' is nil, this function
+has no effect."
+  (when (and so/org-habit-show-graphs-everywhere
+             (not (get-text-property (point) 'org-series)))
+    (let ((cursor (point))
+          item data)
+      (while (setq cursor (next-single-property-change cursor 'org-marker))
+        (setq item (get-text-property cursor 'org-marker))
+        (when (and item (org-is-habit-p item))
+          (with-current-buffer (marker-buffer item)
+            (setq data (org-habit-parse-todo item)))
+          (put-text-property cursor
+                             (next-single-property-change cursor 'org-marker)
+                             'org-habit-p data))))))
+
+(advice-add #'org-agenda-finalize :before #'so/org-agenda-mark-habits)
 
 ;;; http://article.gmane.org/gmane.emacs.orgmode/49215
 (defun fc/has-inheritable-deadline-p ()
