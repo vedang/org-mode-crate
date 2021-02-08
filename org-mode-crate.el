@@ -219,8 +219,8 @@
 ;; Logbook settings
 (setq org-log-done 'time
       org-log-into-drawer t
-      org-log-reschedule 'note
-      org-log-redeadline 'note)
+      org-log-reschedule 'time
+      org-log-redeadline 'time)
 
 
 ;; org-list
