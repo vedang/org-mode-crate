@@ -89,7 +89,7 @@
          :immediate-finish t)
         ("l" "Link"
          entry (file org-default-notes-file)
-         "* Review [[%c][%? ]]  :linklog:\n%U\n"
+         "* Review [[%c][%^{Title of the post}]]  :linklog:\n%U\n"
          :clock-in t
          :clock-resume t))
       org-datetree-add-timestamp t)
