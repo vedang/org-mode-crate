@@ -200,11 +200,15 @@
 ;;org-tags
 ;; Important Tag list
 (setq org-tag-alist
-      '(("next" . ?x)
-        ("notes" . ?n)
+      '((:startgroup)
+        ("Status" . ?s)
+        (:grouptags)
+        ("next" . ?x)
         ("important" . ?i)
-        ("action_items" . ?a)
-        ("waiting" . ?w)))
+        ("waiting" . ?w)
+        (:endgroup)
+        ("notes" . ?n)
+        ("action_items" . ?a)))
 
 
 ;; org-priorities
