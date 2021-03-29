@@ -122,7 +122,7 @@
 ;; @ indicates insert note
 ;; / indicates entering the state
 (setq org-todo-keywords
-      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "|" "DONE(d!/@)")
+      '((sequence "TODO(t!/!)" "WORKING(w!/!)" "TESTING(T!/!)" "|" "DONE(d!/@)")
         (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)" "DELEGATED(e@/!)" "|" "CANCELLED(c@/!)")
         (sequence "PROJECT(p)" "|" "MEETING(m!/!)" "SOMEDAY(S)" "RESTRUCTURED(r@/!)")))
 
@@ -153,6 +153,8 @@
          ("waiting" . nil) ("followup" . nil) ("cancelled" . nil) ("next" . nil))
         ("FOLLOWUP"
          ("followup" . t))
+        ("TESTING"
+         ("next" . nil) ("waiting" . nil))
         ("CANCELLED"
          ("next" . nil) ("followup" . nil) ("cancelled" . t))
         ("WORKING"
