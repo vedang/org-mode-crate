@@ -309,7 +309,7 @@ as the default task."
       ;; We're in the agenda
       ;;
       (let* ((marker (org-get-at-bol 'org-hd-marker))
-             (tags (org-with-point-at marker (org-get-tags-at))))
+             (tags (org-with-point-at marker (org-get-tags))))
         (if (and (eq arg 4) tags)
             (org-agenda-clock-in '(16))
           (bh/clock-in-organization-task-as-default)))
@@ -649,7 +649,7 @@ list with overruling parameters for `org-list-to-generic'."
                                        (+ level
                                           (* 2 (- depth 1))))
                                      ? )
-                        (if (oddp depth)
+                        (if (cl-oddp depth)
                             "+ "
                           "- ")))))))
     (org-list-to-generic
