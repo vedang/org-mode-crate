@@ -411,7 +411,7 @@ A prefix arg forces clock in of the default task."
          ((tags-todo "+important"
                      ((org-agenda-overriding-header
                        "These are your IMPORTANT Tasks")
-                      (org-agenda-dim-blocked-tasks 'invisible)
+                      (org-agenda-dim-blocked-tasks)
                       ;; Sorting is *really* slowing it down.
 
                       ;; @TODO: Figure out a way to speed this up,
@@ -421,16 +421,16 @@ A prefix arg forces clock in of the default task."
                       ;; (org-agenda-sorting-strategy
                       ;;  '(timestamp-down effort-up))
                       ))
+          (tags-todo "+joy"
+                     ((org-agenda-overriding-header
+                       "These tasks bring JOY")
+                      (org-agenda-dim-blocked-tasks)))
           (agenda ""
                   ((org-agenda-overriding-header
                     "These are your URGENT Tasks")
                    (org-agenda-entry-types '(:deadline))
                    (org-deadline-warning-days 1)
                    (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
-          (tags-todo "+joy"
-                     ((org-agenda-overriding-header
-                       "These tasks bring JOY")
-                      (org-agenda-dim-blocked-tasks 'invisible)))
           (agenda ""
                   ((org-agenda-overriding-header
                     "Your Meetings today")
