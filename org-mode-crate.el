@@ -361,7 +361,8 @@ as the default task."
 
 (require 'org-id)
 ;;; Ensuring sane defaults for `org-id'
-(setq org-id-track-globally t)
+(setq org-id-track-globally t
+      org-id-link-to-org-use-id t)
 
 (defun bh/clock-in-task-by-id (id)
   "Clock in a task by id"
