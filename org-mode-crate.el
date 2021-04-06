@@ -445,7 +445,11 @@ A prefix arg forces clock in of the default task."
         ("h" "Your Habits" tags-todo "STYLE=\"habit\"")
         ("r" "Refile" tags "+refile")))
 ;;; Don't recalculate agenda unless I explicitly say so.
-(setq org-agenda-sticky t)
+(setq org-agenda-sticky t
+      ;; Show me only the Agenda window when I ask for Agenda
+      org-agenda-window-setup 'only-window
+      ;; Restore the previous window configuration when I'm done
+      org-agenda-restore-windows-after-quit t)
 
 ;;; Show the Habit graph in all Agenda buffers (where Habits are
 ;;; available). From:
