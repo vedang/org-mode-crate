@@ -615,6 +615,11 @@ has no effect."
                                (emacs-lisp . t)
                                (plantuml . t)))
 
+;;; Use the incredible speed commands introduced in Org 9.4 if they
+;;; are available
+(setq org-use-speed-commands t
+      org-loop-over-headlines-in-active-region 'start-level)
+
 ;;; Structural Editing
 ;; Modify functions found in org-list.el for my purposes
 
