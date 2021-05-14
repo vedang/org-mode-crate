@@ -68,31 +68,34 @@
 ;; Tip: Add the following to the top of your `org-default-notes-file'
 ;; to find tasks that need refiling via a simple tag search:
 ;; #+FILETAGS: refile
-(setq org-capture-templates
-      '(("t" "Todo"
-         entry (file org-default-notes-file)
-         "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
-         :clock-in t
-         :clock-resume t)
-        ("r" "Respond to email"
-         entry (file org-default-notes-file)
-         "* TODO Respond to %:from on %:subject  :email: \nSCHEDULED: %t\n%U\n%a\n"
-         :clock-in t
-         :clock-resume t
-         :immediate-finish t)
-        ("n" "Note"
-         entry (file org-default-notes-file)
-         "* %?  :notes:\n%U\n%a\n  %i" :clock-in t :clock-resume t)
-        ("p" "Org Protocol"
-         entry (file org-default-notes-file)
-         "* TODO Review %c\n%U\n"
-         :immediate-finish t)
-        ("l" "Link"
-         entry (file org-default-notes-file)
-         "* Review [[%c][%^{Title of the post}]]  :linklog:\n%U\n"
-         :clock-in t
-         :clock-resume t))
-      org-datetree-add-timestamp t)
+(require 'org-protocol)
+(defvar org-capture-templates)
+(push '("t" "Todo"
+        entry (file org-default-notes-file)
+        "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
+        :clock-in t
+        :clock-resume t)
+      org-capture-templates)
+(push '("r" "Respond to email"
+        entry (file org-default-notes-file)
+        "* TODO Respond to %:from on %:subject  :email: \nSCHEDULED: %t\n%U\n%a\n"
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t)
+      org-capture-templates)
+(push '("n" "Note"
+        entry (file org-default-notes-file)
+        "* %?  :notes:\n%U\n%a\n  %i"
+        :clock-in t
+        :clock-resume t)
+      org-capture-templates)
+(push '("w" "Web site"
+        entry (file+olp org-default-notes-file "Links Captured from the Browser")
+        "* %c \nSCHEDULED: %t\n%U %?%:initial"
+        :immediate-finish t)
+      org-capture-templates)
+
+(setq org-datetree-add-timestamp t)
 
 
 ;;; Refile settings
