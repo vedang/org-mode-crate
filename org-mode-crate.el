@@ -69,7 +69,7 @@
 ;; to find tasks that need refiling via a simple tag search:
 ;; #+FILETAGS: refile
 (require 'org-protocol)
-(defvar org-capture-templates)
+(require 'org-capture)
 (push '("t" "Todo"
         entry (file org-default-notes-file)
         "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
