@@ -37,6 +37,18 @@ about it.
 
 *** TODO Install via Melpa
 *** TODO Install via El-Get
+*** Install in DOOM emacs
+#+begin_src emacs-lisp
+;; in packages.el
+(package! org-mode-crate
+  :recipe (:host github :repo "vedang/org-mode-crate"))
+;; in config.el
+(use-package! org-mode-crate
+             :init (global-set-key (kbd "<f12>") 'org-agenda)
+             :config (require 'org-mode-crate))
+
+#+end_src
+
 
 ** Workflow notes
 
