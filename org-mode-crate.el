@@ -609,6 +609,19 @@ has no effect."
 (dolist (b (list 'beamer 'md 'confluence 'taskjuggler))
   (add-to-list 'org-export-backends b))
 
+;;; If Pygments is installed, use it to export code blocks. Settings
+;;; copied from https://stackoverflow.com/a/21007117/137430
+(require 'ox-latex)
+(when (executable-find "pygmentize")
+  (add-to-list 'org-latex-packages-alist '("newfloat" "minted" nil))
+  (setq org-latex-listings 'minted)
+  (setq org-latex-pdf-process
+        '("latexmk -f -%latex -shell-escape -interaction=nonstopmode -output-directory=%o %f")))
+(setq org-latex-reference-command "\\cref{%s}"
+      org-latex-tables-booktabs t)
+(add-to-list 'org-latex-packages-alist '("capitalize" "cleveref" nil))
+(add-to-list 'org-latex-packages-alist '("" "booktabs" nil))
+(add-to-list 'org-latex-packages-alist '("" "svg" nil))
 
 ;; Add Babel execution support for es-mode, if it has been installed.
 (eval-after-load 'ob-elasticsearch
@@ -616,11 +629,14 @@ has no effect."
            'org-babel-load-languages
            '((elasticsearch . t)))))
 
-;; Add Babel execution support for shell
-(org-babel-do-load-languages 'org-babel-load-languages
-                             '((shell . t)
-                               (emacs-lisp . t)
-                               (plantuml . t)))
+;; Add Babel execution support for my languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((shell . t)
+   (emacs-lisp . t)
+   (plantuml . t)
+   (clojure . t)
+   (latex . t)))
 
 ;;; Use the incredible speed commands introduced in Org 9.4 if they
 ;;; are available
