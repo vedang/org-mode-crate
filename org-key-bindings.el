@@ -34,6 +34,7 @@
 (global-set-key (kbd "<S-f5>") 'widen)
 (global-set-key (kbd "C-<f11>") 'org-clock-goto)
 (global-set-key (kbd "C-c C-x C") 'org-clone-subtree-with-time-shift)
+(define-key org-mode-map (kbd "C-c C-x C") 'org-clone-subtree-with-time-shift)
 
 (defun bh/hide-other ()
   (interactive)
