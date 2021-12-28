@@ -71,20 +71,20 @@
 (require 'org-protocol)
 (require 'org-capture)
 (push '("t" "Todo"
-        entry (file org-default-notes-file)
+        entry (file+olp+datetree org-default-notes-file)
         "* TODO %^{What do I want to do} \n%U\n%a\n %i%?"
         :clock-in t
         :clock-resume t)
       org-capture-templates)
 (push '("r" "Respond to email"
-        entry (file org-default-notes-file)
+        entry (file+olp+datetree org-default-notes-file)
         "* TODO Respond to %:from on %:subject  :email: \nSCHEDULED: %t\n%U\n%a\n"
         :clock-in t
         :clock-resume t
         :immediate-finish t)
       org-capture-templates)
 (push '("n" "Note"
-        entry (file org-default-notes-file)
+        entry (file+olp+datetree org-default-notes-file)
         "* %?  :notes:\n%U\n%a\n  %i"
         :clock-in t
         :clock-resume t)
