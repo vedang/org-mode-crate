@@ -1,0 +1,4 @@
+* MEETING %^{What did we discuss} %^G:meeting:
+%U
+- Attendees: %^{Who was part of the discussion}, Vedang
+- %?

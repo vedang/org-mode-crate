@@ -1,0 +1,10 @@
+* TODO  %?                                                            :habit:refile:
+SCHEDULED: %t .+1d/3d
+:PROPERTIES:
+:STYLE: habit
+:REPEAT_TO_STATE: TODO
+:END:
+%U
+%a
+%i
+Note that the repeater (.+1d/3d) needs to be pulled into the SCHEDULED timestamp for it to become a habit.

@@ -1,0 +1,6 @@
+* TODO %^{Task Description} [[%^{Type|fdn|jira}:%^{Ticket number}]] %^G:refile:
+DEADLINE: %^{When should this be done by?}t
+%U
+%a
+- %^{Slack Thread link, where relevant}
+- %i%?
