@@ -611,7 +611,7 @@ has no effect."
 
 
 ;; Always highlight current agenda line
-(add-hook 'org-agenda-mode-hook '(lambda ()
+(add-hook 'org-agenda-mode-hook #'(lambda ()
                                    (hl-line-mode 1)))
 
 (setq org-agenda-show-all-dates nil
