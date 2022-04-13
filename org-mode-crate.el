@@ -70,74 +70,74 @@
 
 ;;; One-click Capture for Tasks. Captures immediately and gets out of
 ;;; your way.
-(push '("t" "Todo" entry
+(push `("t" "Todo" entry
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/todo.capture.org")
+        (file ,(expand-file-name "capture-templates/todo.capture.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t)
       org-capture-templates)
 ;;; One-click Capture for replying to emails from notmuch. Creates a
 ;;; task to remind you that you need to reply to this email.
-(push '("r" "Respond to email" entry
+(push `("r" "Respond to email" entry
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/reply.capture.org")
+        (file ,(expand-file-name "capture-templates/reply.capture.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t)
       org-capture-templates)
 ;;; One-click capture of links from the clipboard. Used in conjunction
 ;;; with `org-protocol', or as a stand-alone to capture links.
-(push '("w" "Web site" entry
+(push `("w" "Web site" entry
         (file+olp org-default-notes-file "Links Captured from the Browser")
-        (file "./capture-templates/website.capture.org")
+        (file ,(expand-file-name "capture-templates/website.capture.org"))
         :immediate-finish t)
       org-capture-templates)
 ;;; Set up a new habit for tracking. This should be refiled to the
 ;;; correct location later.
-(push '("h" "Habit" entry
+(push `("h" "Habit" entry
         (file org-default-notes-file)
-        (file "./capture-templates/habit.capture.org"))
+        (file ,(expand-file-name "capture-templates/habit.capture.org")))
       org-capture-templates)
 ;;; Hide work stuff under a separate key-binding
 (push '("u" "Templates for capturing work stuff") org-capture-templates)
 ;; Capture feedback for people I am working with
-(push '("up" "Feedback for People I'm working with" item
+(push `("up" "Feedback for People I'm working with" item
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/feedback.others.capture.org")
+        (file ,(expand-file-name "capture-templates/feedback.others.capture.org"))
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
 ;; Capture a Jira task related to work
-(push '("ut" "Jira Task" entry
+(push `("ut" "Jira Task" entry
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/jira.capture.org")
+        (file ,(expand-file-name "capture-templates/jira.capture.org"))
         :clock-in t
         :clock-resume t)
       org-capture-templates)
 ;; Capture Review related work. This is where I have to read
 ;; documentation or review code.
-(push '("ud" "Documentation Task" entry
+(push `("ud" "Documentation Task" entry
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/review.capture.org")
+        (file ,(expand-file-name "capture-templates/review.capture.org"))
         :clock-in t
         :clock-resume t)
       org-capture-templates)
 ;; Capture notes for an ongoing meeting or a meeting that's already
 ;; happened.
-(push '("um" "Current / Previous Meeting" entry
+(push `("um" "Current / Previous Meeting" entry
         (file+olp+datetree org-default-notes-file)
-        (file "./capture-templates/meeting.ongoing.capture.org")
+        (file ,(expand-file-name "capture-templates/meeting.ongoing.capture.org"))
         :prepend t
         :clock-in t
         :clock-resume t)
       org-capture-templates)
 ;; Capture notes for an upcoming meeting (scheduled sometime in the
 ;; future)
-(push '("un" "Upcoming Meeting" entry
-        (file+olp+datetree org-daily-file)
-        (file "./capture-templates/meeting.upcoming.capture.org")
+(push `("un" "Upcoming Meeting" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/meeting.upcoming.capture.org"))
         :prepend t
         :clock-in t
         :clock-resume t
@@ -145,18 +145,18 @@
       org-capture-templates)
 ;; Capture suggestions / ideas from other people, which can be
 ;; expanded into actual projects later.
-(push '("us" "Suggestions related to Work" entry
-        (file+olp+datetree org-daily-file)
-        (file "./capture-templates/suggestion.capture.org")
+(push `("us" "Suggestions related to Work" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
         :prepend t
         :clock-in t
         :clock-resume t)
       org-capture-templates)
 ;;; Capture some feedback for myself or a quick check-in, which I will
 ;;; move into other more refined notes later.
-(push '("s" "Self Feedback or Check In" entry
-        (file+olp+datetree org-daily-file)
-        (file "./capture-templates/checkin.capture.org")
+(push `("s" "Self Feedback or Check In" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/checkin.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
