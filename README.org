@@ -64,12 +64,13 @@ about it.
     other state automatically removes this tag.
 - The following hotkeys are provided for quick tagging:
 #+begin_src emacs-lisp
-(setq org-tag-alist
-      '(("next" . ?x)
-        ("notes" . ?n)
-        ("important" . ?i)
-        ("action_items" . ?a)
-        ("waiting" . ?w)))
+  (setq org-tag-alist
+        '(("next" . ?x)
+          ("notes" . ?n)
+          ("important" . ?i)
+          ("action_items" . ?a)
+          ("joy" . ?j)
+          ("waiting" . ?w)))
 #+end_src
 
 ** Optional notes
