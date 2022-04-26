@@ -10,10 +10,10 @@ about it.
 
 ** Caveats
 
- - This configuration is ONLY known to work with Emacs 25 and above.
+ - This configuration is ONLY known to work with Emacs 27.2 and above.
    You are on your own with older versions of Emacs.
 
- - This configuration requires Org Mode 9.0 and above.
+ - This configuration requires Org Mode 9.4 and above.
 
 ** Install
 
