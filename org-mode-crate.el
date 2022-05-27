@@ -500,7 +500,7 @@ A prefix arg forces clock in of the default task."
                   ((org-agenda-overriding-header
                     "These are your URGENT Tasks")
                    (org-agenda-entry-types '(:deadline))
-                   (org-deadline-warning-days 1)
+                   (org-deadline-warning-days 2)
                    (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
           (agenda ""
                   ((org-agenda-overriding-header
