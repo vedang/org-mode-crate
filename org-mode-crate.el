@@ -152,9 +152,11 @@
         :clock-in t
         :clock-resume t)
       org-capture-templates)
+;;; Hide personal stuff under a separate key-binding
+(push '("s" "Templates for capturing self related stuff") org-capture-templates)
 ;;; Capture some feedback for myself or a quick check-in, which I will
 ;;; move into other more refined notes later.
-(push `("s" "Self Feedback or Check In" entry
+(push `("sc" "Self Feedback or Check In" entry
         (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/checkin.capture.org"))
         :prepend nil

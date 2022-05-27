@@ -1,13 +1,4 @@
-* %^{Check-in Topic} :checkin:
+* %^{Check-in Topic | The Daily Ongoing Check-in}           :checkin:instant:
 %U
-- What I did yesterday:
-  + %?
-- What I'm planning to do today:
-  + I'm excited about:
-  + My highlight project for today is:
-    - Because it is truly important? (important for my goals, urgently needs attention)
-    - Because it will give me satisfaction for a job well done? (goal driven)
-    - Because it will give me joy?
-    - Any other reason?
 - Thinking / Feeling:
   + Capture thoughts, gratitude here, if any:
