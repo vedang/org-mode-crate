@@ -1,6 +1,6 @@
-* %^{What are we discussing} %^G:meeting:
+* %^{What are we planning to discuss} %^G:meeting:
 %U
-%^{When is the meeting date-time}t
+%^{When is the meeting happening date-time}t
 - Attendees: %^{Attendees}, Vedang
 - Prep/Links:
   + [ ] %?
