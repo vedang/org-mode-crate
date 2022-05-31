@@ -68,9 +68,9 @@
 (require 'org-protocol)
 (require 'org-capture)
 
-;;; One-click Capture for Tasks. Captures immediately and gets out of
-;;; your way.
-(push `("t" "Todo" entry
+;;; One-click Capture for Tasks. Captures the task immediately and
+;;; gets out of your way.
+(push `("t" "Todo Immediate Finish" entry
         (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/todo.capture.org"))
         :clock-in t
