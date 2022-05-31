@@ -1,0 +1,4 @@
+* TODO [[%c][%^{Link Title: | No link title provided}]]  %^G
+SCHEDULED: %t
+%U
+%^{My Notes on the link | No notes captured}

@@ -88,9 +88,18 @@
       org-capture-templates)
 ;;; One-click capture of links from the clipboard. Used in conjunction
 ;;; with `org-protocol', or as a stand-alone to capture links.
-(push `("w" "Web site" entry
+(push `("w" "Website Link Immediate Capture" entry
         (file+olp org-default-notes-file "Links Captured from the Browser")
         (file ,(expand-file-name "capture-templates/website.capture.org"))
+        :immediate-finish t)
+      org-capture-templates)
+;;; A more nuanced capture for browser links, which I use for cleaning
+;;; out my browser 2/3 times a week.
+(push `("l" "Website Link Pinboard Capture" entry
+        (file+olp org-default-notes-file "Links Captured from the Browser")
+        (file ,(expand-file-name "capture-templates/pinboard.capture.org"))
+        :clock-in t
+        :clock-resume t
         :immediate-finish t)
       org-capture-templates)
 ;;; Set up a new habit for tracking. This should be refiled to the
