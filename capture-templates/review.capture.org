@@ -1,5 +1,5 @@
-* TODO Review %^{Person waiting on review}'s [[%^{Document Link}][%^{Document Description}]]   %^G:review:refile:
+* TODO Review %^{Person waiting on review}'s [[%^{Document Link | No link provided}][%^{Document Description | No link provided}]]  %^G:review:refile:
 DEADLINE: %^{When should this be done by?}t
 %U
-- [ ] Update %^{Slack Thread link, where relevant} and let %\1 know
-- %i%?
+- [ ] %i%?
+- [ ] Let %\1 know that the task is done. (By updating the discussion here: %^{Slack, Zulip, Discord, Email or other online thread link | No online update necessary, I'll inform %\1 offline}

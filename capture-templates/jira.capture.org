@@ -1,6 +1,6 @@
-* TODO %^{Task Description} [[%^{Type|fdn|jira}:%^{Ticket number}]] %^G:refile:
+* TODO %^{Task Description} [[%^{Type|fdn|jira|none}:%^{Ticket number | No Ticket Available}]] %^G:refile:
 DEADLINE: %^{When should this be done by?}t
 %U
 %a
-- %^{Slack Thread link, where relevant}
-- %i%?
+- [ ] %i%?
+- [ ] Update the discussion here: %^{Slack, Zulip, Discord, Email or other online thread link | No online update necessary, I'll inform the stakeholders offline}
