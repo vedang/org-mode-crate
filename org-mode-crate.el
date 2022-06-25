@@ -28,17 +28,19 @@
 
 
 (when (not (boundp 'org-directory))
-  (error "org-directory is unset. Please refer to instructions in the README"))
-(message "`org-directory' has been set to: %s" org-directory)
+  (error "The variable `org-directory' is unset. Please refer to instructions in the README"))
 
+(message "`org-directory' has been set to: %s" org-directory)
 
 (require 'org-agenda)
 (require 'org-key-bindings)
 (require 'org-checklist)
 
 ;; Setup directory and file paths for org
-(setq org-archive-directory (concat org-directory "/archive")
-      org-archive-location (concat org-archive-directory "/%s_archive::")
+(defvar org-archive-directory (concat org-directory "/archive")
+  "Directory under which all archived content is stored.")
+
+(setq org-archive-location (concat org-archive-directory "/%s_archive::")
       org-default-notes-file (concat org-directory "/daily.org")
       org-agenda-files (list org-directory))
 
@@ -784,10 +786,11 @@ list with overruling parameters for `org-list-to-generic'."
 (define-key org-mode-map (kbd "C-c C-*")
   'vedang/org-list-make-top-level-subtree)
 
-
-(provide 'org-mode-crate)
 ;; A big thanks to Bernt Hansen for providing an awesome guide to
 ;; beginners so that we can harness the power of org-mode. Almost all of the
 ;; customization here, and my complete day-to-day workflow,
 ;; is based on his document about org-mode which can be
 ;; found here: http://doc.norang.ca/org-mode.html
+
+(provide 'org-mode-crate)
+;;; org-mode-crate.el ends here
