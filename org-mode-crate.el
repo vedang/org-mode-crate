@@ -44,6 +44,11 @@
       org-default-notes-file (concat org-directory "/daily.org")
       org-agenda-files (list org-directory))
 
+(when (not (boundp 'org-journal-file))
+  (defvar org-journal-file org-default-notes-file
+    "File in which journal entries will be stored. Check-ins and
+feedback is also stored here."))
+
 ;; settings for org which don't fall under any particular category.
 (setq org-special-ctrl-a/e t
       org-imenu-depth 4)
@@ -167,14 +172,15 @@
 (push '("s" "Templates for capturing self related stuff") org-capture-templates)
 ;;; Capture some feedback for myself or a quick check-in, which I will
 ;;; move into other more refined notes later.
-(push `("sc" "Self Feedback or Check In" entry
-        (file+olp+datetree org-default-notes-file)
+(push `("sc" "Check In or Journaling" entry
+        (file+olp+datetree org-journal-file)
         (file ,(expand-file-name "capture-templates/checkin.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
+
 
 (setq org-datetree-add-timestamp t)
 
