@@ -1,0 +1,4 @@
+* My weight today                                            :bodylog:weight:
+
+- Captured at: %U
+- My Current Weight is :: %^{My current weight is?} Kg

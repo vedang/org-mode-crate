@@ -172,7 +172,7 @@ feedback is also stored here."))
 (push '("s" "Templates for capturing self related stuff") org-capture-templates)
 ;;; Capture some feedback for myself or a quick check-in, which I will
 ;;; move into other more refined notes later.
-(push `("sc" "Check In or Journaling" entry
+(push `("sc" "Ongoing Check In or Journaling" entry
         (file+olp+datetree org-journal-file)
         (file ,(expand-file-name "capture-templates/checkin.capture.org"))
         :prepend nil
@@ -180,7 +180,25 @@ feedback is also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-
+;;; Capture weight / food. This seems hard to get into a laptop habit.
+;;; This is the kind of quantitative life that a mobile solution would
+;;; have helped with.
+(push `("sw" "Weight Check In" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/bodylog.weight.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("sf" "Food Check In" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/bodylog.food.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t
+        :empty-lines 1)
+      org-capture-templates)
 
 (setq org-datetree-add-timestamp t)
 

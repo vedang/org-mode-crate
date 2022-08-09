@@ -1,0 +1,9 @@
+* The Daily Ongoing Food Log                                   :bodylog:food:
+
+Captured at: %U
+
+- Food type: %^{What meal is this? | Breakfast | Lunch | Dinner | Tea or Coffee | Snacking | Chocolates }
+- What did I eat?: %^{What did I eat?}
+- When did I eat it?: %^{When did I eat?}U
+- Where did I eat it?: %^{Where did I eat? | Home}
+- Cost of the food, if I'm eating outside: %^{What did it cost? | It was free, because it was home}
