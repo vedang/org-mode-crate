@@ -1,0 +1,30 @@
+* The Daily End-of-day Evening Ritual                               :checkin:
+** TODO [0/8] Evening Journal
+- [ ] Did I spend time aligned to my highlight and goals for today?
+- [ ] Tactics I tried today for improving productivity (and how they went):
+- [ ] A moment that I really appreciated today was:
+- [ ] A situation or task that I handled well today was:
+- [ ] Something I realized or learned today was:
+- [ ] I could have made today even better if:
+- [ ] Something that would have made me feel more connected to others today would have been:
+- [ ] If I was my own high performance coach, I would tell myself this statement about today:
+
+** TODO Daily Habits Scorecard
+- Notes:
+  - CLARITY can be thought of also as LASER. How focussed was I today?
+
+| Field        | Description                                                            | Score (1: bad, 5: great) |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| CLARITY      | I knew my "why" and lived intentionally today.                         |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| PRODUCTIVITY | I worked on the things that mattered the most today.                   |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| ENERGY       | I managed my mental and physical energy well today.                    |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| INFLUENCE    | I guided or treated others well today.                                 |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| NECESSITY    | I felt it was necessary to be my best and made success "a must" today. |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+| COURAGE      | I shared my real self, thoughts and feelings today.                    |                          |
+|--------------+------------------------------------------------------------------------+--------------------------|
+|              |                                                                        |                          |

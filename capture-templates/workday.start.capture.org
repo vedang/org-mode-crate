@@ -1,0 +1,17 @@
+* The Daily Start-of-day Morning Ritual                             :checkin:
+%U
+** TODO My Top Priority / Highlight today
+- The way to do this is to review my Custom Org Agenda + my normal Org Agenda and create a new Agenda specially for today.
+- Ideally, I'll pick only one. If I'm feeling ambitious, I'll pick two or three. Pick based on the following:
+  - What is truly important? (important for my goals, urgently needs attention)
+  - What will give me satisfaction for a job well done? (goal driven)
+  - What will give me joy?
+
+** TODO Today's message to myself
+
+** TODO [0/3] The whole day plan for today
+- [ ] Review your calendar and plan out your day to the best of your knowledge
+- [ ] Create time for tasks that absolutely must be done
+- [ ] Create time for your priority task
+
+** TODO Persons I need to lead or connect with today, and how to do it well

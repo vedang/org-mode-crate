@@ -180,6 +180,33 @@ feedback is also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
+;;; Deliberately plan out and make a routine out of start of day and
+;;; end of day activities. This is an attempt to become better at
+;;; planning and therefore at productivity.
+(push `("ss" "The Start of Day Planning Routine" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/workday.start.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("se" "The Start of Day Reflection Routine" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/workday.end.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("sn" "The Next Day Intentions Routine" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/workday.next.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
 ;;; Capture weight / food. This seems hard to get into a laptop habit.
 ;;; This is the kind of quantitative life that a mobile solution would
 ;;; have helped with.
