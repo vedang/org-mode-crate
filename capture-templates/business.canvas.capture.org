@@ -1,0 +1,69 @@
+* %^{What is the business problem you are trying to solve?}
+Describe the business problem you are trying to solve, start writing down high level thoughts, ideas, questions here. Then, start filing out the sections as described below
+
+** %\1: Customer Segments
+- For whom are we creating value?
+- Who are our most important customers?
+- For each customer segment, create a Customer Persona
+
+** %\1: Customer Relationships
+- What type of relationships do our customers expect us to establish and maintain with them?
+- Which ones have we established?
+- How costly are they?
+- For each type of customer, create a Customer Journey Map
+
+Think through the type of customer relationships you want to provide:
+- Personal assistance
+- Dedicated personal assistance
+- Self-service
+- Automated services
+- Communities
+- Co-creation
+
+** %\1: Distribution Channels
+- Through which channels do our customers want to be reached?
+- How are we reaching them now?
+- Which channels work best and are cost-efficient?
+
+Think through the types of distribution channels you want to build:
+- Owned channels: company website, social media sites, in-house sales
+- Partner channels: partner-owned websites, wholesale distribution, retail
+
+** %\1: Revenue Streams
+- What are our customers willing to pay us?
+- What do they currently pay and to whom?
+- How are they currently paying?
+- How much does each revenue stream contribute to our overall revenues?
+
+Think through the pricing plan you will use
+
+** %\1: Key Activities
+- What key activities do our value propositions require?
+- Our distribution channels? Customer relationships? Revenue streams?
+
+** %\1: Key Resources
+What key resources do our value propositions require?
+
+Think through the following types of Key Resources:
+- Human
+- Physical
+- Intellectual
+- Financial
+
+** %\1: Key Partners
+- Who are our key partners?
+- Who are our key suppliers?
+- Which key resources are we acquiring from them?
+
+** %\1: Cost Structure
+- What are the most important costs inherent in our business model?
+- Which key resources and activities are most expensive?
+- Is our business more cost-driven (focusing on reducing cost) or value-driven (focusing on maximizing value)?
+
+** %\1: Value Propositions
+- What values do we deliver to the customer?
+- Which one of our customer's problems are we trying to solve?
+- What products and services are we offering to our customer segments?
+- Which customer needs are we satisfying?
+- Quantitative value prop: Are we reducing cost to customer?
+- Qualitative value prop: Are we improving UX / design / speed of usage?

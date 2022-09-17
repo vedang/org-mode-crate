@@ -1,0 +1,22 @@
+* Customer Persona for a %^{Name of Customer Segment:}
+** Background information of the %\1:
+- Age:
+- Marital Status:
+- Children:
+- Location:
+- Income:
+- Education:
+
+** Professional Information of the %\1
+
+** Worries and fears of the %\1
+
+** Hopes and Dreams of the %\1
+
+** Online behavior of the %\1
+
+** What influences the %\1?
+
+** What is the %\1 looking for?
+
+** How can I make the life of the %\1 easier?

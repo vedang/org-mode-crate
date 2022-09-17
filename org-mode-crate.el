@@ -235,6 +235,45 @@ feedback is also stored here."))
         :empty-lines 1)
       org-capture-templates)
 
+;;; Hide company ideation / business thinking under a separate key-binding
+(push '("c" "Templates for capturing company stuff") org-capture-templates)
+;;; Capture a new idea for sketching out / thinking through
+(push `("cb" "Business Canvas" entry
+        (id "493913BC-1A5A-41D3-BAB7-845A18F55957")
+        (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Capture a customer persona, note that this is always captured in
+;;; the current clocking task.
+(push `("cp" "Customer Persona" entry
+        (clock)
+        (file ,(expand-file-name "capture-templates/business.customer.persona.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Capture a customer journey through your product, note that this is
+;;; always captured in the current clocking task
+(push `("cj" "Customer Journey" entry
+        (clock)
+        (file ,(expand-file-name "capture-templates/business.customer.journey.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("cd" "Business Decision Journal" entry
+        (id "B509F345-B648-43E9-99A1-F48134FB27B5")
+        (file ,(expand-file-name "capture-templates/decision.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
 
 (setq org-datetree-add-timestamp t)
 
