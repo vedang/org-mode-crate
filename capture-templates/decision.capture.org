@@ -1,0 +1,48 @@
+* DN Add Decision Number here: %^{Decision Title}
+*Note*: Decision numbers *must* be monotonically increasing integers. You need to look at the previous decision number and then replace the text "Add Decision Number here" above with the new number. The title should be a short noun phrase, eg: "Deployment on Clojure 1.11.1"
+
+Date and Time: %U
+
+** Context:
+Describe the facts around the decision. The language should be value neutral. Tension in decision making should be captured here, and should not be avoided.
+
+Capture the following:
+- What is the current situation?
+- What is the problem statement / frame in which decision is being taken?
+- What are the variables that govern the situation?
+- What is the complexity, as you see it?
+- What alternatives have been seriously considered and rejected?
+
+** Decision:
+Record the decision in full sentences using active voice.
+
+** Status: %^{Current Status of Decision | Proposed | Accepted | Deprecated | Superceded}
+
+** Consequences:
+Describe the resulting context, once the decision is applied. All consequences should be listed here (positive, negative and neutral).
+
+Capture the following:
+- What does this look like in 5 weeks, 5 months, 5 years?
+- What is the range of expected outcomes?
+- What are the probabilities and reasoning assigned to each outcome? What is the degree of confidence?
+- What is the worst case scenario and why that is okay?
+- What is the potential upside beyond the core thesis?
+- What is the opportunity cost? What am I not doing by doing this?
+- What unique advantages do I have in this situation?
+- Who is the best person to make this decision?
+
+** (For Personal Decisions) Mental and Physical State:
+Keep the words that apply from the list below.
+
+Currently, I'm feeling:
+- Energized
+- Focused
+- Relaxed
+- Confident
+- Tired
+- Accepting
+- Accommodating
+- Anxious
+- Resigned
+- Frustrated
+- Angry

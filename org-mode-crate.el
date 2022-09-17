@@ -226,6 +226,15 @@ feedback is also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
+(push `("sd" "Self Decision Journal" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/decision.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
 
 (setq org-datetree-add-timestamp t)
 
