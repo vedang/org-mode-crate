@@ -191,7 +191,7 @@ feedback is also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-(push `("se" "The Start of Day Reflection Routine" entry
+(push `("se" "The End of Day Reflection Routine" entry
         (file+olp+datetree org-journal-file)
         (file ,(expand-file-name "capture-templates/workday.end.capture.org"))
         :prepend nil

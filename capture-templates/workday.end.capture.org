@@ -4,7 +4,7 @@
 - [ ] Tactics I tried today for improving productivity (and how they went):
 - [ ] A moment that I really appreciated today was:
 - [ ] A situation or task that I handled well today was:
-- [ ] Something I realized or learned today was:
+- [ ] A new insight I realized or learned today was:
 - [ ] I could have made today even better if:
 - [ ] Something that would have made me feel more connected to others today would have been:
 - [ ] If I was my own high performance coach, I would tell myself this statement about today:
@@ -28,3 +28,6 @@
 | COURAGE      | I shared my real self, thoughts and feelings today.                    |                          |
 |--------------+------------------------------------------------------------------------+--------------------------|
 |              |                                                                        |                          |
+
+** TODO Goodnight Gratitude
+What is one thing that I am thankful for today?
