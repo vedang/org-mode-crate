@@ -1,4 +1,4 @@
-* DN Add Decision Number here: %^{Decision Title}
+* DN Add Decision Number here: %^{Decision Title}  :decision:
 *Note*: Decision numbers *must* be monotonically increasing integers. You need to look at the previous decision number and then replace the text "Add Decision Number here" above with the new number. The title should be a short noun phrase, eg: "Deployment on Clojure 1.11.1"
 
 Date and Time: %U
