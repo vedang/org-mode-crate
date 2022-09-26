@@ -1,13 +1,13 @@
 * The Daily End-of-day Evening Ritual                               :checkin:
-** TODO [0/8] Evening Journal
-- [ ] Did I spend time aligned to my highlight and goals for today?
-- [ ] Tactics I tried today for improving productivity (and how they went):
-- [ ] A moment that I really appreciated today was:
-- [ ] A situation or task that I handled well today was:
-- [ ] A new insight I realized or learned today was:
-- [ ] I could have made today even better if:
-- [ ] Something that would have made me feel more connected to others today would have been:
-- [ ] If I was my own high performance coach, I would tell myself this statement about today:
+** TODO Evening Journal
+*** Did I spend time aligned to my highlight and goals for today?
+*** Tactics I tried today for improving productivity (and how they went)
+*** Moments that I really appreciated today and that I'm grateful for
+*** Situations or tasks that I handled well today
+*** New Insights I realized or learned today
+*** How could I have made today even better?
+*** Something that would have made me feel more connected to others today would have been:
+*** If I was my own high performance coach, I would tell myself this statement about today:
 
 ** TODO Daily Habits Scorecard
 - Notes:
@@ -28,6 +28,3 @@
 | COURAGE      | I shared my real self, thoughts and feelings today.                    |                          |
 |--------------+------------------------------------------------------------------------+--------------------------|
 |              |                                                                        |                          |
-
-** TODO Goodnight Gratitude
-What is one thing that I am thankful for today?

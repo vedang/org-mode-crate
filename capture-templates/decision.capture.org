@@ -17,6 +17,7 @@ Capture the following:
 Record the decision in full sentences using active voice.
 
 ** Status: %^{Current Status of Decision | Proposed | Accepted | Deprecated | Superceded}
+- %\2 on: %U
 
 ** Consequences:
 Describe the resulting context, once the decision is applied. All consequences should be listed here (positive, negative and neutral).
