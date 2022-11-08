@@ -1,0 +1,4 @@
+* %U
+%?
+
+- Posted to: %^{Posted to micro-blogging site: | Twitter | Fosstodon | Cohost}

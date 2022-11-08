@@ -49,6 +49,10 @@
     "File in which journal entries will be stored. Check-ins and
 feedback is also stored here."))
 
+(when (not (boundp 'org-blogpost-file))
+  (defvar org-blogpost-file org-default-notes-file
+    "File in which blogposts and microblogposts will be stored."))
+
 ;; settings for org which don't fall under any particular category.
 (setq org-special-ctrl-a/e t
       org-imenu-depth 4)
@@ -226,9 +230,19 @@ feedback is also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
+;;; Capture a decision that you've taken, for review and reflection later.
 (push `("sd" "Self Decision Journal" entry
         (file+olp+datetree org-journal-file)
         (file ,(expand-file-name "capture-templates/decision.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Capture microblogs
+(push `("sm" "New Microblogging entry" entry
+        (file+olp+datetree org-blogpost-file "Microblogging")
+        (file ,(expand-file-name "capture-templates/microblog.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -266,6 +280,7 @@ feedback is also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
+;;; Capture a decision that you've taken, for review and reflection later.
 (push `("cd" "Business Decision Journal" entry
         (id "B509F345-B648-43E9-99A1-F48134FB27B5")
         (file ,(expand-file-name "capture-templates/decision.capture.org"))
