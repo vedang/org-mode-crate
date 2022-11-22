@@ -44,16 +44,20 @@
       org-default-notes-file (concat org-directory "/daily.org")
       org-agenda-files (list org-directory))
 
+;;; Default definitions for variables used in capture templates
 (when (not (boundp 'org-journal-file))
   (defvar org-journal-file org-default-notes-file
-    "File in which journal entries will be stored. Check-ins and
-feedback is also stored here."))
+    "File in which journal entries are stored.
 
+Check-ins and feedback are also stored here."))
 (when (not (boundp 'org-blogpost-file))
   (defvar org-blogpost-file org-default-notes-file
-    "File in which blogposts and microblogposts will be stored."))
+    "File in which blogposts and microblogposts are stored."))
+(when (not (boundp 'org-company-file))
+  (defvar org-company-file org-default-notes-file
+    "File in which company documentation is stored."))
 
-;; settings for org which don't fall under any particular category.
+;; Settings for org which don't fall under any particular category.
 (setq org-special-ctrl-a/e t
       org-imenu-depth 4)
 
@@ -253,7 +257,7 @@ feedback is also stored here."))
 (push '("c" "Templates for capturing company stuff") org-capture-templates)
 ;;; Capture a new idea for sketching out / thinking through
 (push `("cb" "Business Canvas" entry
-        (id "493913BC-1A5A-41D3-BAB7-845A18F55957")
+        (id "D0BB89EB-5496-478A-BBDE-C29EC9EFFA94")
         (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
         :prepend nil
         :clock-in t
@@ -284,6 +288,14 @@ feedback is also stored here."))
 (push `("cd" "Business Decision Journal" entry
         (id "B509F345-B648-43E9-99A1-F48134FB27B5")
         (file ,(expand-file-name "capture-templates/decision.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("cc" "Company Check In and Updates" entry
+        (file+olp+datetree org-company-file "Meeting Notes")
+        (file ,(expand-file-name "capture-templates/checkin.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
