@@ -626,7 +626,19 @@ A prefix arg forces clock in of the default task."
 ;; Custom views for Agenda
 (setq org-agenda-custom-commands
       '(("g" "GTD Agenda"
-         ((tags-todo "+important"
+         ((agenda ""
+                  ((org-agenda-overriding-header
+                    "Your Meetings today")
+                   (org-agenda-entry-types '(:timestamp :sexp))
+                   (org-agenda-repeating-timestamp-show-all t)
+                   (org-agenda-time-grid
+                    '((daily today require-timed)
+                      (800 1000 1200 1400 1600 1800 2000 2200)
+                      " timeblock"
+                      "----------------------------------------"))
+                   (org-agenda-current-time-string
+                    "now - - - - - - - - - - - - now - - - - - - - - - - - now")))
+          (tags-todo "+important"
                      ((org-agenda-overriding-header
                        "These are your IMPORTANT Tasks")
                       (org-agenda-dim-blocked-tasks)
@@ -639,25 +651,21 @@ A prefix arg forces clock in of the default task."
                       ;; (org-agenda-sorting-strategy
                       ;;  '(timestamp-down effort-up))
                       ))
-          (tags-todo "+joy"
-                     ((org-agenda-overriding-header
-                       "These tasks bring JOY")
-                      (org-agenda-dim-blocked-tasks)))
           (agenda ""
                   ((org-agenda-overriding-header
                     "These are your URGENT Tasks")
                    (org-agenda-entry-types '(:deadline))
                    (org-deadline-warning-days 2)
-                   (org-agenda-sorting-strategy '(habit-down priority-down timestamp-down))))
-          (agenda ""
-                  ((org-agenda-overriding-header
-                    "Your Meetings today")
-                   (org-agenda-entry-types '(:timestamp :sexp))
-                   (org-agenda-repeating-timestamp-show-all t)
-                   (org-agenda-time-grid '((daily today require-timed)
-                                           (800 1000 1200 1400 1600 1800 2000)
-                                           "......" "----------------"))))
-          ))
+                   (org-agenda-sorting-strategy
+                    '(habit-down priority-down timestamp-down))))
+          (tags-todo "+joy-notoday"
+                     ((org-agenda-overriding-header
+                       "These tasks bring JOY")
+                      (org-agenda-dim-blocked-tasks)))
+          (tags-todo "+notoday"
+                     ((org-agenda-overriding-header
+                       "I will NOT DO these today")
+                      (org-agenda-dim-blocked-tasks)))))
         ("n" "Your NEXT Tasks" tags-todo "+next")
         ("h" "Your Habits" tags-todo "STYLE=\"habit\"")
         ("r" "Refile" tags "+refile")))

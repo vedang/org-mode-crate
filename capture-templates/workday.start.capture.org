@@ -9,9 +9,10 @@
 
 ** TODO Today's message to myself
 
-** TODO [0/3] The whole day plan for today
+** TODO [0/4] The whole day plan for today
 - [ ] Review your calendar and plan out your day to the best of your knowledge
 - [ ] Create time for tasks that absolutely must be done
+- [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
 - [ ] Create time for your priority task
 
 ** TODO Persons I need to lead or connect with today, and how to do it well
