@@ -83,15 +83,16 @@ Check-ins and feedback are also stored here."))
 (require 'org-protocol)
 (require 'org-capture)
 
-;;; One-click Capture for Tasks. Captures the task immediately and
-;;; gets out of your way.
-(push `("t" "Todo Immediate Finish" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/todo.capture.org"))
-        :clock-in t
-        :clock-resume t
-        :immediate-finish t)
+;; Pushing to capture templates is a stack. What goes in first shows
+;; up at the bottom of the capture templates list.
+
+;;; Set up a new habit for tracking. This should be refiled to the
+;;; correct location later.
+(push `("h" "Habit" entry
+        (file org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/habit.capture.org")))
       org-capture-templates)
+
 ;;; One-click Capture for replying to emails from notmuch. Creates a
 ;;; task to remind you that you need to reply to this email.
 (push `("r" "Respond to email" entry
@@ -101,6 +102,7 @@ Check-ins and feedback are also stored here."))
         :clock-resume t
         :immediate-finish t)
       org-capture-templates)
+
 ;;; One-click capture of links from the clipboard. Used in conjunction
 ;;; with `org-protocol', or as a stand-alone to capture links.
 (push `("w" "Website Link Immediate Capture" entry
@@ -108,6 +110,7 @@ Check-ins and feedback are also stored here."))
         (file ,(expand-file-name "capture-templates/website.capture.org"))
         :immediate-finish t)
       org-capture-templates)
+
 ;;; A more nuanced capture for browser links, which I use for cleaning
 ;;; out my browser 2/3 times a week.
 (push `("l" "Website Link Pinboard Capture" entry
@@ -117,12 +120,17 @@ Check-ins and feedback are also stored here."))
         :clock-resume t
         :immediate-finish t)
       org-capture-templates)
-;;; Set up a new habit for tracking. This should be refiled to the
-;;; correct location later.
-(push `("h" "Habit" entry
-        (file org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/habit.capture.org")))
+
+;;; One-click Capture for Tasks. Captures the task immediately and
+;;; gets out of your way.
+(push `("t" "Todo Immediate Finish" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/todo.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t)
       org-capture-templates)
+
 ;;; Hide work stuff under a separate key-binding
 (push '("u" "Templates for capturing work stuff") org-capture-templates)
 ;; Capture feedback for people I am working with
@@ -148,15 +156,6 @@ Check-ins and feedback are also stored here."))
         :clock-in t
         :clock-resume t)
       org-capture-templates)
-;; Capture notes for an ongoing meeting or a meeting that's already
-;; happened.
-(push `("um" "Current / Previous Meeting" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/meeting.ongoing.capture.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t)
-      org-capture-templates)
 ;; Capture notes for an upcoming meeting (scheduled sometime in the
 ;; future)
 (push `("un" "Upcoming Meeting" entry
@@ -166,6 +165,15 @@ Check-ins and feedback are also stored here."))
         :clock-in t
         :clock-resume t
         :time-prompt t)
+      org-capture-templates)
+;; Capture notes for an ongoing meeting or a meeting that's already
+;; happened.
+(push `("um" "Current / Previous Meeting" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/meeting.ongoing.capture.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t)
       org-capture-templates)
 ;; Capture suggestions / ideas from other people, which can be
 ;; expanded into actual projects later.
