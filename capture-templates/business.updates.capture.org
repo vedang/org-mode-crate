@@ -1,0 +1,21 @@
+* One-pager update of %^{Name of your company:} for the month of %<%B, %Y>
+
+** A small %\1 refresher
+*Who We Are* :
+
+*Our Vision* :
+
+*What we discussed the last time* :
+
+** %\1's progress in the month of %<%B, %Y>
+
+*** Our Achievements
+- What we did
+- What went well
+- What did not go well
+
+*** Insights and lessons we've learnt
+
+** What's next for %\1
+
+** Specific Areas where you can help

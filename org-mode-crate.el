@@ -301,9 +301,19 @@ Check-ins and feedback are also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
+;;; Capture check-ins and thoughts quickly, about your day-to-day work
 (push `("cc" "Company Check In and Updates" entry
         (file+olp+datetree org-company-file "Meeting Notes")
         (file ,(expand-file-name "capture-templates/checkin.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; The monthly newsletter to send to investors, friends and mentors
+(push `("cn" "Company Newsletters" entry
+        (id "BEB8583B-8B92-4771-8B06-BC88D417055F")
+        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
