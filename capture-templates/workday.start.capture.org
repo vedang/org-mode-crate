@@ -1,16 +1,29 @@
 * The Daily Start-of-day Morning Ritual                             :checkin:
 %U
 ** TODO My Top Priority / Highlight today
-- The way to do this is to review my Custom Org Agenda + my normal Org Agenda and create a new Agenda specially for today.
+- The way to do this:
+  + First write whatever comes to the top of your mind. This is what you are thinking of, so write it down.
+  + Now review your (custom/normal) Org Agenda and see if anything on it changes the plans you have made. Update the plan you have written down here.
+  + Actually updating your Agenda happens in the next step
 - Ideally, I'll pick only one. If I'm feeling ambitious, I'll pick two or three. Pick based on the following:
   - What is truly important? (important for my goals, urgently needs attention)
   - What will give me satisfaction for a job well done? (goal driven)
   - What will give me joy?
 
 ** TODO Today's message to myself
+Remember your values:
+- No more zero days!
+- Write code everyday!
+- A sick man wants to be healthy!
 
 ** TODO [0/4] The whole day plan for today
+This is the plan you will follow for the rest of the day. To do it:
+
 - [ ] Review your calendar and plan out your day to the best of your knowledge
+  + ~org-gcal-fetch~
+  + ~cfw:open-calendar-agenda-blocks~
+  + ~org-agenda regular~
+  + ~org-agenda custom~
 - [ ] Create time for tasks that absolutely must be done
 - [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
 - [ ] Create time for your priority task
