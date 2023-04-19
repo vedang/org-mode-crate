@@ -657,7 +657,7 @@ A prefix arg forces clock in of the default task."
                       "----------------------------------------"))
                    (org-agenda-current-time-string
                     "now - - - - - - - - - - - - now - - - - - - - - - - - now")))
-          (tags-todo "+important"
+          (tags-todo "+important-notoday"
                      ((org-agenda-overriding-header
                        "These are your IMPORTANT Tasks")
                       (org-agenda-dim-blocked-tasks)
