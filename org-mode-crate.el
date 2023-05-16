@@ -242,19 +242,67 @@ Check-ins and feedback are also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
-;;; Capture a decision that you've taken, for review and reflection later.
-(push `("sd" "Self Decision Journal" entry
-        (file+olp+datetree org-journal-file)
-        (file ,(expand-file-name "capture-templates/decision.capture.org"))
+;;; Capture microblogs
+(push `("sm" "New Microblogging entry" entry
+        (file+olp+datetree org-blogpost-file "Microblogging")
+        (file ,(expand-file-name "capture-templates/microblog.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-;;; Capture microblogs
-(push `("sm" "New Microblogging entry" entry
-        (file+olp+datetree org-blogpost-file "Microblogging")
-        (file ,(expand-file-name "capture-templates/microblog.capture.org"))
+
+;;; Hide general thinking tools under a separate key-binding
+(push '("T" "Templates for helping me think") org-capture-templates)
+;;; Capture a decision that you've taken, for review and reflection later.
+(push `("Td" "Decision Journal" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.decision.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Create a Current Reality Tree for a problem
+(push `("Tc" "Current Reality Tree" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.crt.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Create an Evaporating Cloud for a problem
+(push `("Te" "Evaporating Cloud" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.ec.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Create a Future Reality Tree for a problem
+(push `("Tf" "Future Reality Tree" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.frt.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Create a Prerequisite Tree for a problem
+(push `("Tp" "Prerequisite Tree" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.prt.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; Create a Transition Tree for a problem
+(push `("Tt" "Transition Tree" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/thinking.trt.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -295,7 +343,7 @@ Check-ins and feedback are also stored here."))
 ;;; Capture a decision that you've taken, for review and reflection later.
 (push `("cd" "Business Decision Journal" entry
         (id "B509F345-B648-43E9-99A1-F48134FB27B5")
-        (file ,(expand-file-name "capture-templates/decision.capture.org"))
+        (file ,(expand-file-name "capture-templates/thinking.decision.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
