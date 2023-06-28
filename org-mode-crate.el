@@ -190,7 +190,7 @@ Check-ins and feedback are also stored here."))
 ;;; move into other more refined notes later.
 (push `("sc" "Ongoing Check In or Journaling" entry
         (file+olp+datetree org-journal-file)
-        (file ,(expand-file-name "capture-templates/checkin.capture.org"))
+        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -352,7 +352,7 @@ Check-ins and feedback are also stored here."))
 ;;; Capture check-ins and thoughts quickly, about your day-to-day work
 (push `("cc" "Company Check-Ins" entry
         (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/checkin.capture.org"))
+        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
