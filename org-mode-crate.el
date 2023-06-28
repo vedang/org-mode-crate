@@ -201,7 +201,7 @@ Check-ins and feedback are also stored here."))
 ;;; planning and therefore at productivity.
 (push `("ss" "The Start of Day Planning Routine" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.start.capture.org"))
+        (file ,(expand-file-name "capture-templates/workday.start.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -209,7 +209,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 (push `("se" "The End of Day Reflection Routine" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.end.capture.org"))
+        (file ,(expand-file-name "capture-templates/workday.end.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -217,7 +217,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 (push `("sn" "The Next Day Intentions Routine" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.next.capture.org"))
+        (file ,(expand-file-name "capture-templates/workday.next.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
