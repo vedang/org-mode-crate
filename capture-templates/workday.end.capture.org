@@ -3,8 +3,14 @@
 *** Did I spend time aligned to my highlight today?
 Did I make progress towards my goals?
 *** Did I write code today?
-*** Was today a zero day?
-If so, what am I going to do right now to fix it?
+If not, what am I going to do right now to fix it?
+*** Did I exercise today?
+- [ ] Meditation?
+- [ ] Flexibility Exercise?
+- [ ] Muscle Strength Exercise?
+- [ ] Cardio Exercise?
+
+If not, what am I going to do right now to fix it?
 *** How could I have made today even better?
 *** What tactics did I try today for improving productivity?
 How did they fare?
