@@ -245,7 +245,7 @@ Check-ins and feedback are also stored here."))
 ;;; Capture microblogs
 (push `("sm" "New Microblogging entry" entry
         (file+olp+datetree org-blogpost-file "Microblogging")
-        (file ,(expand-file-name "capture-templates/microblog.capture.org"))
+        (file ,(expand-file-name "capture-templates/microblog.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
