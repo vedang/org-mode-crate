@@ -1,4 +1,0 @@
-* TODO [#D] %^{What do I want to do}                                 :refile:
-%U %a
-      %i
-%^{Extra Details if any | No extra details captured}

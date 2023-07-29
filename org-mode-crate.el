@@ -125,7 +125,7 @@ Check-ins and feedback are also stored here."))
 ;;; gets out of your way.
 (push `("t" "Todo Immediate Finish" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/todo.capture.org"))
+        (file ,(expand-file-name "capture-templates/todo.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t)
