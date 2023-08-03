@@ -1,0 +1,4 @@
+* My DT today                                                    :bodylog:dt:
+
+- Captured at: %U
+- My DT was :: %^{DT in minutes, integer}

@@ -228,7 +228,7 @@ Check-ins and feedback are also stored here."))
 ;;; have helped with.
 (push `("sw" "Weight Check In" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/bodylog.weight.capture.org"))
+        (file ,(expand-file-name "capture-templates/bodylog.weight.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t
@@ -236,7 +236,15 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 (push `("sf" "Food Check In" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/bodylog.food.capture.org"))
+        (file ,(expand-file-name "capture-templates/bodylog.food.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t
+        :empty-lines 1)
+      org-capture-templates)
+(push `("sd" "DT Check In" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/bodylog.dt.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t
