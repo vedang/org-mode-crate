@@ -24,6 +24,7 @@ This is the plan you will follow for the rest of the day. To do it:
   + ~cfw:open-calendar-agenda-blocks~
   + ~org-agenda regular~
   + ~org-agenda custom~
+  + ~Projects and Tasks~ in Notion
 - [ ] Create time for tasks that absolutely must be done
 - [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
 - [ ] Create time for your priority task
