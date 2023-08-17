@@ -416,7 +416,8 @@ Check-ins and feedback are also stored here."))
 (setq org-todo-keywords
       '((sequence "TODO(t!/!)" "WORKING(w!/!)" "TESTING(T!/!)" "|" "DONE(d!/@)")
         (sequence "FOLLOWUP(f!/!)" "WAITING(a@/!)" "DELEGATED(e@/!)" "|" "CANCELLED(c@/!)")
-        (sequence "PROJECT(p)" "|" "MEETING(m!/!)" "SOMEDAY(S)" "RESTRUCTURED(r@/!)")))
+        (sequence "PROJECT(p)" "|" "MEETING(m!/!)" "SOMEDAY(S)" "RESTRUCTURED(r@/!)")
+        (sequence "TOREAD(R!/!)" "READING(E!/!)" "REREAD(A!/!)""|" "READ(D!/!)")))
 
 
 (setq org-todo-keyword-faces
