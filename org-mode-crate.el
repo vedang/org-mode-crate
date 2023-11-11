@@ -742,6 +742,19 @@ A prefix arg forces clock in of the default task."
                      ((org-agenda-overriding-header
                        "I will NOT DO these today")
                       (org-agenda-dim-blocked-tasks)))))
+        ("i" "Your IMPORTANT Tasks"
+         ((tags-todo "+important-notoday"
+                     ((org-agenda-overriding-header
+                       "These are your IMPORTANT Tasks")
+                      (org-agenda-dim-blocked-tasks)))))
+        ("u" "Your URGENT Tasks"
+         ((agenda ""
+                  ((org-agenda-overriding-header
+                    "These are your URGENT Tasks")
+                   (org-agenda-entry-types '(:deadline))
+                   (org-deadline-warning-days 2)
+                   (org-agenda-sorting-strategy
+                    '(habit-down priority-down timestamp-down))))))
         ("n" "Your NEXT Tasks" tags-todo "+next")
         ("h" "Your Habits" tags-todo "STYLE=\"habit\"")
         ("r" "Refile" tags "+refile")))
