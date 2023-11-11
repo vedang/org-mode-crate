@@ -11,7 +11,7 @@
   - What will give me joy?
 
 ** TODO Today's message to myself
-Remember your core value: No more zero days!
+Remember your core value: *No more zero days!*
 - Write code everyday!
 - Exercise everyday. A sick man wants to be healthy!
 - Think about the product, not the implementation. Make progress!

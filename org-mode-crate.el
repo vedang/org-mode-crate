@@ -915,6 +915,7 @@ has no effect."
 
 ;; Pull in contrib export backends that I want
 (require 'ox-md)
+(require 'ox-latex)
 (require 'ox-confluence)
 (require 'ox-taskjuggler)
 (dolist (b (list 'beamer 'md 'confluence 'taskjuggler))
@@ -922,17 +923,38 @@ has no effect."
 
 ;;; If Pygments is installed, use it to export code blocks. Settings
 ;;; copied from https://stackoverflow.com/a/21007117/137430
-(require 'ox-latex)
 (when (executable-find "pygmentize")
   (add-to-list 'org-latex-packages-alist '("newfloat" "minted" nil))
-  (setq org-latex-listings 'minted)
-  (setq org-latex-pdf-process
-        '("latexmk -f -%latex -shell-escape -interaction=nonstopmode -output-directory=%o %f")))
+  (setq org-latex-listings 'minted))
 (setq org-latex-reference-command "\\cref{%s}"
-      org-latex-tables-booktabs t)
+      org-latex-tables-booktabs t
+      org-latex-toc-command "\\tableofcontents \\clearpage"
+      org-latex-compiler "lualatex"
+      org-latex-hyperref-template
+      "\\hypersetup{
+ pdfauthor={%a},
+ pdftitle={%t},
+ pdfkeywords={%k},
+ pdfsubject={%d},
+ pdfcreator={%c},
+ pdflang={%L},
+ linktoc=all,
+ colorlinks=true,
+ linkcolor=blue,
+ urlcolor=blue,
+ citecolor=blue,
+ pdfborder={0 0 1}
+ }
+"
+      org-latex-pdf-process
+      '("latexmk -f -pdf -%latex --jobname=%b  -file-line-error --synctex=1 -shell-escape -interaction=nonstopmode -output-directory=%o %f"))
 (add-to-list 'org-latex-packages-alist '("capitalize" "cleveref" nil))
 (add-to-list 'org-latex-packages-alist '("" "booktabs" nil))
 (add-to-list 'org-latex-packages-alist '("" "svg" nil))
+(add-to-list 'org-latex-packages-alist '("" "fontspec" nil))
+(add-to-list 'org-latex-default-packages-alist
+             "\\PassOptionsToPackage{hyphens}{url}")
+
 
 ;; Add Babel execution support for es-mode, if it has been installed.
 (eval-after-load 'ob-elasticsearch
