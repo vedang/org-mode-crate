@@ -135,7 +135,7 @@ Check-ins and feedback are also stored here."))
 (push '("u" "Templates for capturing work stuff") org-capture-templates)
 ;; Capture feedback for people I am working with
 (push `("up" "Feedback for People I'm working with" item
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file "Feedback")
         (file ,(expand-file-name "capture-templates/feedback.others.capture.org"))
         :clock-in t
         :clock-resume t
@@ -143,7 +143,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 ;; Capture a Jira task related to work
 (push `("ut" "Jira Task" entry
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file)
         (file ,(expand-file-name "capture-templates/jira.capture.org"))
         :clock-in t
         :clock-resume t)
@@ -151,7 +151,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture Review related work. This is where I have to read
 ;; documentation or review code.
 (push `("ud" "Documentation Task" entry
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file)
         (file ,(expand-file-name "capture-templates/review.capture.org"))
         :clock-in t
         :clock-resume t)
@@ -159,7 +159,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture notes for an upcoming meeting (scheduled sometime in the
 ;; future)
 (push `("un" "Upcoming Meeting" entry
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file "Meeting Notes")
         (file ,(expand-file-name "capture-templates/meeting.upcoming.capture.org"))
         :prepend t
         :clock-in t
@@ -169,7 +169,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture notes for an ongoing meeting or a meeting that's already
 ;; happened.
 (push `("um" "Current / Previous Meeting" entry
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file "Meeting Notes")
         (file ,(expand-file-name "capture-templates/meeting.ongoing.capture.org"))
         :prepend t
         :clock-in t
@@ -178,7 +178,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture suggestions / ideas from other people, which can be
 ;; expanded into actual projects later.
 (push `("us" "Suggestions related to Work" entry
-        (file+olp+datetree org-default-notes-file)
+        (file+olp+datetree org-company-file "Ideas and Suggestions")
         (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
         :prepend t
         :clock-in t
