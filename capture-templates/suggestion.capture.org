@@ -1,4 +1,7 @@
 * %^{Suggestion Summary}  %^G:suggestion:
+%U
+%i
 - Suggestion from: %^{Who suggested this idea?}
 - Links: %^{Slack Thread link, other links | No Links}
-- Notes: %i%?
+- %^{Idea Description: }
+- My Notes: %?

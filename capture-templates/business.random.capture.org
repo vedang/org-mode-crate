@@ -1,4 +1,0 @@
-* Random Idea: %^{Random Idea Title:}
-%U
-      %i
-%^{Random Idea Description: }

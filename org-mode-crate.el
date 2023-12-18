@@ -177,13 +177,33 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 ;; Capture suggestions / ideas from other people, which can be
 ;; expanded into actual projects later.
-(push `("us" "Suggestions related to Work" entry
-        (file+olp+datetree org-company-file "Ideas and Suggestions")
+(push `("us" "Ideas and Suggestions" entry
+        (id "DAD40887-E990-4E6A-BD5E-0856A21EF13A")
         (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
         :prepend t
         :clock-in t
-        :clock-resume t)
+        :clock-resume t
+        :empty-lines 1)
       org-capture-templates)
+;;; Capture check-ins and thoughts quickly, about your day-to-day work
+(push `("uc" "Work Check-Ins" entry
+        (file+olp+datetree org-company-file "Meeting Notes")
+        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+;;; The monthly newsletter to send to investors, friends and mentors
+(push `("uw" "Company Newsletters" entry
+        (id "BEB8583B-8B92-4771-8B06-BC88D417055F")
+        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
 ;;; Hide personal stuff under a separate key-binding
 (push '("s" "Templates for capturing self related stuff") org-capture-templates)
 ;;; Capture some feedback for myself or a quick check-in, which I will
@@ -316,11 +336,8 @@ Check-ins and feedback are also stored here."))
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-
-;;; Hide company ideation / business thinking under a separate key-binding
-(push '("c" "Templates for capturing company stuff") org-capture-templates)
-;;; Capture a new idea for sketching out / thinking through
-(push `("cb" "Business Canvas" entry
+;;; Capture a new Business idea for sketching out / thinking through
+(push `("Tb" "Business Canvas" entry
         (id "D0BB89EB-5496-478A-BBDE-C29EC9EFFA94")
         (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
         :prepend nil
@@ -330,7 +347,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 ;;; Capture a customer persona, note that this is always captured in
 ;;; the current clocking task.
-(push `("cp" "Customer Persona" entry
+(push `("TP" "Customer Persona" entry
         (clock)
         (file ,(expand-file-name "capture-templates/business.customer.persona.capture.org"))
         :prepend nil
@@ -340,7 +357,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 ;;; Capture a customer journey through your product, note that this is
 ;;; always captured in the current clocking task
-(push `("cj" "Customer Journey" entry
+(push `("Tj" "Customer Journey" entry
         (clock)
         (file ,(expand-file-name "capture-templates/business.customer.journey.capture.org"))
         :prepend nil
@@ -352,33 +369,6 @@ Check-ins and feedback are also stored here."))
 (push `("cd" "Business Decision Journal" entry
         (id "B509F345-B648-43E9-99A1-F48134FB27B5")
         (file ,(expand-file-name "capture-templates/thinking.decision.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture check-ins and thoughts quickly, about your day-to-day work
-(push `("cc" "Company Check-Ins" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; The monthly newsletter to send to investors, friends and mentors
-(push `("cn" "Company Newsletters" entry
-        (id "BEB8583B-8B92-4771-8B06-BC88D417055F")
-        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Random ideas are the best ideas
-(push `("cr" "Company Random Ideas" entry
-        (id "0F32C926-F7E9-453F-9DD9-5DC12AF831DB")
-        (file ,(expand-file-name "capture-templates/business.random.capture.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
