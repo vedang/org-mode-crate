@@ -14,6 +14,7 @@
 Remember your core value: *No more zero days!*
 - Write code everyday!
 - Exercise everyday. A sick man wants to be healthy!
+  + #Goal: "75 by Mar 5" : Hit 75 KG on or before <2024-03-05 Tue>, look dapper at Vishwa's wedding
 - Think about the product, not the implementation. Make progress!
 
 ** TODO [0/4] The whole day plan for today
