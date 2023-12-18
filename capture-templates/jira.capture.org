@@ -1,4 +1,4 @@
-* TODO %^{Task Description} [[%^{Type|fdn|jira|none}:%^{Ticket number | No Ticket Available}]] %^G:refile:
+* TODO %^{Task Description} [[%^{Type|jira|notion|none}:%^{Ticket number | No Ticket Available}]] %^G:refile:
 DEADLINE: %^{When should this be done by?}t
 %U
 %a
