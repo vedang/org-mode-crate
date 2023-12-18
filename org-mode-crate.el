@@ -484,9 +484,9 @@ Check-ins and feedback are also stored here."))
   (define-key map "x" 'org-todo-state-map)
 
   (define-key org-todo-state-map "d"
-    #'(lambda nil (interactive) (org-agenda-todo "DONE")))
+              #'(lambda nil (interactive) (org-agenda-todo "DONE")))
   (define-key org-todo-state-map "x"
-    #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
+              #'(lambda nil (interactive) (org-agenda-todo "CANCELLED")))
 
   ;; These functions are defined later in the file.
   (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
@@ -634,7 +634,7 @@ as the default task."
 (defun bh/clock-in-default-task ()
   (save-excursion
     (org-with-point-at org-clock-default-task
-                       (org-clock-in))))
+      (org-clock-in))))
 
 
 (defun bh/clock-in-parent-task ()
@@ -648,7 +648,7 @@ as the default task."
             (setq parent-task (point))))
         (if parent-task
             (org-with-point-at parent-task
-                               (org-clock-in))
+              (org-clock-in))
           (when bh/keep-clock-running
             (bh/clock-in-default-task)))))))
 
@@ -666,7 +666,7 @@ as the default task."
   (interactive)
   (when (boundp 'bh/organization-task-id)
     (org-with-point-at (org-id-find bh/organization-task-id 'marker)
-                       (org-clock-in '(16)))))
+      (org-clock-in '(16)))))
 
 (defun bh/clock-in-last-task (arg)
   "Clock in the interrupted task if there is one
@@ -843,20 +843,20 @@ has no effect."
          (pos (marker-position marker))
          newhead)
     (org-with-remote-undo (marker-buffer marker)
-                          (with-current-buffer (marker-buffer marker)
-                            (widen)
-                            (goto-char pos)
-                            (org-show-context 'agenda)
-                            (org-show-entry)
-                            (org-cycle-hide-drawers 'children)
-                            (fc/org-inherit-deadline)
-                            (setq newhead (org-get-heading)))
-                          (org-agenda-change-all-lines newhead hdmarker))))
+      (with-current-buffer (marker-buffer marker)
+        (widen)
+        (goto-char pos)
+        (org-show-context 'agenda)
+        (org-show-entry)
+        (org-cycle-hide-drawers 'children)
+        (fc/org-inherit-deadline)
+        (setq newhead (org-get-heading)))
+      (org-agenda-change-all-lines newhead hdmarker))))
 
 
 ;; Always highlight current agenda line
 (add-hook 'org-agenda-mode-hook #'(lambda ()
-                                   (hl-line-mode 1)))
+                                    (hl-line-mode 1)))
 
 (setq org-agenda-show-all-dates nil
       org-agenda-start-on-weekday 1
@@ -1037,7 +1037,7 @@ list with overruling parameters for `org-list-to-generic'."
       (save-excursion (insert (vedang/org-list-top-level-to-subtree list))))))
 
 (define-key org-mode-map (kbd "C-c C-*")
-  'vedang/org-list-make-top-level-subtree)
+            'vedang/org-list-make-top-level-subtree)
 
 ;; A big thanks to Bernt Hansen for providing an awesome guide to
 ;; beginners so that we can harness the power of org-mode. Almost all of the
