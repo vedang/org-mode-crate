@@ -143,7 +143,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 ;; Capture a Jira task related to work
 (push `("ut" "Jira Task" entry
-        (file+olp+datetree org-company-file)
+        (file+olp+datetree org-company-file "Meeting Notes")
         (file ,(expand-file-name "capture-templates/jira.capture.org"))
         :clock-in t
         :clock-resume t)
@@ -151,7 +151,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture Review related work. This is where I have to read
 ;; documentation or review code.
 (push `("ud" "Documentation Task" entry
-        (file+olp+datetree org-company-file)
+        (file+olp+datetree org-company-file "Meeting Notes")
         (file ,(expand-file-name "capture-templates/review.capture.org"))
         :clock-in t
         :clock-resume t)
