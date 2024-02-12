@@ -1,4 +1,4 @@
-* %^{Check-in Topic | The Daily Ongoing Check-in | The Morning Journaling Ritual}  :noexport:
+* %^{Check-in Topic |The Morning Journaling Ritual |The Daily Standup Meeting |The Daily Ongoing Check-in} :noexport:
 %U
 - I'm feeling grateful for:
   + Capture gratitude here
