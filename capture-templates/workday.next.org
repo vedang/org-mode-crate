@@ -1,13 +1,29 @@
 * The Next Day Intentions Ritual                            :checkin:
-- [ ] One thing I can get excited about tomorrow is:
-- [ ] If one word can describe the kind of person I want to be tomorrow, that word is: (and why)
-- [ ] Someone who needs me on my A game tomorrow is:
-- [ ] A situation that might stress me out or trip me up tomorrow is:
-  - [ ] The situation is:
-  - [ ] The way my best self would deal with it is:
-- [ ] Someone I could surprise with a note, a gift or a sign of appreciation is:
-- [ ] One action I could take tomorrow to demonstrate excellence or real value is:
-- [ ] One thing I could do tomorrow that is a little outside my comfort zone is:
-- [ ] If I was a high performance coach looking at my life from a high level, I would tell myself to remember that:
-- [ ] The big projects I have to keep in mind, that I want to take on, even if I cannot act on them tomorrow are:
-- [ ] I would know tomorrow was a great success if at the end of the day I did, said or felt this:
+| Prompt                                                                                     | Answer |
+|--------------------------------------------------------------------------------------------+--------|
+| One thing I can get excited about tomorrow is:                                             |        |
+|--------------------------------------------------------------------------------------------+--------|
+| If one word can describe the kind of person I want to be tomorrow, that word is: (and why) |        |
+|--------------------------------------------------------------------------------------------+--------|
+| Someone who needs me on my A game tomorrow is:                                             |        |
+|--------------------------------------------------------------------------------------------+--------|
+| A situation that might stress me out or trip me up tomorrow is:                            |        |
+| - The situation is:                                                                        |        |
+| - The way my best self would deal with it is:                                              |        |
+|--------------------------------------------------------------------------------------------+--------|
+| Someone I could surprise with a note, a gift or a sign of appreciation is:                 |        |
+|--------------------------------------------------------------------------------------------+--------|
+| One action I could take tomorrow to demonstrate excellence or real value is:               |        |
+|--------------------------------------------------------------------------------------------+--------|
+| One thing I could do tomorrow that is a little outside my comfort zone is:                 |        |
+|--------------------------------------------------------------------------------------------+--------|
+| If I was a high performance coach looking at my life from a high level,                    |        |
+| I would tell myself to remember that:                                                      |        |
+|--------------------------------------------------------------------------------------------+--------|
+| The big projects I have to keep in mind, that I want to take on,                           |        |
+| even if I cannot act on them tomorrow are:                                                 |        |
+|--------------------------------------------------------------------------------------------+--------|
+| I would know tomorrow was a great success                                                  |        |
+| if at the end of the day I did, said or felt this:                                         |        |
+|--------------------------------------------------------------------------------------------+--------|
+|                                                                                            |        |

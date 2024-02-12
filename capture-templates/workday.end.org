@@ -1,24 +1,34 @@
 * The Daily End-of-day Evening Ritual                               :checkin:
 ** TODO Evening Journal
-*** Did I spend time aligned to my highlight today?
-Did I make progress towards my goals?
-*** Did I write code today?
-If not, what am I going to do right now to fix it?
-*** Did I exercise today?
-- [ ] Meditation?
-- [ ] Flexibility Exercise?
-- [ ] Muscle Strength Exercise?
-- [ ] Cardio Exercise?
-
-If not, what am I going to do right now to fix it?
-*** How could I have made today even better?
-*** What tactics did I try today for improving productivity?
-How did they fare?
-*** Moments that I really appreciated today and that I'm grateful for
-*** Situations or tasks that I handled well today
-*** New Insights I realized or learned today
-*** Something that would have made me feel more connected to others today would have been:
-*** If I was my own high performance coach, I would tell myself this statement about today:
+| Question to Self                                                                        | YES/NO + Notes |
+|-----------------------------------------------------------------------------------------+----------------|
+| Did I spend time aligned to my highlight today?                                         |                |
+| - Did I make progress towards my goals?                                                 |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| Did I write code today?                                                                 |                |
+| - What does =tokei= say?                                                                |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| Did I exercise today?                                                                   |                |
+| - Meditation?                                                                           |                |
+| - Flexibility or Cardio?                                                                |                |
+| - Strength training?                                                                    |                |
+| - If NO, can I do something to fix it right now?                                        |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| How could I have made today even better?                                                |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| What tactics did I try today for improving productivity?                                |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| Moments that I really appreciated today and that I'm grateful for                       |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| Situations or tasks that I handled well today                                           |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| New Insights I realized or learned today                                                |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| Something that would have made me feel more connected to others today would have been:  |                |
+|-----------------------------------------------------------------------------------------+----------------|
+| If I was my own high performance coach, I would tell myself this statement about today: |                |
+|-----------------------------------------------------------------------------------------+----------------|
+|                                                                                         |                |
 
 ** TODO Daily Habits Scorecard
 - Notes:

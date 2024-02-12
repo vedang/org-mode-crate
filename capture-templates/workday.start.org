@@ -13,8 +13,10 @@
 ** TODO Today's message to myself
 Remember your core value: *No more zero days!*
 - Write code everyday!
+  + Think like a writer. Write 750 lines of code everyday, use =tokei= to confirm that you have done this.
 - Exercise everyday. A sick man wants to be healthy!
-  + #Goal: "75 by Mar 5" : Hit 75 KG on or before <2024-03-05 Tue>, look dapper at Vishwa's wedding
+  + #Goal: "75 by Apr 5" : Hit 75 KG on or before <2024-04-05 Fri>, look dapper at Vishwa's wedding
+  + #Goal: "72 by Nov 2" : Hit 72 KG on or before <2024-11-02 Sat>, look dapper at Anuj's wedding.
 - Think about the product, not the implementation. Make progress!
 
 ** TODO [0/4] The whole day plan for today
