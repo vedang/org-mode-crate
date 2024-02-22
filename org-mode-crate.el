@@ -865,7 +865,7 @@ has no effect."
                                                      :narrow 80)
       org-agenda-span 'day
       org-columns-default-format
-      "%50ITEM(Task) %5Effort(Effort){:} %5CLOCKSUM %3PRIORITY %20DEADLINE %20SCHEDULED %20TIMESTAMP %TODO %CATEGORY(Category) %TAGS"
+      "%50ITEM(Task) %5Effort(Effort){:} %5CLOCKSUM %3PRIORITY %20CLOSED %20DEADLINE %20SCHEDULED %20TIMESTAMP %TODO %CATEGORY(Category) %TAGS"
       org-global-properties
       '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 4:00 6:00 8:00")
         ("STYLE_ALL" . "habit"))
