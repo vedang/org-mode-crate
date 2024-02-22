@@ -1,4 +1,5 @@
 * TODO [#D] %^{What do I want to do | %i}                            :refile:
-%U %a
-      %i
+SCHEDULED: %^T
+%a
+
 %^{Extra Details if any | No extra details captured}
