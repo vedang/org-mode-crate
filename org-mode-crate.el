@@ -83,170 +83,114 @@ Check-ins and feedback are also stored here."))
 (require 'org-protocol)
 (require 'org-capture)
 
+;;; *CRITICAL NOTE* Read before modifying the push stack below:
 ;; Pushing to capture templates is a stack. What goes in first shows
 ;; up at the bottom of the capture templates list.
 
-;;; Set up a new habit for tracking. This should be refiled to the
-;;; correct location later.
-(push `("h" "Habit" entry
-        (file org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/habit.capture.org")))
-      org-capture-templates)
+;;; Templates for thinking tools
+(push '("T" "Templates for Helping Me Think") org-capture-templates)
 
-;;; One-click Capture for replying to emails from notmuch. Creates a
-;;; task to remind you that you need to reply to this email.
-(push `("r" "Respond to email" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/reply.capture.org"))
-        :clock-in t
-        :clock-resume t
-        :immediate-finish t)
-      org-capture-templates)
-
-;;; One-click capture of links from the clipboard. Used in conjunction
-;;; with `org-protocol', or as a stand-alone to capture links.
-(push `("w" "Website Link Immediate Capture" entry
-        (file+olp org-default-notes-file "Links Captured from the Browser")
-        (file ,(expand-file-name "capture-templates/website.capture.org"))
-        :immediate-finish t)
-      org-capture-templates)
-
-;;; A more nuanced capture for browser links, which I use for cleaning
-;;; out my browser 2/3 times a week.
-(push `("l" "Website Link Pinboard Capture" entry
-        (file+olp org-default-notes-file "Links Captured from the Browser")
-        (file ,(expand-file-name "capture-templates/pinboard.capture.org"))
-        :clock-in t
-        :clock-resume t
-        :immediate-finish t)
-      org-capture-templates)
-
-;;; One-click Capture for Tasks. Captures the task immediately and
-;;; gets out of your way.
-(push `("t" "Todo Immediate Finish" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/todo.org"))
-        :clock-in t
-        :clock-resume t
-        :immediate-finish t)
-      org-capture-templates)
-
-;;; Hide work stuff under a separate key-binding
-(push '("u" "Templates for capturing work stuff") org-capture-templates)
-;; Capture feedback for people I am working with
-(push `("up" "Feedback for People I'm working with" item
-        (file+olp+datetree org-company-file "Feedback")
-        (file ,(expand-file-name "capture-templates/feedback.others.capture.org"))
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;; Capture a Jira task related to work
-(push `("ut" "Jira Task" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/jira.capture.org"))
-        :clock-in t
-        :clock-resume t)
-      org-capture-templates)
-;; Capture Review related work. This is where I have to read
-;; documentation or review code.
-(push `("ud" "Documentation Task" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/review.capture.org"))
-        :clock-in t
-        :clock-resume t)
-      org-capture-templates)
-;; Capture notes for an upcoming meeting (scheduled sometime in the
-;; future)
-(push `("un" "Upcoming Meeting" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/meeting.upcoming.capture.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t
-        :time-prompt t)
-      org-capture-templates)
-;; Capture notes for an ongoing meeting or a meeting that's already
-;; happened.
-(push `("um" "Current / Previous Meeting" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/meeting.ongoing.capture.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t)
-      org-capture-templates)
-;; Capture suggestions / ideas from other people, which can be
-;; expanded into actual projects later.
-(push `("us" "Ideas and Suggestions" entry
-        (id "DAD40887-E990-4E6A-BD5E-0856A21EF13A")
-        (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture check-ins and thoughts quickly, about your day-to-day work
-(push `("uc" "Work Check-Ins" entry
-        (file+olp+datetree org-company-file "Meeting Notes")
-        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; The monthly newsletter to send to investors, friends and mentors
-(push `("uw" "Company Newsletters" entry
-        (id "BEB8583B-8B92-4771-8B06-BC88D417055F")
-        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
+;; Capture a decision that you've taken, for review and reflection later.
+(push `("Td" "Decision Journal" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.decision.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
 
-;;; Hide personal stuff under a separate key-binding
-(push '("s" "Templates for capturing self related stuff") org-capture-templates)
-;;; Capture some feedback for myself or a quick check-in, which I will
-;;; move into other more refined notes later.
-(push `("sc" "Ongoing Check In or Journaling" entry
-        (file+olp+datetree org-journal-file)
-        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
+;; Create a Current Reality Tree for a problem
+(push `("Tc" "Current Reality Tree" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.crt.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-;;; Deliberately plan out and make a routine out of start of day and
-;;; end of day activities. This is an attempt to become better at
-;;; planning and therefore at productivity.
-(push `("ss" "The Start of Day Planning Routine" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.start.org"))
+
+;; Create an Evaporating Cloud for a problem
+(push `("Te" "Evaporating Cloud" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.ec.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-(push `("se" "The End of Day Reflection Routine" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.end.org"))
+
+;; Create a Future Reality Tree for a problem
+(push `("Tf" "Future Reality Tree" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.frt.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-(push `("sn" "The Next Day Intentions Routine" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/workday.next.org"))
+
+;; Create a Prerequisite Tree for a problem
+(push `("Tp" "Prerequisite Tree" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.prt.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
-;;; Capture weight / food. This seems hard to get into a laptop habit.
-;;; This is the kind of quantitative life that a mobile solution would
-;;; have helped with.
-(push `("sw" "Weight Check In" entry
+
+;; Create a Transition Tree for a problem
+(push `("Tt" "Transition Tree" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/thinking.trt.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; Capture a new Business idea for sketching out / thinking through
+(push `("Tb" "Business Canvas" entry
+        (file+headline org-default-notes-file "Helping Me Think")
+        (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; Capture a customer persona, note that this is always captured in
+;; the current clocking task, and is something I should do under the
+;; business canvas.
+(push `("TP" "Customer Persona (under Business Canvas)" entry
+        (clock)
+        (file ,(expand-file-name "capture-templates/business.customer.persona.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; Capture a customer journey through your product, note that this is
+;; always captured in the current clocking task
+(push `("Tj" "Customer Journey (under Business Canvas)" entry
+        (clock)
+        (file ,(expand-file-name "capture-templates/business.customer.journey.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;;; Templates for capturing data about myself on a day-to-day basis
+(push '("d" "Templates for Capturing Data (personal)") org-capture-templates)
+
+;; Capture weight / food. This seems hard to get into a laptop habit.
+;; This is the kind of quantitative life that a mobile solution would
+;; have helped with.
+
+(push `("dw" "Weight Tracking" entry
         (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/bodylog.weight.org"))
         :clock-in t
@@ -254,7 +198,8 @@ Check-ins and feedback are also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
-(push `("sf" "Food Check In" entry
+
+(push `("df" "Food Tracking" entry
         (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/bodylog.food.org"))
         :clock-in t
@@ -262,7 +207,8 @@ Check-ins and feedback are also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
-(push `("sd" "DT Check In" entry
+
+(push `("dd" "Downtime Tracking" entry
         (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/bodylog.dt.org"))
         :clock-in t
@@ -270,8 +216,12 @@ Check-ins and feedback are also stored here."))
         :immediate-finish t
         :empty-lines 1)
       org-capture-templates)
-;;; Capture microblogs
-(push `("sm" "New Microblogging entry" entry
+
+;;; Templates for capturing build in public ideas
+(push '("b" "Templates for Capturing Build in Public") org-capture-templates)
+
+;; Capture Micro-blogging
+(push `("bm" "New Microblogging entry" entry
         (file+olp+datetree org-blogpost-file "Microblogging")
         (file ,(expand-file-name "capture-templates/microblog.org"))
         :prepend nil
@@ -280,102 +230,189 @@ Check-ins and feedback are also stored here."))
         :empty-lines 1)
       org-capture-templates)
 
-;;; Hide general thinking tools under a separate key-binding
-(push '("T" "Templates for helping me think") org-capture-templates)
-;;; Capture a decision that you've taken, for review and reflection later.
-(push `("Td" "Decision Journal" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.decision.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Create a Current Reality Tree for a problem
-(push `("Tc" "Current Reality Tree" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.crt.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Create an Evaporating Cloud for a problem
-(push `("Te" "Evaporating Cloud" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.ec.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Create a Future Reality Tree for a problem
-(push `("Tf" "Future Reality Tree" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.frt.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Create a Prerequisite Tree for a problem
-(push `("Tp" "Prerequisite Tree" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.prt.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Create a Transition Tree for a problem
-(push `("Tt" "Transition Tree" entry
-        (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/thinking.trt.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture a new Business idea for sketching out / thinking through
-(push `("Tb" "Business Canvas" entry
-        (id "D0BB89EB-5496-478A-BBDE-C29EC9EFFA94")
-        (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture a customer persona, note that this is always captured in
-;;; the current clocking task.
-(push `("TP" "Customer Persona" entry
-        (clock)
-        (file ,(expand-file-name "capture-templates/business.customer.persona.capture.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture a customer journey through your product, note that this is
-;;; always captured in the current clocking task
-(push `("Tj" "Customer Journey" entry
-        (clock)
-        (file ,(expand-file-name "capture-templates/business.customer.journey.capture.org"))
-        :prepend nil
-        :clock-in t
-        :clock-resume t
-        :empty-lines 1)
-      org-capture-templates)
-;;; Capture a decision that you've taken, for review and reflection later.
-(push `("cd" "Business Decision Journal" entry
-        (id "B509F345-B648-43E9-99A1-F48134FB27B5")
-        (file ,(expand-file-name "capture-templates/thinking.decision.org"))
+;; New blogpost idea
+(push `("bb" "New Blogpost entry" entry
+        (file+headline org-blogpost-file "Meta: Blogposts to write")
+        (file ,(expand-file-name "capture-templates/todo.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
         :empty-lines 1)
       org-capture-templates)
 
-(setq org-datetree-add-timestamp t)
+;;; Templates for when I want to capture specific feedback about something
+(push '("f" "Templates for Feedback and Reflection") org-capture-templates)
+
+;; Capture feedback for people I am working with
+(push `("fp" "Feedback for People I'm working with" item
+        (file+headline org-company-file "Feedback")
+        (file ,(expand-file-name "capture-templates/feedback.others.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; The monthly newsletter to send to investors, friends and mentors
+(push `("fn" "Company Newsletters" entry
+        (file+headline org-company-file "Company Newsletters")
+        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; Capture suggestions / ideas from other people, which can be
+;; expanded into actual projects later.
+(push `("fs" "Ideas and Suggestions" entry
+        (file+headline org-company-file "Ideas and Suggestions")
+        (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;; Capture personal check-ins, journaling
+(push `("fc" "Personal Check In or Journaling" entry
+        (file+olp+datetree org-journal-file)
+        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;;; Templates for planning on a day-to-day basis
+(push '("p" "Templates for Planning") org-capture-templates)
+
+;; Deliberately plan out and make a routine out of start of day and
+;; end of day activities.
+
+(push `("ps" "The Start of Day Planning Routine" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/workday.start.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+(push `("pe" "The End of Day Reflection Routine" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/workday.end.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+(push `("pn" "The Next Day Intentions Routine" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/workday.next.org"))
+        :prepend nil
+        :clock-in t
+        :clock-resume t
+        :empty-lines 1)
+      org-capture-templates)
+
+;;; Templates for capturing meetings, events, something happening at this time
+(push '("m" "Templates for Capturing Meetings or Events") org-capture-templates)
+
+;; Capture an upcoming meeting or one that has already happened
+(push `("mp" "Upcoming or Already Done Personal Meeting" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/meeting.upcoming.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t
+        :time-prompt t)
+      org-capture-templates)
+(push `("mo" "Upcoming or Already Done Company Meeting" entry
+        (file+olp+datetree org-company-file)
+        (file ,(expand-file-name "capture-templates/meeting.upcoming.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t
+        :time-prompt t)
+      org-capture-templates)
+
+;; Capture notes for an ongoing meeting or a meeting that's already
+;; happened.
+(push `("mn" "Ongoing Personal Meeting" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/meeting.ongoing.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t)
+      org-capture-templates)
+(push `("mm" "Ongoing Company Meeting" entry
+        (file+olp+datetree org-company-file)
+        (file ,(expand-file-name "capture-templates/meeting.ongoing.org"))
+        :prepend t
+        :clock-in t
+        :clock-resume t)
+      org-capture-templates)
+
+;;; Templates for Capturing Tasks
+(push '("t" "Templates for Capturing Tasks") org-capture-templates)
+
+;; Set up a new habit for tracking. This should be refiled to the
+;; correct location later.
+(push `("th" "Habit" entry
+        (file+headline org-default-notes-file "My Habit Tracker")
+        (file ,(expand-file-name "capture-templates/habit.capture.org")))
+      org-capture-templates)
+
+;; One-click Capture for replying to emails from notmuch. Creates a
+;; task to remind you that you need to reply to this email.
+(push `("tr" "Respond to email" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/reply.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t)
+      org-capture-templates)
+
+;; One-click capture of links from the clipboard. Used in conjunction
+;; with `org-protocol', or as a stand-alone to capture links.
+(push `("tw" "Website Link Immediate Capture" entry
+        (file+olp org-default-notes-file "Links Captured from the Browser")
+        (file ,(expand-file-name "capture-templates/website.capture.org"))
+        :immediate-finish t)
+      org-capture-templates)
+
+;; A more nuanced capture for browser links, which I use for cleaning
+;; out my browser 2/3 times a week.
+(push `("tl" "Website Link Pinboard Capture" entry
+        (file+olp org-default-notes-file "Links Captured from the Browser")
+        (file ,(expand-file-name "capture-templates/pinboard.capture.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t)
+      org-capture-templates)
+
+;; Capture a task where someone expects me to communicate when it's done
+(push `("tj" "Jira or External-facing Task" entry
+        (file+olp+datetree org-company-file)
+        (file ,(expand-file-name "capture-templates/jira.capture.org"))
+        :clock-in t
+        :clock-resume t)
+      org-capture-templates)
+
+;; One-click Capture for Tasks. Captures the task immediately and gets
+;; out of your way.
+(push `("ti" "Simple Task Immediate Finish" entry
+        (file+olp+datetree org-default-notes-file)
+        (file ,(expand-file-name "capture-templates/todo.org"))
+        :clock-in t
+        :clock-resume t
+        :immediate-finish t)
+      org-capture-templates)
+
+(require 'org-datetree)
+;; add an active timestamp when you create a date-tree entry.
+(setq org-datetree-add-timestamp 'active)
 
 ;;; Refile settings
 (setq org-refile-targets '((org-agenda-files :maxlevel . 9)
