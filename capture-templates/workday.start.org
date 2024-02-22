@@ -23,11 +23,11 @@ Remember your core value: *No more zero days!*
 This is the plan you will follow for the rest of the day. To do it:
 
 - [ ] Review your calendar and plan out your day to the best of your knowledge
-  + ~org-gcal-fetch~
-  + ~cfw:open-calendar-agenda-blocks~
-  + ~org-agenda regular~
-  + ~org-agenda custom~
-  + ~Projects and Tasks~ in Notion
+  + [ ] ~org-gcal-fetch~
+  + [ ] ~cfw:open-calendar-agenda-blocks~
+  + [ ] ~org-agenda~ regular version =C-c a a=
+  + [ ] ~org-agenda~ custom versions =C-c a g=, =C-c a i=
+  + [ ] ~Projects and Tasks~ wherever we are tracking this as a team
 - [ ] Create time for tasks that absolutely must be done
 - [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
 - [ ] Create time for your priority task
