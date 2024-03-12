@@ -26,7 +26,7 @@ This is the plan you will follow for the rest of the day. To do it:
   + [ ] ~org-gcal-fetch~
   + [ ] ~cfw:open-calendar-agenda-blocks~
   + [ ] ~org-agenda~ regular version =C-c a a=
-  + [ ] ~org-agenda~ custom versions =C-c a g=, =C-c a i=
+  + [ ] ~org-agenda~ custom versions =C-c a g= (GTD), =C-c a i= (Important), =C-c a h= (Habits)
   + [ ] ~Projects and Tasks~ wherever we are tracking this as a team
 - [ ] Create time for tasks that absolutely must be done
 - [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
