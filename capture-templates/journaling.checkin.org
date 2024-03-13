@@ -1,8 +1,18 @@
 * %^{Check-in Topic |The Morning Journaling Ritual |The Daily Standup Meeting |The Daily Ongoing Check-in} :noexport:
 %U
+
+What is this check-in about?
+
+- I'm emptying my mind:
+  + This is a "stream of consciousness" note to empty my mind.
+  + A foolscap page has 32 ruled lines. Each line should contain 8 words at Max according to Pu La Deshpande. This means that 1 full page should contain 256 words.
+  + The Morning Page exercise requires you to write 3 foolscap pages worth of stream of consciousness. This means that I should be writing 768 words here (at least) to meet my target.
+
 - I'm feeling grateful for:
   + Capture gratitude here
+
 - I had an insight!
   + Capture insight here
+
 - Thinking / Feeling:
   + Capture other thoughts, feels here
