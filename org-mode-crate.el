@@ -974,7 +974,8 @@ has no effect."
  }
 "
       org-latex-pdf-process
-      '("latexmk -f -pdf -%latex --jobname=%b  -file-line-error --synctex=1 -shell-escape -interaction=nonstopmode -output-directory=%o %f"))
+      '("latexmk -f -pdf -%latex --jobname=%b  -file-line-error --synctex=1 -shell-escape -interaction=nonstopmode -output-directory=%o %f")
+      org-image-actual-width nil)
 (add-to-list 'org-latex-packages-alist '("capitalize" "cleveref" nil))
 (add-to-list 'org-latex-packages-alist '("" "booktabs" nil))
 (add-to-list 'org-latex-packages-alist '("" "svg" nil))
