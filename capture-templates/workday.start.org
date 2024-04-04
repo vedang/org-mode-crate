@@ -1,6 +1,11 @@
 * The Daily Start-of-day Morning Ritual                             :checkin:
 %U
 ** TODO My Top Priority / Highlight today
+What is the *one concrete outcome* that I will have at the end of the day today?
+
+Is it a 'build in public' outcome?
+
+#+begin_comment
 - The way to do this:
   + First write whatever comes to the top of your mind. This is what you are thinking of, so write it down.
   + Now review your (custom/normal) Org Agenda and see if anything on it changes the plans you have made. Update the plan you have written down here.
@@ -9,13 +14,13 @@
   - What is truly important? (important for my goals, urgently needs attention)
   - What will give me satisfaction for a job well done? (goal driven)
   - What will give me joy?
+#+end_comment
 
 ** TODO Today's message to myself
 Remember your core value: *No more zero days!*
 - Write code everyday!
   + Think like a writer. Write 750 lines of code everyday, use =tokei= to confirm that you have done this.
 - Exercise everyday. A sick man wants to be healthy!
-  + #Goal: "75 by Apr 5" : Hit 75 KG on or before <2024-04-05 Fri>, look dapper at Vishwa's wedding
   + #Goal: "72 by Nov 2" : Hit 72 KG on or before <2024-11-02 Sat>, look dapper at Anuj's wedding.
 - Think about the product, not the implementation. Make progress!
 
@@ -23,7 +28,7 @@ Remember your core value: *No more zero days!*
 This is the plan you will follow for the rest of the day. To do it:
 
 - [ ] Review your calendar and plan out your day to the best of your knowledge
-  + [ ] ~org-gcal-fetch~
+  + [ ] ~org-gcal-fetch~ (ensure that ~(vedang/gcal-on-demand)~ is evaluated first)
   + [ ] ~cfw:open-calendar-agenda-blocks~
   + [ ] ~org-agenda~ regular version =C-c a a=
   + [ ] ~org-agenda~ custom versions =C-c a g= (GTD), =C-c a i= (Important), =C-c a h= (Habits)
