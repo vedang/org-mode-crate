@@ -58,9 +58,16 @@ Check-ins and feedback are also stored here."))
     "File in which company documentation is stored."))
 
 ;; Settings for org which don't fall under any particular category.
-(setq org-special-ctrl-a/e t
-      org-imenu-depth 4)
+(setq org-fold-catch-invisible-edits 'show-and-error
+      org-imenu-depth 4
+      org-insert-heading-respect-content t
+      org-special-ctrl-a/e t
+      org-auto-align-tags nil
+      org-tags-column 0
 
+      ;; Org styling, hide markup etc.
+      org-hide-emphasis-markers t
+      org-pretty-entities t)
 
 ;; Ido for the win
 (setq org-completion-use-ido t)
