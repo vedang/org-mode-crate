@@ -805,7 +805,7 @@ A prefix arg forces clock in of the default task."
 ;;; Show the Habit graph in all Agenda buffers (where Habits are
 ;;; available). From:
 ;;; https://emacs.stackexchange.com/a/17328/20448
-
+(require 'org-habit)
 (defvar so/org-habit-show-graphs-everywhere t
   "If non-nil, show habit graphs in all types of agenda buffers.
 
@@ -842,7 +842,7 @@ has no effect."
 
 ;;; http://article.gmane.org/gmane.emacs.orgmode/49215
 (defun fc/has-inheritable-deadline-p ()
-  "Any task (without DEADLINE) that can inherit a DEADLINE"
+  "Any task (without DEADLINE) that can inherit a DEADLINE."
   (let ((deadline (org-entry-get nil "DEADLINE"))
         (inheritable-deadline (org-entry-get-with-inheritance "DEADLINE")))
 
