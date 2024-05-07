@@ -1,4 +1,4 @@
-;;; org-mode-crate --- A pre-defined org environment for the consummate gtd'er
+;;; org-mode-crate --- A pre-defined org environment for the consummate gtd'er -*- lexical-binding: t -*-
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;

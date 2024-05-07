@@ -1,4 +1,4 @@
-;;; org-key-bindings --- Key bindings in Org
+;;; org-key-bindings --- Key bindings in Org -*- lexical-binding: t -*-
 ;;
 ;;; Copyright (C) 2012, 2013 Vedang Manerikar
 ;;
