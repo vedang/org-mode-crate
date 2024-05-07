@@ -892,8 +892,7 @@ has no effect."
 
 
 ;; Always highlight current agenda line
-(add-hook 'org-agenda-mode-hook #'(lambda ()
-                                    (hl-line-mode 1)))
+;; (add-hook 'org-agenda-mode-hook #'(lambda () (hl-line-mode 1)))
 
 (setq org-agenda-show-all-dates nil
       org-agenda-start-on-weekday 1
@@ -919,8 +918,9 @@ has no effect."
       '(("Effort_ALL" . "0:10 0:20 0:30 1:00 2:00 3:00 4:00 6:00 8:00")
         ("STYLE_ALL" . "habit"))
       org-agenda-clock-consistency-checks
-      '(:max-duration "4:00" :min-duration 0 :max-gap 0 :gap-ok-around ("4:00")))
-
+      '(:max-duration "4:00" :min-duration 0 :max-gap 0 :gap-ok-around ("4:00"))
+      org-agenda-tags-column 0
+      org-agenda-block-separator ?─)
 
 ;; settings for Reminder
 ;; Erase all reminders and rebuild reminders for today from the agenda
