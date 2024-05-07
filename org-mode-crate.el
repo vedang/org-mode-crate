@@ -870,8 +870,8 @@ has no effect."
         (org-deadline nil (org-time-string-to-time deadline)))))
 
 
-(defun fc/org-agenda-inherit-deadline (&optional arg)
-  "Inherit a DEADLINE in agenda."
+(defun fc/org-agenda-inherit-deadline (&optional _arg)
+  "Inherit a deadline in agenda."
   (interactive "P")
   (let* ((marker (or (org-get-at-bol 'org-marker)
                      (org-agenda-error)))
@@ -883,8 +883,8 @@ has no effect."
       (with-current-buffer (marker-buffer marker)
         (widen)
         (goto-char pos)
-        (org-show-context 'agenda)
-        (org-show-entry)
+        (org-fold-show-context 'agenda)
+        (org-fold-show-entry)
         (org-cycle-hide-drawers 'children)
         (fc/org-inherit-deadline)
         (setq newhead (org-get-heading)))
