@@ -748,10 +748,9 @@ A prefix arg forces clock in of the default task."
                    (org-agenda-time-grid
                     '((daily today require-timed)
                       (800 1000 1200 1400 1600 1800 2000 2200)
-                      " timeblock"
-                      "----------------------------------------"))
+                      " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄"))
                    (org-agenda-current-time-string
-                    "now - - - - - - - - - - - - now - - - - - - - - - - - now")))
+                    "◀── now ─────────────────────────────────────────────────")))
           (tags-todo "+important-notoday"
                      ((org-agenda-overriding-header
                        "These are your IMPORTANT Tasks")
@@ -899,9 +898,11 @@ has no effect."
 (setq org-agenda-show-all-dates nil
       org-agenda-start-on-weekday 1
       org-agenda-time-grid
-      '(nil (800 1000 1200 1400 1600 1800 2000)
-            "......"
-            "----------------")
+      '((daily today require-timed)
+        (800 1000 1200 1400 1600 1800 2000)
+        " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+      org-agenda-current-time-string
+      "◀── now ─────────────────────────────────────────────────"
       org-agenda-skip-deadline-if-done t
       org-agenda-skip-scheduled-if-done t
       org-agenda-text-search-extra-files '(agenda-archives)
