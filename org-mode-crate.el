@@ -69,6 +69,10 @@ Check-ins and feedback are also stored here."))
       org-hide-emphasis-markers t
       org-pretty-entities t)
 
+;; Ellipsis styling
+(setq org-ellipsis "⤵")
+(set-face-attribute 'org-ellipsis nil :inherit 'default :box nil)
+
 ;; Ido for the win
 (setq org-completion-use-ido t)
 
