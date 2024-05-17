@@ -64,7 +64,7 @@ Check-ins and feedback are also stored here."))
       org-special-ctrl-a/e nil
       org-auto-align-tags nil
       org-tags-column 0
-
+      org-use-sub-superscripts '{}
       ;; Org styling, hide markup etc.
       org-hide-emphasis-markers t
       org-pretty-entities t)
