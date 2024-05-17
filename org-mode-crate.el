@@ -61,7 +61,7 @@ Check-ins and feedback are also stored here."))
 (setq org-fold-catch-invisible-edits 'show-and-error
       org-imenu-depth 4
       org-insert-heading-respect-content t
-      org-special-ctrl-a/e t
+      org-special-ctrl-a/e nil
       org-auto-align-tags nil
       org-tags-column 0
 
