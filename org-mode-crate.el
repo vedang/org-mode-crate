@@ -331,16 +331,8 @@ Check-ins and feedback are also stored here."))
 (push '("m" "Templates for Capturing Meetings or Events") org-capture-templates)
 
 ;; Capture an upcoming meeting or one that has already happened
-(push `("mp" "Upcoming or Already Done Personal Meeting" entry
+(push `("mp" "Upcoming or Already Done Meeting" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/meeting.upcoming.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t
-        :time-prompt t)
-      org-capture-templates)
-(push `("mo" "Upcoming or Already Done Company Meeting" entry
-        (file+olp+datetree org-company-file)
         (file ,(expand-file-name "capture-templates/meeting.upcoming.org"))
         :prepend t
         :clock-in t
@@ -350,15 +342,8 @@ Check-ins and feedback are also stored here."))
 
 ;; Capture notes for an ongoing meeting or a meeting that's already
 ;; happened.
-(push `("mn" "Ongoing Personal Meeting" entry
+(push `("mn" "Ongoing Meeting" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/meeting.ongoing.org"))
-        :prepend t
-        :clock-in t
-        :clock-resume t)
-      org-capture-templates)
-(push `("mm" "Ongoing Company Meeting" entry
-        (file+olp+datetree org-company-file)
         (file ,(expand-file-name "capture-templates/meeting.ongoing.org"))
         :prepend t
         :clock-in t
@@ -405,7 +390,7 @@ Check-ins and feedback are also stored here."))
 
 ;; Capture a task where someone expects me to communicate when it's done
 (push `("tj" "Jira or External-facing Task" entry
-        (file+olp+datetree org-company-file)
+        (file+olp+datetree org-default-notes-file)
         (file ,(expand-file-name "capture-templates/jira.capture.org"))
         :clock-in t
         :clock-resume t)
