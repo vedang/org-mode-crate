@@ -1,4 +1,4 @@
 * %U
 %?
 
-- Posted to: Fosstodon, Twitter, Substack Notes, Cohost, Blue Sky, Recurse Zulip, Clojure Slack, Chaitimers Discord, Unravel Discord, TEO Discord, REPL Discord, Links blog, ELD Whatsapp Group, XShift Whatsapp Group, Recurse Whatsapp Group
+- Posted to: Fosstodon, Twitter, Linkedin, Chaitimers Discord, Unravel Discord, TEO Discord, REPL Discord, Links blog, ELD Whatsapp Group, XShift Whatsapp Group, Recurse Whatsapp Group, Substack Notes, Cohost, Blue Sky, Recurse Zulip, Clojure Slack
