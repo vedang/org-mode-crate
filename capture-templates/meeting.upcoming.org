@@ -1,7 +1,0 @@
-* %^{What are we discussing?} %^G:meeting:
-%U
-%^{The date-time when the meeting takes place}t
-- Attendees: %^{Attendees}, Vedang
-- Prep/Links:
-  + [ ] %?
-- Notes:

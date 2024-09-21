@@ -331,9 +331,9 @@ Check-ins and feedback are also stored here."))
 (push '("m" "Templates for Capturing Meetings or Events") org-capture-templates)
 
 ;; Capture an upcoming meeting or one that has already happened
-(push `("mp" "Upcoming or Already Done Meeting" entry
+(push `("mp" "Meeting some other day" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/meeting.upcoming.org"))
+        (file ,(expand-file-name "capture-templates/meeting.org"))
         :prepend t
         :clock-in t
         :clock-resume t
@@ -342,9 +342,9 @@ Check-ins and feedback are also stored here."))
 
 ;; Capture notes for an ongoing meeting or a meeting that's already
 ;; happened.
-(push `("mn" "Ongoing Meeting" entry
+(push `("mn" "Meeting today" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/meeting.ongoing.org"))
+        (file ,(expand-file-name "capture-templates/meeting.org"))
         :prepend t
         :clock-in t
         :clock-resume t)

@@ -1,0 +1,13 @@
+* %^{What is happening? |Phone Call |The Daily Standup Meeting |The Daily Ongoing Check-in} %^G:meeting:
+%U
+- Attendees: %^{Who is part of the discussion? |}, Vedang
+- Prep/Links:
+  + [ ] %^{Prep Reading |No prep needed}
+- Notes:
+  + %?
+- I'm feeling grateful for:
+  + Capture gratitude here
+- I had an insight!
+  + Capture insight here
+- Thinking / Feeling:
+  + Capture other thoughts, feels here
