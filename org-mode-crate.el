@@ -252,7 +252,7 @@ Check-ins and feedback are also stored here."))
       org-capture-templates)
 
 ;;; Templates for when I want to capture specific feedback about something
-(push '("f" "Templates for Feedback and Reflection") org-capture-templates)
+(push '("f" "Templates for Feedback, Reflection, Journaling") org-capture-templates)
 
 ;; Capture feedback for people I am working with
 (push `("fp" "Feedback for People I'm working with" item
@@ -287,7 +287,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture personal check-ins, journaling
 (push `("fc" "Personal Check In or Journaling" entry
         (file+olp+datetree org-journal-file)
-        (file ,(expand-file-name "capture-templates/journaling.checkin.org"))
+        (file ,(expand-file-name "capture-templates/journaling.org"))
         :prepend nil
         :clock-in t
         :clock-resume t

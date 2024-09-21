@@ -1,7 +1,5 @@
-* %^{Check-in Topic |The Morning Journaling Ritual |The Daily Standup Meeting |The Daily Ongoing Check-in} :noexport:
+* %^{Journaling about |The morning journaling ritual |I'm feeling grateful for |I had an insight! |I'm thinking about |I'm feeling } :noexport:
 %U
-
-What is this check-in about?
 
 - I'm emptying my mind:
   + This is a "stream of consciousness" note to empty my mind.
@@ -14,5 +12,8 @@ What is this check-in about?
 - I had an insight!
   + Capture insight here
 
-- Thinking / Feeling:
-  + Capture other thoughts, feels here
+- I am thinking about:
+  + Capture thoughts here
+
+- I am feeling:
+  + Capture feels here
