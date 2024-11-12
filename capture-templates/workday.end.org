@@ -1,4 +1,12 @@
 * The Daily End-of-day Evening Ritual                               :checkin:
+- [0/2] Review and update the plan for tomorrow
+  + [ ] Identify your highlights for tomorrow based on your org-mode agenda and energy. Restructure where needed.
+  + [ ] Update calendar meetings for tomorrow and later.
+- [0/2] Capture meeting notes for the day, link to appropriate entries where needed.
+  + [ ] Go back into the day + week and check if there is anything pending on any of the dates.
+  + [ ] Review sync up notes in the day + previous week and create follow up tasks if any.
+- [ ] Update my weekly work notes where necessary
+
 ** TODO Evening Journal
 | Question to Self                                                                        | YES/NO + Notes |
 |-----------------------------------------------------------------------------------------+----------------|

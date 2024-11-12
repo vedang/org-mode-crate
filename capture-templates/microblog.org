@@ -1,4 +1,21 @@
 * %U
 %?
 
-- Posted to: Fosstodon, Twitter, Linkedin, Chaitimers Discord, Unravel Discord, TEO Discord, REPL Discord, Links blog, ELD Whatsapp Group, XShift Whatsapp Group, Recurse Whatsapp Group, Substack Notes, Cohost, Blue Sky, Recurse Zulip, Clojure Slack
+** Meta Information :noexport:
+
+Posted to:
+- [ ] Fosstodon
+- [ ] Twitter
+- [ ] Linkedin
+- [ ] Substack Notes
+- [ ] Chaitimers Discord
+- [ ] Unravel Discord
+- [ ] TEO Discord
+- [ ] REPL Discord
+- [ ] Links blog
+- [ ] ELD Whatsapp Group
+- [ ] XShift Whatsapp Group
+- [ ] Recurse Whatsapp Group
+- [ ] Recurse Zulip
+- [ ] Clojure Slack
+- [ ] Nilenso Slack
