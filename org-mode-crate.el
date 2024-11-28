@@ -515,34 +515,48 @@ Check-ins and feedback are also stored here."))
   (define-key org-todo-state-map "D" #'fc/org-agenda-inherit-deadline))
 
 
-;;org-tags
+;;;; org-tags
 ;; Important Tag list
 (setq org-tag-alist
-      '((:startgroup)
-        ("Status" . ?s)
+      '((:startgrouptag)
+        ("TaskStatus" . ?S)
         (:grouptags)
         ("next" . ?x)
-        ("important" . ?i)
-        ("joy" . ?j)
         ("waiting" . ?w)
-        (:endgroup)
+        ("delegated" . ?d)
+        (:endgrouptag)
+        (:startgrouptag)
+        ("Writing" . ?W)
+        (:grouptags)
         ("notes" . ?n)
-        ("action_items" . ?a)))
+        ("sketch" . ?s)
+        ("feedback" . ?f)
+        ("actionitems" . ?a)
+        (:endgrouptag)
+        (:startgrouptag)
+        ("TaskType" . ?T)
+        (:startgrouptag)
+        ("joy" . ?j)
+        ("errand" . ?e)
+        ("bug" . ?b)
+        ("habit" . ?h)
+        ("goal" . ?g)
+        (:endgrouptag)
+        ("important" . ?i)
+        ("refile" . ?r)
+        ("future" . ?F)))
 
-
-;; org-priorities
+;;;; org-priorities
 (setq org-lowest-priority ?E)
 (setq org-default-priority ?D)
 
-
-;; Logbook settings
+;;;; Logbook settings
 (setq org-log-done 'time
       org-log-into-drawer t
       org-log-reschedule 'time
       org-log-redeadline 'time)
 
-
-;; org-list
+;;;; org-list
 (setq org-list-demote-modify-bullet
       '(("+" . "-") ("-" . "+") ("*" . "+")))
 
@@ -563,7 +577,7 @@ Check-ins and feedback are also stored here."))
 
 (define-key org-mode-map (kbd "C-c j") 'suv/org-move-item-or-tree)
 
-;;; org-clock
+;;;; org-clock
 (org-clock-persistence-insinuate)
 (setq org-clock-history-length 20
       org-clock-in-resume t
