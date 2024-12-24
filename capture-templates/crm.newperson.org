@@ -1,0 +1,8 @@
+* %^{Name of Person}
+:PROPERTIES:
+:CREATED: %U
+:REFERRED_BY:
+:EMAIL:
+:PHONE:
+:END:
+- %?

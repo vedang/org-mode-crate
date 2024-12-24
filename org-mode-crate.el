@@ -164,7 +164,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture a new Business idea for sketching out / thinking through
 (push `("Tb" "Business Canvas" entry
         (file+headline org-default-notes-file "Helping Me Think")
-        (file ,(expand-file-name "capture-templates/business.canvas.capture.org"))
+        (file ,(expand-file-name "capture-templates/business.canvas.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -176,7 +176,7 @@ Check-ins and feedback are also stored here."))
 ;; business canvas.
 (push `("TP" "Customer Persona (under Business Canvas)" entry
         (clock)
-        (file ,(expand-file-name "capture-templates/business.customer.persona.capture.org"))
+        (file ,(expand-file-name "capture-templates/business.customer.persona.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -187,7 +187,7 @@ Check-ins and feedback are also stored here."))
 ;; always captured in the current clocking task
 (push `("Tj" "Customer Journey (under Business Canvas)" entry
         (clock)
-        (file ,(expand-file-name "capture-templates/business.customer.journey.capture.org"))
+        (file ,(expand-file-name "capture-templates/business.customer.journey.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -257,7 +257,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture feedback for people I am working with
 (push `("fp" "Feedback for People I'm working with" item
         (file+headline org-company-file "Feedback")
-        (file ,(expand-file-name "capture-templates/feedback.others.capture.org"))
+        (file ,(expand-file-name "capture-templates/feedback.others.org"))
         :clock-in t
         :clock-resume t
         :empty-lines 1)
@@ -266,7 +266,7 @@ Check-ins and feedback are also stored here."))
 ;; The monthly newsletter to send to investors, friends and mentors
 (push `("fn" "Company Newsletters" entry
         (file+headline org-company-file "Company Newsletters")
-        (file ,(expand-file-name "capture-templates/business.updates.capture.org"))
+        (file ,(expand-file-name "capture-templates/business.updates.org"))
         :prepend nil
         :clock-in t
         :clock-resume t
@@ -277,7 +277,7 @@ Check-ins and feedback are also stored here."))
 ;; expanded into actual projects later.
 (push `("fs" "Ideas and Suggestions" entry
         (file+headline org-company-file "Ideas and Suggestions")
-        (file ,(expand-file-name "capture-templates/suggestion.capture.org"))
+        (file ,(expand-file-name "capture-templates/suggestion.org"))
         :prepend t
         :clock-in t
         :clock-resume t
@@ -357,14 +357,14 @@ Check-ins and feedback are also stored here."))
 ;; correct location later.
 (push `("th" "Habit" entry
         (file+headline org-default-notes-file "My Habit Tracker")
-        (file ,(expand-file-name "capture-templates/habit.capture.org")))
+        (file ,(expand-file-name "capture-templates/habit.org")))
       org-capture-templates)
 
 ;; One-click Capture for replying to emails from notmuch. Creates a
 ;; task to remind you that you need to reply to this email.
 (push `("tr" "Respond to email" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/reply.capture.org"))
+        (file ,(expand-file-name "capture-templates/reply.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t)
@@ -374,7 +374,7 @@ Check-ins and feedback are also stored here."))
 ;; with `org-protocol', or as a stand-alone to capture links.
 (push `("tw" "Website Link Immediate Capture" entry
         (file+olp org-default-notes-file "Links Captured from the Browser")
-        (file ,(expand-file-name "capture-templates/website.capture.org"))
+        (file ,(expand-file-name "capture-templates/website.org"))
         :immediate-finish t)
       org-capture-templates)
 
@@ -382,7 +382,7 @@ Check-ins and feedback are also stored here."))
 ;; out my browser 2/3 times a week.
 (push `("tl" "Website Link Pinboard Capture" entry
         (file+olp org-default-notes-file "Links Captured from the Browser")
-        (file ,(expand-file-name "capture-templates/pinboard.capture.org"))
+        (file ,(expand-file-name "capture-templates/pinboard.org"))
         :clock-in t
         :clock-resume t
         :immediate-finish t)
@@ -391,7 +391,7 @@ Check-ins and feedback are also stored here."))
 ;; Capture a task where someone expects me to communicate when it's done
 (push `("tj" "Jira or External-facing Task" entry
         (file+olp+datetree org-default-notes-file)
-        (file ,(expand-file-name "capture-templates/jira.capture.org"))
+        (file ,(expand-file-name "capture-templates/jira.org"))
         :clock-in t
         :clock-resume t)
       org-capture-templates)

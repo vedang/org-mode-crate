@@ -1,4 +1,4 @@
-* TODO [#D] %^{What do I want to do | %i}                            :refile:
+* TODO %^{What do I want to do | %i}                            :refile:
 SCHEDULED: %^T
 %a
 

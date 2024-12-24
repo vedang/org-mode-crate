@@ -1,0 +1,14 @@
+** MEET %^T | %?
+:PROPERTIES:
+:CREATED: %U
+:STAGE: %^{Pick Sales Stage|Prospecting|Qualify|Pitch|Proposal}
+:CONTACT:
+:COMPANY:
+:END:
+- *Meeting Purpose*:
+- *Attendees*:
+- *Key Takeaways*
+  +
+- *Next steps* [0/2]
+  + [ ]
+  + [ ]

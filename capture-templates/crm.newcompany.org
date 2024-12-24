@@ -1,0 +1,10 @@
+* %^{Company}
+:PROPERTIES:
+:DOMAIN:
+:CREATED: %U
+:REFERRED_BY:
+:END:
+** Notes
+- %?
+** %\1 Company Details
+** %\1 Contacts :people:

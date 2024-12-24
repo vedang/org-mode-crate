@@ -1,0 +1,20 @@
+* %^{lead} :company:crm:
+:PROPERTIES:
+:COMPANY:
+:CREATED: %U
+:EST_AMNT:
+:ACT_AMNT:
+:ESTIMATE_NO:
+:EST_CLOSE:
+:PRCNT_DONE:
+:SOURCE:
+:END:
+-  [/] *Next Actions*
+  + [ ]
+- *Notes and Links*
+  +  %i
+- *wiwdatt*: %a
+
+** %\1 Meetings :meet:
+** %\1 related Sales Tasks :sales:
+** %\1 written communication :emails:
