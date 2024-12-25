@@ -1,20 +1,16 @@
-* %^{lead} :company:crm:
+* %^{TODO State|PROSPECT} %^{What is the Lead?}, %^{What is the Company name?}
 :PROPERTIES:
-:COMPANY:
+:COMPANY: %\3
 :CREATED: %U
+:CATEGORY: %^{Pick Sales Category|Engineering Management|AI Agent Workflows|AI Video Generation|Scaling|Migration}
 :EST_AMNT:
 :ACT_AMNT:
 :ESTIMATE_NO:
 :EST_CLOSE:
 :PRCNT_DONE:
-:SOURCE:
 :END:
--  [/] *Next Actions*
-  + [ ]
-- *Notes and Links*
-  +  %i
-- *wiwdatt*: %a
-
-** %\1 Meetings :meet:
-** %\1 related Sales Tasks :sales:
-** %\1 written communication :emails:
+%^{SOURCE|no-source}p
+%?
+** %\2 - Meetings :meet:
+** %\2 - Sales Tasks :sales:
+** %\2 - Communication :emails:

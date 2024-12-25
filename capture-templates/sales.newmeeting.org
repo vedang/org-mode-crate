@@ -1,14 +1,16 @@
-** MEET %^T | %?
+** MEET %^u | %?
 :PROPERTIES:
 :CREATED: %U
-:STAGE: %^{Pick Sales Stage|Prospecting|Qualify|Pitch|Proposal}
+:STAGE: %^{Pick Sales Stage|Prospecting|Qualify|Pitch|Proposal|Negotiation|Contract Signing|Post-Purchase}
 :CONTACT:
 :COMPANY:
 :END:
 - *Meeting Purpose*:
-- *Attendees*:
-- *Key Takeaways*
-  +
+- *Meeting Prep* [/]:
+  + [ ]
+- *Attendees*: %^{Who is part of the discussion? |} ,Vedang
 - *Next steps* [0/2]
   + [ ]
   + [ ]
+- *Key Takeaways*
+  +

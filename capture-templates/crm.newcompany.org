@@ -1,10 +1,12 @@
 * %^{Company}
 :PROPERTIES:
-:DOMAIN:
 :CREATED: %U
-:REFERRED_BY:
 :END:
-** Notes
+%^{REFERRED_BY|cold-inbound}p
+%^{DOMAIN|no-idea}p
+%^{POINT_OF_CONTACT|vedang}p
+%^{PERSON_WORKING|vedang}p
+** Notes and Tasks
 - %?
 ** %\1 Company Details
 ** %\1 Contacts :people:
