@@ -6,7 +6,7 @@
 %^{DOMAIN|no-idea}p
 %^{POINT_OF_CONTACT|vedang}p
 %^{PERSON_WORKING|vedang}p
-** Notes and Tasks
+** %\1 Notes and Tasks
 - %?
 ** %\1 Company Details
 ** %\1 Contacts :people:

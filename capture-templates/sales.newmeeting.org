@@ -5,12 +5,21 @@
 :CONTACT:
 :COMPANY:
 :END:
-- *Meeting Purpose*:
-- *Meeting Prep* [/]:
-  + [ ]
-- *Attendees*: %^{Who is part of the discussion? |} ,Vedang
-- *Next steps* [0/2]
-  + [ ]
-  + [ ]
-- *Key Takeaways*
-  +
+*** Meeting Details
+- Attendee Names: %^{Who is part of the discussion? |} ,Vedang
+- Meeting Purpose:
+
+*** Pre-Meeting Prep [/]:
++ [ ]
+
+*** Next Steps and Action Items [0/2]
+- [ ]
+- [ ]
+*** Key Takeaways
+-
+-
+*** Main Topics covered
+**** Topic 1
+Summary of discussion points around Topic 1
+**** Topic 2
+Summary of discussion points around Topic 2

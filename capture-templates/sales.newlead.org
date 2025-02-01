@@ -1,6 +1,6 @@
-* %^{TODO State|PROSPECT} %^{What is the Lead?}, %^{What is the Company name?}
+* %^{TODO State|PROSPECT} %^{What is the Company name?}, %^{What is the Lead?}
 :PROPERTIES:
-:COMPANY: %\3
+:COMPANY: %\2
 :CREATED: %U
 :CATEGORY: %^{Pick Sales Category|Engineering Management|AI Agent Workflows|AI Video Generation|Scaling|Migration}
 :EST_AMNT:
@@ -11,6 +11,6 @@
 :END:
 %^{SOURCE|no-source}p
 %?
-** %\2 - Meetings :meet:
-** %\2 - Sales Tasks :sales:
-** %\2 - Communication :emails:
+** %\3 - Meetings :meet:
+** %\3 - Sales Tasks :sales:
+** %\3 - Communication :emails:
