@@ -1,5 +1,18 @@
 * The Daily Start-of-day Morning Ritual                             :checkin:
 %U
+** TODO Today's message to myself
+
+Goals:
+- [[denote:20250129T222433::#h:9BD5060C-67E1-4203-9F69-FDEDA9921FD1][Unravel.tech Revenue Goals for H1 2025]]
+
+Values:
+- Remember your core value: *No more zero days!*
+- Write code everyday!
+  + Think like a writer. Write 750 lines of code everyday, use =tokei= to confirm that you have done this.
+- Exercise everyday. A sick man wants to be healthy!
+  + #Goal: "34 by Jun 2" : Hit 34 inch waist on or before <2025-06-02 Mon>, look dapper!
+- Think about the product, not the implementation. Make progress!
+
 ** TODO My Top Priority / Highlight today
 What is the *one concrete outcome* that I will have at the end of the day today?
 
@@ -16,14 +29,6 @@ Is it a 'build in public' outcome?
   - What will give me joy?
 #+end_comment
 
-** TODO Today's message to myself
-Remember your core value: *No more zero days!*
-- Write code everyday!
-  + Think like a writer. Write 750 lines of code everyday, use =tokei= to confirm that you have done this.
-- Exercise everyday. A sick man wants to be healthy!
-  + #Goal: "72 by Jan 2" : Hit 72 KG on or before <2025-01-02 Thu>, look dapper in the new year.
-- Think about the product, not the implementation. Make progress!
-
 ** TODO [0/4] The whole day plan for today
 This is the plan you will follow for the rest of the day. To do it:
 
@@ -36,15 +41,5 @@ This is the plan you will follow for the rest of the day. To do it:
 - [ ] Create time for tasks that absolutely must be done
 - [ ] Make sure you mark distracting tasks as "I will NOT DO these today"
 - [ ] Create time for your priority task
-
-** TODO Status update on Unravel Discord
-
-## My Plan for Today:
-
-### Communication:
-
-### Work:
-
-### Build in Public:
 
 ** TODO Persons I need to lead or connect with today, and how to do it well

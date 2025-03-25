@@ -6,7 +6,7 @@ Review:
 + [ ] Last Week's progress (Weekly Report)
   - Reflect and celebrate my achievements in the last week!
   - Did you actually do what you had planned in last week's Weekly Intentions?
-+ [ ] Yearly Goals
++ [ ] Single long-term goal (till [2025-06-01 Sun])
 + [ ] Monthly Goals
 + [ ] 31-day challenge
 
